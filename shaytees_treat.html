@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaytee's Treat — Akure's Sweetest Destination</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-primary: #ff1493;
+            --pink-light: #ff69b4;
+            --pink-dark: #c71585;
+            --cream: #fff5f7;
+            --chocolate: #5d4037;
+            --caramel: #d4a574;
+            --vanilla: #f3e5ab;
+            --strawberry: #ff6b6b;
+            --banana: #ffe135;
+            --popcorn: #ffd700;
+            --coffee: #6f4e37;
+            --text-dark: #2d2d2d;
+            --text-light: #666;
+            --shadow-soft: 0 10px 40px rgba(255,20,147,0.15);
+            --gradient-pink: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #ffb6c1 100%);
+            --gradient-candy: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 50%, #ff69b4 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        /* PARTICLES */
+        .particles-container {
+            position: fixed; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            will-change: transform;
+            animation: float linear infinite;
+            opacity: 0.6;
+        }
+        .particle.sprinkle { width: 8px; height: 8px; border-radius: 50%; }
+        .particle.wafer { width: 12px; height: 4px; border-radius: 2px; background: #d4a574; }
+        .particle.popcorn { width: 10px; height: 10px; border-radius: 50% 50% 50% 0; background: #ffd700; transform: rotate(45deg); }
+        .particle.cherry { width: 12px; height: 12px; border-radius: 50% 50% 50% 0; background: #dc143c; transform: rotate(-45deg); }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(720deg) scale(1); opacity: 0; }
+        }
+        /* HERO */
+        .hero {
+            position: relative; min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; background: var(--gradient-pink); z-index: 1;
+        }
+        .hero::before {
+            content: ''; position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 900px; }
+        .hero-badge {
+            display: inline-block; background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px); padding: 0.5rem 1.5rem;
+            border-radius: 50px; color: white; font-size: 0.9rem;
+            font-weight: 600; margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: clamp(3rem, 10vw, 7rem);
+            color: white; text-shadow: 0 5px 30px rgba(0,0,0,0.2);
+            line-height: 1.1; margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        .hero-title span { display: inline-block; animation: bounce 2s ease-in-out infinite; }
+        .hero-title span:nth-child(2) { animation-delay: 0.1s; }
+        .hero-title span:nth-child(3) { animation-delay: 0.2s; }
+        .hero-title span:nth-child(4) { animation-delay: 0.3s; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .hero-subtitle {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            color: rgba(255,255,255,0.95); margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        .hero-location {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(10px);
+            padding: 0.75rem 1.5rem; border-radius: 50px; color: white;
+            font-size: 0.95rem; margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.9s both;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeInUp 1s ease-out 1.2s both; }
+        .btn {
+            padding: 1rem 2.5rem; border-radius: 50px; font-weight: 700;
+            font-size: 1rem; cursor: pointer; transition: all 0.3s ease;
+            text-decoration: none; display: inline-flex; align-items: center;
+            gap: 0.5rem; border: none; position: relative; overflow: hidden;
+        }
+        .btn-primary { background: white; color: var(--pink-primary); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn-primary:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .btn-secondary { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-3px); }
+
+        /* 3D ICE CREAM */
+        .ice-cream-3d {
+            position: absolute; right: 5%; top: 50%;
+            transform: translateY(-50%); width: 300px; height: 400px;
+            z-index: 1; animation: floatIceCream 6s ease-in-out infinite;
+            display: none;
+        }
+        @media (min-width: 1024px) { .ice-cream-3d { display: block; } }
+        @keyframes floatIceCream {
+            0%, 100% { transform: translateY(-50%) rotateY(0deg); }
+            50% { transform: translateY(-55%) rotateY(10deg); }
+        }
+        .cone-3d { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: rotateCone 20s linear infinite; }
+        @keyframes rotateCone { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+        .cone-body {
+            position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 0; height: 0;
+            border-left: 80px solid transparent; border-right: 80px solid transparent;
+            border-top: 200px solid #d4a574;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+        .cone-body::before {
+            content: ''; position: absolute; top: -200px; left: -80px;
+            width: 160px; height: 200px;
+            background: repeating-linear-gradient(45deg, #c4956a, #c4956a 10px, #d4a574 10px, #d4a574 20px);
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+        .scoop { position: absolute; border-radius: 50%; box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+        .scoop-1 { width: 140px; height: 140px; background: radial-gradient(circle at 30% 30%, #ffb6c1, #ff1493); bottom: 180px; left: 50%; transform: translateX(-50%); }
+        .scoop-2 { width: 120px; height: 120px; background: radial-gradient(circle at 30% 30%, #f3e5ab, #d4a574); bottom: 260px; left: 30%; transform: translateX(-50%); }
+        .scoop-3 { width: 100px; height: 100px; background: radial-gradient(circle at 30% 30%, #8b4513, #5d4037); bottom: 320px; left: 70%; transform: translateX(-50%); }
+        .cherry-top {
+            position: absolute; width: 30px; height: 30px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #dc143c);
+            border-radius: 50%; bottom: 380px; left: 50%; transform: translateX(-50%);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+        .cherry-top::after {
+            content: ''; position: absolute; top: -15px; left: 50%;
+            width: 3px; height: 20px; background: #228b22;
+            transform: translateX(-50%) rotate(20deg); border-radius: 2px;
+        }
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; animation: fadeInUp 1s ease-out 1.5s both; }
+        .scroll-mouse { width: 30px; height: 50px; border: 2px solid rgba(255,255,255,0.5); border-radius: 15px; position: relative; }
+        .scroll-wheel { width: 6px; height: 6px; background: white; border-radius: 50%; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); animation: scrollWheel 2s ease-in-out infinite; }
+        @keyframes scrollWheel { 0% { top: 10px; opacity: 1; } 100% { top: 30px; opacity: 0; } }
+
+        /* NAVIGATION */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; }
+        .nav.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); box-shadow: 0 5px 30px rgba(0,0,0,0.1); }
+        .nav.scrolled .nav-logo { color: var(--pink-primary); }
+        .nav.scrolled .nav-links a { color: var(--text-dark); }
+        .nav-logo { font-family: 'Fredoka One', cursive; font-size: 1.5rem; color: white; text-decoration: none; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--pink-primary); transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-mobile-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 2rem; gap: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            .nav-links.active { display: flex; }
+            .nav-links a { color: var(--text-dark); }
+            .nav-mobile-toggle { display: block; }
+            .nav.scrolled .nav-mobile-toggle { color: var(--text-dark); }
+        }
+
+        /* SECTIONS */
+        .section { position: relative; z-index: 1; padding: 6rem 2rem; max-width: 1400px; margin: 0 auto; }
+        .section-title {
+            font-family: 'Fredoka One', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem); text-align: center; margin-bottom: 1rem;
+            background: var(--gradient-pink); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .section-subtitle { text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* STORY */
+        .story-section { background: white; border-radius: 30px; margin: 2rem auto; max-width: 1200px; padding: 4rem 2rem; box-shadow: var(--shadow-soft); }
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 2rem; } }
+        .story-text h2 { font-family: 'Fredoka One', cursive; font-size: 2.5rem; color: var(--pink-primary); margin-bottom: 1rem; }
+        .story-text p { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); margin-bottom: 1.5rem; }
+        .story-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .stat-card { text-align: center; padding: 1.5rem; background: var(--cream); border-radius: 20px; transition: transform 0.3s; }
+        .stat-card:hover { transform: translateY(-5px); }
+        .stat-number { font-family: 'Fredoka One', cursive; font-size: 2rem; color: var(--pink-primary); }
+        .stat-label { font-size: 0.85rem; color: var(--text-light); margin-top: 0.5rem; }
+        .story-visual { position: relative; height: 400px; display: flex; align-items: center; justify-content: center; }
+        .story-visual::before { content: ''; position: absolute; width: 300px; height: 300px; background: var(--gradient-pink); border-radius: 50%; opacity: 0.1; animation: pulse 4s ease-in-out infinite; }
+        .cart-icon { font-size: 8rem; animation: bounce 2s ease-in-out infinite; }
+
+        /* MENU */
+        .menu-section { background: linear-gradient(180deg, var(--cream) 0%, white 50%, var(--cream) 100%); }
+        .menu-categories { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+        .menu-tab {
+            padding: 0.75rem 1.5rem; border-radius: 50px; border: 2px solid var(--pink-light);
+            background: transparent; color: var(--pink-primary); font-weight: 600;
+            cursor: pointer; transition: all 0.3s; font-size: 0.9rem;
+        }
+        .menu-tab.active, .menu-tab:hover {
+            background: var(--gradient-pink); color: white; border-color: transparent;
+            transform: translateY(-2px); box-shadow: 0 5px 20px rgba(255,20,147,0.3);
+        }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .menu-card {
+            background: white; border-radius: 24px; overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.4s ease;
+            position: relative; transform-style: preserve-3d;
+        }
+        .menu-card:hover { transform: translateY(-10px) rotateX(5deg); box-shadow: 0 30px 60px rgba(255,20,147,0.15); }
+        .menu-card-header { padding: 1.5rem; background: var(--gradient-pink); color: white; display: flex; align-items: center; gap: 1rem; }
+        .menu-card-icon { font-size: 2.5rem; }
+        .menu-card-title { font-family: 'Fredoka One', cursive; font-size: 1.3rem; }
+        .menu-card-body { padding: 1.5rem; }
+        .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; border-bottom: 1px dashed #eee; transition: all 0.3s; }
+        .menu-item:last-child { border-bottom: none; }
+        .menu-item:hover { background: var(--cream); margin: 0 -1.5rem; padding: 0.75rem 1.5rem; }
+        .menu-item-name { font-weight: 600; color: var(--text-dark); }
+        .menu-item-desc { font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem; }
+        .menu-item-price { font-weight: 700; color: var(--pink-primary); font-size: 1.1rem; white-space: nowrap; }
+        .menu-item-sizes { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+        .size-tag { font-size: 0.75rem; padding: 0.25rem 0.5rem; background: var(--cream); border-radius: 10px; color: var(--text-light); }
+
+        /* ORDER BUILDER */
+        .order-section { background: white; border-radius: 30px; margin: 2rem auto; max-width: 1000px; padding: 4rem 2rem; box-shadow: var(--shadow-soft); }
+        .order-builder { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        @media (max-width: 768px) { .order-builder { grid-template-columns: 1fr; } }
+        .order-step { margin-bottom: 2rem; }
+        .order-step h3 { font-family: 'Fredoka One', cursive; color: var(--pink-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .step-number { width: 30px; height: 30px; background: var(--gradient-pink); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+        .option-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+        .option-btn { padding: 0.75rem; border: 2px solid #eee; border-radius: 15px; background: white; cursor: pointer; transition: all 0.3s; text-align: center; font-size: 0.9rem; }
+        .option-btn:hover, .option-btn.selected { border-color: var(--pink-primary); background: var(--cream); color: var(--pink-primary); font-weight: 600; }
+        .order-summary { background: var(--cream); border-radius: 24px; padding: 2rem; position: sticky; top: 100px; }
+        .order-summary h3 { font-family: 'Fredoka One', cursive; color: var(--pink-primary); margin-bottom: 1.5rem; }
+        .summary-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px dashed #ddd; }
+        .summary-total { display: flex; justify-content: space-between; padding-top: 1rem; font-size: 1.3rem; font-weight: 700; color: var(--pink-primary); }
+        .order-actions { display: flex; gap: 1rem; margin-top: 2rem; }
+        .btn-whatsapp { background: #25d366; color: white; flex: 1; justify-content: center; }
+        .btn-whatsapp:hover { background: #128c7e; transform: translateY(-3px); }
+        .btn-call { background: var(--pink-primary); color: white; flex: 1; justify-content: center; }
+        .btn-call:hover { background: var(--pink-dark); transform: translateY(-3px); }
+
+        /* LOCATION */
+        .location-section { background: var(--gradient-pink); border-radius: 30px; margin: 2rem auto; max-width: 1200px; padding: 4rem 2rem; color: white; text-align: center; }
+        .location-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .location-card { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 24px; padding: 2rem; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s; }
+        .location-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.25); }
+        .location-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .location-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .location-card p { opacity: 0.9; line-height: 1.6; }
+        .location-map { margin-top: 2rem; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+        .location-map iframe { width: 100%; height: 400px; border: none; }
+
+        /* FOOTER */
+        .footer { background: var(--text-dark); color: white; padding: 4rem 2rem 2rem; text-align: center; position: relative; z-index: 1; }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { font-family: 'Fredoka One', cursive; font-size: 2.5rem; margin-bottom: 1rem; background: var(--gradient-pink); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .footer-tagline { font-family: 'Pacifico', cursive; font-size: 1.2rem; opacity: 0.8; margin-bottom: 2rem; }
+        .footer-social { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 3rem; }
+        .social-link { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.3rem; transition: all 0.3s; }
+        .social-link:hover { background: var(--pink-primary); transform: translateY(-5px) rotate(10deg); }
+        .footer-contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
+        .contact-item h4 { font-family: 'Fredoka One', cursive; margin-bottom: 0.5rem; color: var(--pink-light); }
+        .contact-item p, .contact-item a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .contact-item a:hover { color: var(--pink-light); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.9rem; opacity: 0.6; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        /* FLOATING ORDER */
+        .floating-order { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: var(--gradient-pink); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: 700; box-shadow: 0 10px 30px rgba(255,20,147,0.4); cursor: pointer; transition: all 0.3s; border: none; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; animation: pulse 2s ease-in-out infinite; text-decoration: none; }
+        .floating-order:hover { transform: scale(1.1); box-shadow: 0 20px 40px rgba(255,20,147,0.6); }
+
+        /* BADGES */
+        .badge-new { display: inline-block; background: var(--gradient-candy); color: white; padding: 0.25rem 0.75rem; border-radius: 10px; font-size: 0.75rem; font-weight: 700; margin-left: 0.5rem; animation: pulse 2s ease-in-out infinite; }
+        .badge-hot { display: inline-block; background: linear-gradient(135deg, #ff6b6b, #ff8e53); color: white; padding: 0.25rem 0.75rem; border-radius: 10px; font-size: 0.75rem; font-weight: 700; margin-left: 0.5rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2.5rem; }
+            .section { padding: 3rem 1rem; }
+            .story-stats { grid-template-columns: 1fr; }
+            .option-grid { grid-template-columns: 1fr; }
+            .order-actions { flex-direction: column; }
+            .floating-order { bottom: 1rem; right: 1rem; padding: 0.75rem 1.5rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- PARTICLES -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="navbar">
+        <a href="#" class="nav-logo">🍦 Shaytee's</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" id="mobileToggle">☰</button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="ice-cream-3d">
+            <div class="cone-3d">
+                <div class="cone-body"></div>
+                <div class="scoop scoop-1"></div>
+                <div class="scoop scoop-2"></div>
+                <div class="scoop scoop-3"></div>
+                <div class="cherry-top"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">✨ AKURE'S #1 ICE CREAM DESTINATION</div>
+            <h1 class="hero-title">
+                <span>Shaytee's</span><br>
+                <span>Treat</span>
+            </h1>
+            <p class="hero-subtitle">Where Every Bite is a Sweet Memory</p>
+            <div class="hero-location">
+                📍 FUTA Southgate, Atolagbe Shopping Complex, Akure
+            </div>
+            <div class="hero-cta">
+                <a href="#order" class="btn btn-primary">🛒 Order Now</a>
+                <a href="#menu" class="btn btn-secondary">📋 View Menu</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="section story-section" id="story">
+        <div class="story-grid">
+            <div class="story-text">
+                <h2>From Cart to Crown 👑</h2>
+                <p>Shaytee's Treat started with a simple dream — to bring premium ice cream and delicious treats to the students and families of Akure. What began as a humble cart near FUTA Southgate has grown into <strong>Akure's One & Only Ice Cream Shop</strong>.</p>
+                <p>Today, we serve hundreds of happy customers daily from our two locations at FUTA Southgate, offering everything from creamy gelato-style ice cream to savory noodles, crispy waffles, and refreshing coffee.</p>
+                <div class="story-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Locations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Menu Items</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1000s</div>
+                        <div class="stat-label">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="story-visual">
+                <div class="cart-icon">🛒➡️🏪</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="section menu-section" id="menu">
+        <h2 class="section-title">Our Sweet Menu 🍭</h2>
+        <p class="section-subtitle">Handcrafted with love, served with a smile. Every item is made fresh daily at our FUTA Southgate kitchen.</p>
+
+        <div class="menu-categories">
+            <button class="menu-tab active" data-category="all">All Items</button>
+            <button class="menu-tab" data-category="icecream">🍦 Ice Cream</button>
+            <button class="menu-tab" data-category="food">🍜 Food</button>
+            <button class="menu-tab" data-category="snacks">🥞 Snacks & Waffles</button>
+            <button class="menu-tab" data-category="drinks">☕ Drinks</button>
+            <button class="menu-tab" data-category="special">⭐ Specials</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+            <!-- ICE CREAM -->
+            <div class="menu-card" data-category="icecream">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🍦</span>
+                    <span class="menu-card-title">Ice Cream</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Vanilla Dream</div>
+                            <div class="menu-item-desc">Classic creamy vanilla</div>
+                            <div class="menu-item-sizes">
+                                <span class="size-tag">₦1,500</span>
+                                <span class="size-tag">₦3,000</span>
+                                <span class="size-tag">₦5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Strawberry Delight</div>
+                            <div class="menu-item-desc">Fresh strawberry swirl</div>
+                            <div class="menu-item-sizes">
+                                <span class="size-tag">₦1,500</span>
+                                <span class="size-tag">₦3,000</span>
+                                <span class="size-tag">₦5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Banana Caramel</div>
+                            <div class="menu-item-desc">Sweet banana with caramel drizzle</div>
+                            <div class="menu-item-sizes">
+                                <span class="size-tag">₦1,500</span>
+                                <span class="size-tag">₦3,000</span>
+                                <span class="size-tag">₦5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Chocolate Bliss</div>
+                            <div class="menu-item-desc">Rich Belgian chocolate</div>
+                            <div class="menu-item-sizes">
+                                <span class="size-tag">₦1,500</span>
+                                <span class="size-tag">₦3,000</span>
+                                <span class="size-tag">₦5,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOPPINGS -->
+            <div class="menu-card" data-category="icecream">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🍬</span>
+                    <span class="menu-card-title">Toppings</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item"><div class="menu-item-name">Oreo Crumbles</div><div class="menu-item-price">₦500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Sprinkles</div><div class="menu-item-price">₦500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Chocolate Chips</div><div class="menu-item-price">₦500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Gummy Bears</div><div class="menu-item-price">₦500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Peanut</div><div class="menu-item-price">₦500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">M&Ms</div><div class="menu-item-price">₦1,000</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Wafers</div><div class="menu-item-price">₦500</div></div>
+                </div>
+            </div>
+
+            <!-- FREE DRIZZLE -->
+            <div class="menu-card" data-category="icecream">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🍯</span>
+                    <span class="menu-card-title">Free Drizzle</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item"><div class="menu-item-name">Chocolate</div><div class="menu-item-price">FREE</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Strawberry</div><div class="menu-item-price">FREE</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Honey</div><div class="menu-item-price">FREE</div></div>
+                </div>
+            </div>
+
+            <!-- FOOD -->
+            <div class="menu-card" data-category="food">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🍜</span>
+                    <span class="menu-card-title">Food</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Noodles & Egg <span class="badge-hot">HOT</span></div>
+                            <div class="menu-item-desc">Viral Akure favorite!</div>
+                        </div>
+                        <div class="menu-item-price">₦3,000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Noodles & Chicken</div>
+                        <div class="menu-item-price">₦4,700</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Egg Sandwich</div>
+                        <div class="menu-item-price">₦2,500</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Chicken Sandwich</div>
+                        <div class="menu-item-price">₦3,000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Chicken Salad</div>
+                        <div class="menu-item-price">₦4,500</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Toast Bread & Egg</div>
+                        <div class="menu-item-price">₦2,000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Toast Bread, Egg & Sardine</div>
+                        <div class="menu-item-price">₦2,500</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POPCORN -->
+            <div class="menu-card" data-category="snacks">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🍿</span>
+                    <span class="menu-card-title">Popcorn</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div class="menu-item-name">Milky Popcorn</div>
+                        <div class="menu-item-sizes">
+                            <span class="size-tag">₦1,000</span>
+                            <span class="size-tag">₦1,500</span>
+                            <span class="size-tag">₦2,500</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Caramel Popcorn</div>
+                        <div class="menu-item-sizes">
+                            <span class="size-tag">₦1,000</span>
+                            <span class="size-tag">₦1,500</span>
+                            <span class="size-tag">₦2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MINI PANCAKES -->
+            <div class="menu-card" data-category="snacks">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🥞</span>
+                    <span class="menu-card-title">Mini Pancakes</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Box of 6</div>
+                            <div class="menu-item-desc">+ 1 free topping</div>
+                        </div>
+                        <div class="menu-item-price">₦2,000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Box of 12</div>
+                            <div class="menu-item-desc">+ 2 free toppings</div>
+                        </div>
+                        <div class="menu-item-price">₦4,500</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WAFFLES -->
+            <div class="menu-card" data-category="snacks">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🧇</span>
+                    <span class="menu-card-title">Waffles</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div class="menu-item-name">Bubble Waffles</div>
+                        <div class="menu-item-price">₦3,000</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Plain Waffles</div>
+                            <div class="menu-item-desc">With Syrup or Honey</div>
+                        </div>
+                        <div class="menu-item-price">₦3,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POPSICLES -->
+            <div class="menu-card" data-category="snacks">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🍡</span>
+                    <span class="menu-card-title">Popsicles</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item"><div class="menu-item-name">Fruit Popsicle</div><div class="menu-item-price">₦1,700</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Chocolate Popsicle</div><div class="menu-item-price">₦2,000</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Strawberry Popsicle</div><div class="menu-item-price">₦1,700</div></div>
+                </div>
+            </div>
+
+            <!-- COFFEE -->
+            <div class="menu-card" data-category="drinks">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">☕</span>
+                    <span class="menu-card-title">Coffee</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item"><div class="menu-item-name">Cappuccino</div><div class="menu-item-price">₦2,500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Latte</div><div class="menu-item-price">₦3,500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Americano</div><div class="menu-item-price">₦2,500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Mocha</div><div class="menu-item-price">₦3,500</div></div>
+                    <div class="menu-item"><div class="menu-item-name">Espresso</div><div class="menu-item-price">₦3,000</div></div>
+                </div>
+            </div>
+
+            <!-- SHOTS -->
+            <div class="menu-card" data-category="drinks">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">🥃</span>
+                    <span class="menu-card-title">Shots</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div class="menu-item-name">Tequila Shot</div>
+                        <div class="menu-item-price">₦2,000 <small>each</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPECIAL MENU -->
+            <div class="menu-card" data-category="special">
+                <div class="menu-card-header">
+                    <span class="menu-card-icon">⭐</span>
+                    <span class="menu-card-title">Special Menu</span>
+                </div>
+                <div class="menu-card-body">
+                    <div class="menu-item">
+                        <div>
+                            <div class="menu-item-name">Dubai Strawberry Cup <span class="badge-new">NEW</span></div>
+                            <div class="menu-item-desc">Our signature dessert cup</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Small</div>
+                        <div class="menu-item-price">₦6,500</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-name">Big</div>
+                        <div class="menu-item-price">₦8,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ORDER BUILDER -->
+    <section class="section order-section" id="order">
+        <h2 class="section-title">Build Your Order 🛒</h2>
+        <p class="section-subtitle">Customize your perfect treat and we will have it ready for pickup at FUTA Southgate!</p>
+
+        <div class="order-builder">
+            <div class="order-steps">
+                <div class="order-step">
+                    <h3><span class="step-number">1</span> Choose Your Ice Cream</h3>
+                    <div class="option-grid">
+                        <button class="option-btn" data-type="flavor" data-value="Vanilla Dream" data-price="1500">Vanilla Dream</button>
+                        <button class="option-btn" data-type="flavor" data-value="Strawberry Delight" data-price="1500">Strawberry Delight</button>
+                        <button class="option-btn" data-type="flavor" data-value="Banana Caramel" data-price="1500">Banana Caramel</button>
+                        <button class="option-btn" data-type="flavor" data-value="Chocolate Bliss" data-price="1500">Chocolate Bliss</button>
+                    </div>
+                </div>
+                <div class="order-step">
+                    <h3><span class="step-number">2</span> Pick a Size</h3>
+                    <div class="option-grid">
+                        <button class="option-btn" data-type="size" data-value="Small" data-price="0">Small (+₦0)</button>
+                        <button class="option-btn" data-type="size" data-value="Medium" data-price="1500">Medium (+₦1,500)</button>
+                        <button class="option-btn" data-type="size" data-value="Large" data-price="3500">Large (+₦3,500)</button>
+                    </div>
+                </div>
+                <div class="order-step">
+                    <h3><span class="step-number">3</span> Add Toppings</h3>
+                    <div class="option-grid">
+                        <button class="option-btn" data-type="topping" data-value="Oreo Crumbles" data-price="500">Oreo ₦500</button>
+                        <button class="option-btn" data-type="topping" data-value="Sprinkles" data-price="500">Sprinkles ₦500</button>
+                        <button class="option-btn" data-type="topping" data-value="Chocolate Chips" data-price="500">Chips ₦500</button>
+                        <button class="option-btn" data-type="topping" data-value="Gummy Bears" data-price="500">Gummy ₦500</button>
+                        <button class="option-btn" data-type="topping" data-value="Peanut" data-price="500">Peanut ₦500</button>
+                        <button class="option-btn" data-type="topping" data-value="M&Ms" data-price="1000">M&Ms ₦1,000</button>
+                        <button class="option-btn" data-type="topping" data-value="Wafers" data-price="500">Wafers ₦500</button>
+                    </div>
+                </div>
+                <div class="order-step">
+                    <h3><span class="step-number">4</span> Choose Drizzle</h3>
+                    <div class="option-grid">
+                        <button class="option-btn" data-type="drizzle" data-value="Chocolate" data-price="0">Chocolate</button>
+                        <button class="option-btn" data-type="drizzle" data-value="Strawberry" data-price="0">Strawberry</button>
+                        <button class="option-btn" data-type="drizzle" data-value="Honey" data-price="0">Honey</button>
+                    </div>
+                </div>
+            </div>
+            <div class="order-summary">
+                <h3>🧾 Your Order</h3>
+                <div id="orderItems">
+                    <p style="color: var(--text-light); font-style: italic;">Select items to build your order...</p>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span id="orderTotal">₦0</span>
+                </div>
+                <div class="order-actions">
+                    <a href="#" class="btn btn-whatsapp" id="whatsappOrder">📱 WhatsApp Order</a>
+                    <a href="tel:08162125710" class="btn btn-call">📞 Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section" id="location">
+        <div class="location-section">
+            <h2 class="section-title" style="color: white; -webkit-text-fill-color: white;">Find Us 📍</h2>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Two convenient locations at FUTA Southgate, Akure. We are open daily and always ready to serve you!</p>
+
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="location-icon">🏪</div>
+                    <h3>Shop 1</h3>
+                    <p>FUTA Southgate<br>Adjacent Atolagbe Shopping Complex<br>Akure, Ondo State</p>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">🏪</div>
+                    <h3>Shop 2</h3>
+                    <p>FUTA Southgate<br>Second Location<br>Akure, Ondo State</p>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">⏰</div>
+                    <h3>Open Daily</h3>
+                    <p>Monday - Sunday<br>2:00 PM - 10:00 PM<br>Weekends till late!</p>
+                </div>
+            </div>
+
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.1!2d5.2!3d7.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDcnMjQuNCJOIDXCsDA3JzI0LjQiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-logo">🍦 Shaytee's Treat</div>
+            <p class="footer-tagline">Treat Yourself, You Deserve It!</p>
+
+            <div class="footer-social">
+                <a href="https://tiktok.com/@shaytee.s.treat" class="social-link" target="_blank">📱</a>
+                <a href="https://facebook.com/DhineBitesweet" class="social-link" target="_blank">📘</a>
+                <a href="https://instagram.com/shaytee.s.treat" class="social-link" target="_blank">📸</a>
+                <a href="https://wa.me/2348162125710" class="social-link" target="_blank">💬</a>
+            </div>
+
+            <div class="footer-contact">
+                <div class="contact-item">
+                    <h4>📞 Phone</h4>
+                    <a href="tel:08162125710">0816 212 5710</a>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 Address</h4>
+                    <p>FUTA Southgate, Atolagbe Shopping Complex, Akure</p>
+                </div>
+                <div class="contact-item">
+                    <h4>⏰ Hours</h4>
+                    <p>Daily: 2PM - 10PM</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Shaytee's Treat. Made with 💖 in Akure, Nigeria.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING ORDER BUTTON -->
+    <a href="#order" class="floating-order">🛒 Order Now</a>
+
+    <script>
+        // PARTICLE SYSTEM
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const colors = ['#ff1493', '#ff69b4', '#ffb6c1', '#ffd700', '#dc143c', '#d4a574', '#f3e5ab'];
+            const types = ['sprinkle', 'wafer', 'popcorn', 'cherry'];
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle ' + types[Math.floor(Math.random() * types.length)];
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                if (particle.classList.contains('sprinkle')) {
+                    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                }
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // NAVBAR SCROLL
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // MOBILE MENU
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            mobileToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // MENU FILTERING
+        const menuTabs = document.querySelectorAll('.menu-tab');
+        const menuCards = document.querySelectorAll('.menu-card');
+        menuTabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                menuTabs.forEach(function(t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+                const category = tab.dataset.category;
+                menuCards.forEach(function(card) {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.5s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // ORDER BUILDER
+        let order = { flavor: null, size: null, toppings: [], drizzle: null };
+        const optionBtns = document.querySelectorAll('.option-btn');
+        const orderItemsDiv = document.getElementById('orderItems');
+        const orderTotalSpan = document.getElementById('orderTotal');
+        const whatsappOrderBtn = document.getElementById('whatsappOrder');
+
+        function updateOrder() {
+            let html = '';
+            let total = 0;
+            if (order.flavor) {
+                html += '<div class="summary-item"><span>' + order.flavor.name + '</span><span>₦' + order.flavor.price.toLocaleString() + '</span></div>';
+                total += order.flavor.price;
+            }
+            if (order.size) {
+                html += '<div class="summary-item"><span>' + order.size.name + '</span><span>+₦' + order.size.price.toLocaleString() + '</span></div>';
+                total += order.size.price;
+            }
+            order.toppings.forEach(function(t) {
+                html += '<div class="summary-item"><span>' + t.name + '</span><span>+₦' + t.price.toLocaleString() + '</span></div>';
+                total += t.price;
+            });
+            if (order.drizzle) {
+                html += '<div class="summary-item"><span>' + order.drizzle.name + ' Drizzle</span><span>FREE</span></div>';
+            }
+            if (!order.flavor && !order.size && order.toppings.length === 0 && !order.drizzle) {
+                html = '<p style="color: var(--text-light); font-style: italic;">Select items to build your order...</p>';
+            }
+            orderItemsDiv.innerHTML = html;
+            orderTotalSpan.textContent = '₦' + total.toLocaleString();
+            let message = 'Hello Shaytee's Treat! I would like to order:';
+            if (order.flavor) message += '\n🍦 ' + order.flavor.name;
+            if (order.size) message += '\n📏 ' + order.size.name;
+            order.toppings.forEach(function(t) { message += '\n🍬 ' + t.name; });
+            if (order.drizzle) message += '\n🍯 ' + order.drizzle.name + ' Drizzle';
+            message += '\n💰 Total: ₦' + total.toLocaleString();
+            message += '\n\nPlease confirm my order. Thank you!';
+            whatsappOrderBtn.href = 'https://wa.me/2348162125710?text=' + encodeURIComponent(message);
+        }
+
+        optionBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const type = btn.dataset.type;
+                const value = btn.dataset.value;
+                const price = parseInt(btn.dataset.price);
+                if (type === 'flavor') {
+                    order.flavor = { name: value, price: price };
+                    document.querySelectorAll('[data-type="flavor"]').forEach(function(b) { b.classList.remove('selected'); });
+                } else if (type === 'size') {
+                    order.size = { name: value, price: price };
+                    document.querySelectorAll('[data-type="size"]').forEach(function(b) { b.classList.remove('selected'); });
+                } else if (type === 'topping') {
+                    const existing = order.toppings.find(function(t) { return t.name === value; });
+                    if (existing) {
+                        order.toppings = order.toppings.filter(function(t) { return t.name !== value; });
+                        btn.classList.remove('selected');
+                    } else {
+                        order.toppings.push({ name: value, price: price });
+                        btn.classList.add('selected');
+                    }
+                    updateOrder();
+                    return;
+                } else if (type === 'drizzle') {
+                    order.drizzle = { name: value, price: price };
+                    document.querySelectorAll('[data-type="drizzle"]').forEach(function(b) { b.classList.remove('selected'); });
+                }
+                btn.classList.add('selected');
+                updateOrder();
+            });
+        });
+
+        // SCROLL ANIMATIONS
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
