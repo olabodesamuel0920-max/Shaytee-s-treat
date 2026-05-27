@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { MessageCircle, Heart, Star, Gift, Compass, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { Heart, Star, Gift, Sparkles, ChevronRight } from "lucide-react";
 import Particles from "@/components/Particles";
 
 interface Combo {
@@ -11,6 +12,13 @@ interface Combo {
   emoji: string;
   badge?: string;
   estimatedPrice: number;
+  params: {
+    flavor: string;
+    size: string;
+    toppings: string[];
+    drizzle?: string;
+    extras: string[];
+  };
 }
 
 export default function CombosPage() {
@@ -18,34 +26,59 @@ export default function CombosPage() {
     {
       name: "After Class Treat",
       desc: "Perfect way to reward yourself or hang out with friends after a long day of lectures at FUTA.",
-      items: ["1 Medium Ice Cream (Strawberry or Vanilla)", "Oreo Crumbles topping", "1 Cup of Caramel Popcorn"],
+      items: ["1 Medium Ice Cream (Strawberry Delight)", "Oreo Crumbles topping", "1 Milky Popcorn (Medium)"],
       emoji: "🎒",
       badge: "STUDENT FAVORITE",
       estimatedPrice: 5000,
+      params: {
+        flavor: "Strawberry Delight",
+        size: "Medium Cup",
+        toppings: ["Oreo Crumbles"],
+        extras: ["Milky Popcorn (Medium)"],
+      }
     },
     {
       name: "Birthday Treat Box",
       desc: "Celebrate your special day or surprise a friend with a curated sweet overload birthday package.",
-      items: ["1 Large Ice Cream (any flavor)", "Box of 12 Mini Pancakes + 2 Free Toppings", "2 Popsicles (Fruit or Chocolate)"],
+      items: ["1 Large Ice Cream (Chocolate Bliss)", "Box of 12 Mini Pancakes + 2 Free Toppings", "Milky Popcorn (Large)"],
       emoji: "🎂",
       badge: "PARTY SPECIAL",
-      estimatedPrice: 11500,
+      estimatedPrice: 12000,
+      params: {
+        flavor: "Chocolate Bliss",
+        size: "Large Cup",
+        toppings: ["Wafers", "Chocolate Chips"],
+        extras: ["Mini Pancakes (Box of 12)", "Milky Popcorn (Large)"],
+      }
     },
     {
       name: "Date Night Dessert",
       desc: "A romantic sweet treat combo designed to be shared. Sweeten up your evening with your special someone.",
-      items: ["2 Medium Ice Cream cups", "Toppings: Chocolate Chips & Sprinkles", "1 Bubble Waffle with Honey Drizzle"],
+      items: ["1 Medium Ice Cream (Vanilla Dream)", "Toppings: Chocolate Chips & Sprinkles", "1 Bubble Waffle + Honey Drizzle"],
       emoji: "💖",
       badge: "SHARE FOR TWO",
-      estimatedPrice: 10000,
+      estimatedPrice: 6500,
+      params: {
+        flavor: "Vanilla Dream",
+        size: "Medium Cup",
+        toppings: ["Chocolate Chips", "Sprinkles"],
+        drizzle: "Honey Drizzle",
+        extras: ["Bubble Waffle"],
+      }
     },
     {
       name: "Movie & Popcorn Combo",
       desc: "Snack buddy package for your chill movie nights at home. Keep the sweet crunch flowing.",
-      items: ["1 Large Caramel Popcorn", "1 Large Milky Popcorn", "2 Fruit Popsicles"],
+      items: ["1 Small Cup Ice Cream (Vanilla)", "1 Caramel Popcorn (Large)", "1 Milky Popcorn (Large)"],
       emoji: "🍿",
       badge: "CRUNCH BOX",
-      estimatedPrice: 8400,
+      estimatedPrice: 6500,
+      params: {
+        flavor: "Vanilla Dream",
+        size: "Small Cup",
+        toppings: [],
+        extras: ["Caramel Popcorn (Large)", "Milky Popcorn (Large)"],
+      }
     },
     {
       name: "Sweet Tooth Overload",
@@ -53,29 +86,44 @@ export default function CombosPage() {
       items: ["1 Medium Chocolate Bliss Gelato", "Toppings: M&Ms & Wafers", "Box of 6 Mini Pancakes + Oreo topping", "1 Hot Mocha coffee"],
       emoji: "🍩",
       badge: "ULTIMATE SWEET",
-      estimatedPrice: 10500,
+      estimatedPrice: 11000,
+      params: {
+        flavor: "Chocolate Bliss",
+        size: "Medium Cup",
+        toppings: ["M&Ms", "Wafers"],
+        extras: ["Mini Pancakes (Box of 6)", "Mocha"],
+      }
     },
     {
       name: "FUTA Chill Combo",
       desc: "Our budget-friendly student chillout selection. Stay refreshed during those library study breaks.",
-      items: ["1 Small Vanilla or Chocolate scoop", "1 Plain Waffle + Syrup", "1 Latte Coffee"],
+      items: ["1 Small Vanilla scoop", "1 Plain Waffle + Syrup", "1 Latte Coffee"],
       emoji: "🎓",
       badge: "BUDGET VIBE",
       estimatedPrice: 8000,
+      params: {
+        flavor: "Vanilla Dream",
+        size: "Small Cup",
+        toppings: [],
+        extras: ["Plain Waffle + Syrup", "Latte"],
+      }
     },
   ];
 
-  const handleOrderCombo = (combo: Combo) => {
-    const itemsText = combo.items.map((it) => `• ${it}`).join("\n");
-    const message = `Hello Shaytee's Treat! I want to order the "${combo.name}" Combo:
-Items included:
-${itemsText}
-Estimated combo price: ₦${combo.estimatedPrice.toLocaleString()}
-
-Please confirm the final availability and pricing. Thank you!`;
-
-    const url = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
+  const getComboLink = (combo: Combo) => {
+    const searchParams = new URLSearchParams();
+    searchParams.set("flavor", combo.params.flavor);
+    searchParams.set("size", combo.params.size);
+    if (combo.params.toppings.length > 0) {
+      searchParams.set("toppings", combo.params.toppings.join(","));
+    }
+    if (combo.params.drizzle) {
+      searchParams.set("drizzle", combo.params.drizzle);
+    }
+    if (combo.params.extras.length > 0) {
+      searchParams.set("extras", combo.params.extras.join(","));
+    }
+    return `/build-your-treat?${searchParams.toString()}`;
   };
 
   return (
@@ -93,76 +141,79 @@ Please confirm the final availability and pricing. Thank you!`;
             Sweet Combo Offers 🎁
           </h1>
           <p className="font-poppins text-text-light text-sm md:text-base leading-relaxed">
-            Experience our handpicked combinations matching every mood. Tap a combo to order directly on WhatsApp.
+            Experience our handpicked combinations matching every mood. Tap a combo to load it directly into our treat customizer.
           </p>
         </div>
 
         {/* Combo Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {combosList.map((combo, idx) => (
-            <div
-              key={idx}
-              className="glossy-card p-6 flex flex-col justify-between relative overflow-hidden"
-            >
-              {/* Badge */}
-              {combo.badge && (
-                <span className="absolute top-4 right-4 text-[9px] font-bold text-white bg-gradient-to-r from-pink-primary to-pink-light px-2 py-0.5 rounded shadow-sm">
-                  {combo.badge}
-                </span>
-              )}
-
-              <div>
-                {/* Header */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl animate-bounce-slow" style={{ animationDelay: `${idx * 0.15}s` }}>
-                    {combo.emoji}
+          {combosList.map((combo, idx) => {
+            const builderLink = getComboLink(combo);
+            return (
+              <div
+                key={idx}
+                className="glossy-card p-6 flex flex-col justify-between relative overflow-hidden"
+              >
+                {/* Badge */}
+                {combo.badge && (
+                  <span className="absolute top-4 right-4 text-[9px] font-bold text-white bg-gradient-to-r from-pink-primary to-pink-light px-2 py-0.5 rounded shadow-sm">
+                    {combo.badge}
                   </span>
-                  <h3 className="font-fredoka text-xl font-bold text-chocolate leading-tight pr-16">
-                    {combo.name}
-                  </h3>
+                )}
+
+                <div>
+                  {/* Header */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl animate-bounce-slow" style={{ animationDelay: `${idx * 0.15}s` }}>
+                      {combo.emoji}
+                    </span>
+                    <h3 className="font-fredoka text-xl font-bold text-chocolate leading-tight pr-16">
+                      {combo.name}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-6">
+                    {combo.desc}
+                  </p>
+
+                  {/* Items list */}
+                  <div className="bg-pink-50/40 rounded-2xl p-4 border border-pink-100/50 mb-6">
+                    <h4 className="font-fredoka text-xs font-bold text-pink-dark uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Sparkles size={12} />
+                      What's Included:
+                    </h4>
+                    <ul className="space-y-2 text-xs font-poppins text-text-dark">
+                      {combo.items.map((item, itemIdx) => (
+                        <li key={itemIdx} className="flex items-start gap-1.5">
+                          <span className="text-pink-primary shrink-0">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
-                {/* Description */}
-                <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-6">
-                  {combo.desc}
-                </p>
+                {/* Price & CTA */}
+                <div className="pt-4 border-t border-pink-100/40 flex justify-between items-center">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Est. Price</span>
+                    <span className="font-fredoka text-lg font-bold text-pink-primary mt-0.5">
+                      ₦{combo.estimatedPrice.toLocaleString()}
+                    </span>
+                  </div>
 
-                {/* Items list */}
-                <div className="bg-pink-50/40 rounded-2xl p-4 border border-pink-100/50 mb-6">
-                  <h4 className="font-fredoka text-xs font-bold text-pink-dark uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                    <Sparkles size={12} />
-                    What's Included:
-                  </h4>
-                  <ul className="space-y-2 text-xs font-poppins text-text-dark">
-                    {combo.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="flex items-start gap-1.5">
-                        <span className="text-pink-primary shrink-0">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <Link
+                    href={builderLink}
+                    className="px-4 py-2.5 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka text-xs font-bold rounded-full shadow-md flex items-center gap-1 transition-all hover:scale-105"
+                  >
+                    Load into Builder 🍦
+                    <ChevronRight size={14} />
+                  </Link>
                 </div>
               </div>
-
-              {/* Price & CTA */}
-              <div className="pt-4 border-t border-pink-100/40 flex justify-between items-center">
-                <div className="flex flex-col">
-                  <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Est. Price</span>
-                  <span className="font-fredoka text-lg font-bold text-pink-primary mt-0.5">
-                    ₦{combo.estimatedPrice.toLocaleString()}
-                  </span>
-                </div>
-
-                <button
-                  onClick={() => handleOrderCombo(combo)}
-                  className="px-4 py-2.5 bg-[#25d366] hover:bg-[#128c7e] text-white font-fredoka text-xs font-bold rounded-full shadow-md flex items-center gap-1.5 transition-all hover:scale-105"
-                >
-                  <MessageCircle size={14} />
-                  Order Combo
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Disclaimer */}

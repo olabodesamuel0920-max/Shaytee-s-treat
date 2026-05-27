@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, Compass, ShoppingCart } from "lucide-react";
+import { Search, Compass, ShoppingCart, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import Particles from "@/components/Particles";
 
@@ -89,6 +89,46 @@ export default function MenuPage() {
     return matchesTab && matchesSearch;
   });
 
+  // Check if item is customizable in builder
+  const isCustomizable = (item: MenuItem) => {
+    return item.category === "icecream" || 
+           item.category === "toppings" || 
+           item.category === "drizzle" || 
+           item.name.toLowerCase().includes("waffle");
+  };
+
+  // Get deep link for custom builder
+  const getBuilderLink = (item: MenuItem) => {
+    if (item.category === "icecream") {
+      return `/build-your-treat?flavor=${encodeURIComponent(item.name)}&size=Small%20Cup`;
+    }
+    if (item.category === "toppings") {
+      return `/build-your-treat?toppings=${encodeURIComponent(item.name)}`;
+    }
+    if (item.category === "drizzle") {
+      return `/build-your-treat?drizzle=${encodeURIComponent(item.name)}`;
+    }
+    return `/build-your-treat?extras=${encodeURIComponent(item.name)}`;
+  };
+
+  // Quick Order template generator for WhatsApp
+  const handleQuickOrder = (item: MenuItem) => {
+    const priceText = item.prices
+      ? item.prices.map((p) => `₦${p.toLocaleString()}`).join(" / ") + " (Please specify size)"
+      : `₦${item.price?.toLocaleString()}`;
+
+    const message = `Hello Shaytee's Treat, I want to order:
+Item: ${item.name}
+Price: ${priceText}
+
+Name: 
+Pickup/Delivery: 
+Location: `;
+
+    const whatsappUrl = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <div className="relative min-h-screen py-12 px-4 md:px-8">
       {/* Background Particles */}
@@ -104,7 +144,7 @@ export default function MenuPage() {
             Our Sweet Menu 📑
           </h1>
           <p className="font-poppins text-text-light text-sm md:text-base leading-relaxed">
-            Browse our selections prepared with care in our Southgate kitchen. Choose your favorites and head to the treat builder to compile your WhatsApp order.
+            Browse our selections prepared with care in our Southgate kitchen. Customize ice cream and waffles in our builder, or place a quick order for other specialties.
           </p>
         </div>
 
@@ -125,10 +165,10 @@ export default function MenuPage() {
           {/* Quick CTA to Builder */}
           <Link
             href="/build-your-treat"
-            className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka font-bold rounded-full shadow-md hover:scale-105 transition-transform"
+            className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka font-bold rounded-full shadow-md hover:scale-105 transition-transform animate-pulse-slow"
           >
             <ShoppingCart size={18} />
-            Launch Treat Builder
+            Launch Customizer
           </Link>
         </div>
 
@@ -173,16 +213,16 @@ export default function MenuPage() {
                   )}
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-pink-50/50 flex justify-between items-center">
+                <div className="mt-4 pt-4 border-t border-pink-50/50 flex justify-between items-center gap-3">
                   {/* Prices display */}
                   {item.prices ? (
                     <div className="flex flex-col">
                       <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Sizes</span>
-                      <div className="flex gap-2 mt-1">
+                      <div className="flex gap-1.5 mt-1">
                         {item.prices.map((p, idx) => (
                           <span
                             key={idx}
-                            className="px-2 py-1 bg-pink-50 border border-pink-100 text-pink-primary text-xs font-bold rounded-md"
+                            className="px-2 py-0.5 bg-pink-50 border border-pink-100 text-pink-primary text-[10px] md:text-xs font-bold rounded-md"
                           >
                             ₦{p.toLocaleString()}
                           </span>
@@ -192,19 +232,28 @@ export default function MenuPage() {
                   ) : (
                     <div className="flex flex-col">
                       <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Price</span>
-                      <span className="font-poppins text-lg font-bold text-pink-primary mt-0.5">
+                      <span className="font-poppins text-base md:text-lg font-bold text-pink-primary mt-0.5">
                         {item.price === 0 ? "FREE" : `₦${item.price?.toLocaleString()}`}
                       </span>
                     </div>
                   )}
 
-                  {/* Add action */}
-                  <Link
-                    href="/build-your-treat"
-                    className="p-2.5 bg-pink-50 hover:bg-pink-primary text-pink-primary hover:text-white rounded-full transition-colors duration-300"
-                  >
-                    <ShoppingCart size={16} />
-                  </Link>
+                  {/* Dynamic Action Buttons */}
+                  {isCustomizable(item) ? (
+                    <Link
+                      href={getBuilderLink(item)}
+                      className="px-4 py-2 bg-gradient-to-r from-pink-primary to-pink-light text-white text-xs font-fredoka font-bold rounded-full shadow-sm hover:scale-105 transition-transform text-center whitespace-nowrap flex items-center gap-1"
+                    >
+                      {item.category === "toppings" || item.category === "drizzle" ? "Add to Builder 🍦" : "Customize 🍦"}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleQuickOrder(item)}
+                      className="px-4 py-2 bg-chocolate hover:bg-pink-dark text-white text-xs font-fredoka font-bold rounded-full shadow-sm hover:scale-105 transition-transform text-center whitespace-nowrap flex items-center gap-1 cursor-pointer"
+                    >
+                      Quick Order 💬
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

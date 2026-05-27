@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { MessageCircle, ShoppingBag, User, MapPin, Truck, ChevronRight } from "lucide-react";
+import React, { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import { MessageCircle, ShoppingBag, User, MapPin, Truck } from "lucide-react";
 import Particles from "@/components/Particles";
 
 interface Option {
@@ -9,15 +10,17 @@ interface Option {
   price: number;
 }
 
-export default function BuildYourTreat() {
-  // STATE variables for builder
+function BuildYourTreatContent() {
+  const searchParams = useSearchParams();
+
+  // State variables for builder
   const [flavor, setFlavor] = useState<Option | null>(null);
   const [size, setSize] = useState<Option | null>(null);
   const [toppings, setToppings] = useState<Option[]>([]);
   const [drizzle, setDrizzle] = useState<Option | null>(null);
   const [extras, setExtras] = useState<Option[]>([]);
   
-  // STATE variables for client information
+  // State variables for client information
   const [clientName, setClientName] = useState("");
   const [orderType, setOrderType] = useState<"pickup" | "delivery">("pickup");
   const [location, setLocation] = useState("");
@@ -82,6 +85,54 @@ export default function BuildYourTreat() {
     { name: "Toast Bread, Egg & Sardine", price: 2500 },
   ];
 
+  // Overwrite defaults with URL parameters
+  useEffect(() => {
+    if (!searchParams) return;
+
+    const flavorParam = searchParams.get("flavor");
+    const sizeParam = searchParams.get("size");
+    const toppingsParam = searchParams.get("toppings");
+    const drizzleParam = searchParams.get("drizzle");
+    const extrasParam = searchParams.get("extras");
+
+    if (flavorParam) {
+      const foundFlav = flavors.find(
+        (f) => f.name.toLowerCase() === flavorParam.toLowerCase()
+      );
+      if (foundFlav) setFlavor(foundFlav);
+    }
+
+    if (sizeParam) {
+      const foundSize = sizes.find(
+        (s) => s.name.toLowerCase().includes(sizeParam.toLowerCase())
+      );
+      if (foundSize) setSize(foundSize);
+    }
+
+    if (toppingsParam) {
+      const names = toppingsParam.split(",").map((t) => t.trim().toLowerCase());
+      const matched = toppingsList.filter((t) =>
+        names.includes(t.name.toLowerCase())
+      );
+      setToppings(matched);
+    }
+
+    if (drizzleParam) {
+      const foundDriz = drizzles.find(
+        (d) => d.name.toLowerCase().includes(drizzleParam.toLowerCase())
+      );
+      if (foundDriz) setDrizzle(foundDriz);
+    }
+
+    if (extrasParam) {
+      const names = extrasParam.split(",").map((e) => e.trim().toLowerCase());
+      const matched = extrasList.filter((e) =>
+        names.includes(e.name.toLowerCase())
+      );
+      setExtras(matched);
+    }
+  }, [searchParams]);
+
   // Calculate Total
   useEffect(() => {
     let sum = 0;
@@ -125,7 +176,6 @@ export default function BuildYourTreat() {
     const selectedDrizzle = drizzle ? drizzle.name : "None";
     const selectedExtras = extras.length > 0 ? extras.map((e) => e.name).join(", ") : "None";
 
-    // Text constructor using template literals to avoid quote escaping issues
     const message = `Hello Shaytee's Treat, I want to order:
 Ice Cream: ${flavor.name}
 Size: ${sizeName}
@@ -508,5 +558,17 @@ Location: ${location || "[Please Fill]"}`;
 
       </div>
     </div>
+  );
+}
+
+export default function BuildYourTreat() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex flex-col items-center justify-center bg-cream text-pink-primary">
+        <div className="animate-bounce text-2xl font-fredoka font-bold">Loading Customizer...</div>
+      </div>
+    }>
+      <BuildYourTreatContent />
+    </Suspense>
   );
 }
