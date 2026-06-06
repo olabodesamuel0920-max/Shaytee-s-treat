@@ -176,17 +176,19 @@ function BuildYourTreatContent() {
     const selectedDrizzle = drizzle ? drizzle.name : "None";
     const selectedExtras = extras.length > 0 ? extras.map((e) => e.name).join(", ") : "None";
 
-    const message = `Hello Shaytee's Treat, I want to order:
-Ice Cream: ${flavor.name}
-Size: ${sizeName}
-Toppings: ${selectedToppings}
-Drizzle: ${selectedDrizzle}
-Extras: ${selectedExtras}
-Estimated Total: ₦${estimatedTotal.toLocaleString()}
+    const message = `🍭 *NEW ORDER — Shaytee's Treat*
 
-Name: ${clientName || "[Please Fill]"}
+👤 Customer: ${clientName || "[Please Fill]"}
 Pickup/Delivery: ${orderType === "delivery" ? "Delivery" : "Pickup"}
-Location: ${location || "[Please Fill]"}`;
+📍 Location: ${location || "[Please Fill]"}
+
+*Items:*
+1. ${flavor.name} (${sizeName}) — ₦${((flavor.price) + (size ? size.price : 0)).toLocaleString()}
+${toppings.length > 0 ? toppings.map(t => `   + ${t.name} — ₦${t.price.toLocaleString()}`).join("\n") + "\n" : ""}${drizzle ? `   + ${drizzle.name} (FREE)\n` : ""}${extras.map((ex, i) => `${i + 2}. ${ex.name} — ₦${ex.price.toLocaleString()}`).join("\n")}
+
+*Estimated Total: ₦${estimatedTotal.toLocaleString()}*
+
+Thank you! 💖`;
 
     const whatsappUrl = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -411,14 +413,28 @@ Location: ${location || "[Please Fill]"}`;
                   ))}
                 </div>
 
-                {/* Ice cream Scoop */}
-                <div className={`w-32 h-32 rounded-full border-4 border-white/40 shadow-xl transition-all duration-500 z-10 flex items-center justify-center font-fredoka font-bold text-sm ${getPreviewFlavorColor()} ${getPreviewSize()}`}>
+                {/* Ice cream Scoop with dynamic photography mapping */}
+                <div className={`w-32 h-32 rounded-full border-4 border-white/40 shadow-xl overflow-hidden transition-all duration-500 z-10 flex items-center justify-center font-fredoka font-bold text-sm ${getPreviewFlavorColor()} ${getPreviewSize()}`}>
                   {!flavor ? (
                     <span className="text-text-light/50 text-xs italic text-center p-2">Select flavor</span>
                   ) : (
-                    <span className="text-chocolate drop-shadow-sm text-center px-2">
-                      {flavor.name}
-                    </span>
+                    <div className="w-full h-full relative">
+                      <img
+                        src={
+                          flavor.name === "Vanilla Dream" ? "/images/ice_cream_sundae_pink.png" :
+                          flavor.name === "Strawberry Delight" ? "/images/ice_cream_sundae_pink.png" :
+                          flavor.name === "Banana Caramel" ? "/images/bubble_waffle_caramel_icecream.png" :
+                          "/images/ice_cream_sundae_glasses.png"
+                        }
+                        alt={flavor.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                        <span className="text-white text-xs text-center px-2 drop-shadow-md">
+                          {flavor.name}
+                        </span>
+                      </div>
+                    </div>
                   )}
                 </div>
 

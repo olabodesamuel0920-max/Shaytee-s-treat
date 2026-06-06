@@ -1,0 +1,362 @@
+{
+  "brand": "Shaytee's Treat",
+  "tagline": "Treat Yourself, You Deserve It!",
+  "location": "Akure, Nigeria",
+  "contact": "+234 816 212 5710",
+  "currency": "NGN",
+  "currency_symbol": "₦",
+  "categories": [
+    {
+      "id": "ice-cream",
+      "name": "Ice Cream",
+      "icon": "🍦",
+      "description": "Premium soft serve ice cream in cones and cups",
+      "items": [
+        {
+          "name": "Vanilla Dream",
+          "flavor": "Vanilla",
+          "prices": {
+            "small": 1500,
+            "medium": 3000,
+            "large": 5000
+          },
+          "image": "ice_cream_sundae_pink.png"
+        },
+        {
+          "name": "Strawberry Delight",
+          "flavor": "Strawberry",
+          "prices": {
+            "small": 1500,
+            "medium": 3000,
+            "large": 5000
+          },
+          "image": "ice_cream_sundae_glasses.png"
+        },
+        {
+          "name": "Banana Caramel",
+          "flavor": "Banana",
+          "prices": {
+            "small": 1500,
+            "medium": 3000,
+            "large": 5000
+          },
+          "image": "bubble_waffle_caramel_icecream.png"
+        },
+        {
+          "name": "Chocolate Bliss",
+          "flavor": "Chocolate",
+          "prices": {
+            "small": 1500,
+            "medium": 3000,
+            "large": 5000
+          },
+          "image": "chocolate_cake_slice.png"
+        }
+      ]
+    },
+    {
+      "id": "toppings",
+      "name": "Toppings",
+      "icon": "🍒",
+      "description": "Add extra flavor to your treat",
+      "items": [
+        {
+          "name": "Oreo Crumbles",
+          "price": 500,
+          "image": "pastry_assortment_overhead.png"
+        },
+        {
+          "name": "Sprinkles",
+          "price": 500,
+          "image": "cupcakes_box_variety.png"
+        },
+        {
+          "name": "Chocolate Chips",
+          "price": 500,
+          "image": "chocolate_popsicles_dark.png"
+        },
+        {
+          "name": "Gummy Bears",
+          "price": 500,
+          "image": "cupcakes_purple_frosting.png"
+        },
+        {
+          "name": "Peanut",
+          "price": 500,
+          "image": "cookies_display_case.png"
+        },
+        {
+          "name": "M&Ms",
+          "price": 1000,
+          "image": "cupcakes_gold_thankyou.png"
+        },
+        {
+          "name": "Wafers",
+          "price": 500,
+          "image": "eclairs_fruit_topping.png"
+        }
+      ],
+      "free_drizzles": [
+        "Chocolate",
+        "Strawberry",
+        "Honey"
+      ]
+    },
+    {
+      "id": "popcorn",
+      "name": "Popcorn",
+      "icon": "🍿",
+      "description": "Fresh popped gourmet popcorn",
+      "items": [
+        {
+          "name": "Milky Popcorn",
+          "prices": {
+            "small": 1000,
+            "medium": 1500,
+            "large": 2500
+          },
+          "image": "caramel_popcorn_bowl.png"
+        },
+        {
+          "name": "Caramel Popcorn",
+          "prices": {
+            "small": 1000,
+            "medium": 1500,
+            "large": 2500
+          },
+          "image": "caramel_popcorn_bowl.png"
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "icon": "☕",
+      "description": "Barista-style coffee selections",
+      "items": [
+        {
+          "name": "Cappuccino",
+          "price": 2500,
+          "image": "cappuccino_latte_art.png"
+        },
+        {
+          "name": "Latte",
+          "price": 3500,
+          "image": "latte_heart_art.png"
+        },
+        {
+          "name": "Americano",
+          "price": 2500,
+          "image": "cappuccino_latte_art.png"
+        },
+        {
+          "name": "Mocha",
+          "price": 3500,
+          "image": "chocolate_cake_caramel.png"
+        },
+        {
+          "name": "Espresso",
+          "price": 3000,
+          "image": "latte_heart_art.png"
+        }
+      ]
+    },
+    {
+      "id": "popsicles",
+      "name": "Popsicles",
+      "icon": "🧊",
+      "description": "Refreshing frozen treats on a stick",
+      "items": [
+        {
+          "name": "Fruit Popsicle",
+          "price": 1700,
+          "image": "chocolate_popsicles_ice.png"
+        },
+        {
+          "name": "Chocolate",
+          "price": 2000,
+          "image": "chocolate_popsicles_dark.png"
+        },
+        {
+          "name": "Strawberry",
+          "price": 1700,
+          "image": "chocolate_popsicles_ice.png"
+        }
+      ]
+    },
+    {
+      "id": "special-menu",
+      "name": "Special Menu",
+      "icon": "✨",
+      "description": "Signature exclusive treats",
+      "items": [
+        {
+          "name": "Dabba Strawberry Cup",
+          "sizes": {
+            "small": 6500,
+            "big": 8000
+          },
+          "image": "birthday_cake_slice_pink.png"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "name": "Food",
+      "icon": "🍜",
+      "description": "Savory meals and snacks",
+      "items": [
+        {
+          "name": "Noodles & Egg",
+          "prices": {
+            "regular": 3000,
+            "large": 3500
+          },
+          "image": "pastry_assortment_overhead.png"
+        },
+        {
+          "name": "Noodles & Chicken",
+          "prices": {
+            "regular": 3000,
+            "large": 5000
+          },
+          "image": "shawarma_wrap_red.png"
+        },
+        {
+          "name": "Egg Sandwich",
+          "price": 2500,
+          "image": "cookies_glass_display.png"
+        },
+        {
+          "name": "Chicken Sandwich",
+          "price": 3000,
+          "image": "eclairs_fruit_topping.png"
+        },
+        {
+          "name": "Chicken Salad",
+          "price": 4500,
+          "image": "bakery_collection_flatlay.png"
+        },
+        {
+          "name": "Toast Bread & Egg",
+          "price": 2000,
+          "image": "waffles_variety_grid.png"
+        },
+        {
+          "name": "Toast Bread, Egg & Sardine",
+          "price": 2500,
+          "image": "waffles_variety_grid.png"
+        },
+        {
+          "name": "Beef Shawarma",
+          "variants": {
+            "single_sausage": 3500,
+            "double_sausage": 4000
+          },
+          "image": "shawarma_wrap_red.png"
+        },
+        {
+          "name": "Chicken Shawarma",
+          "variants": {
+            "single_sausage": 3500,
+            "double_sausage": 4000
+          },
+          "image": "shawarma_wrap_red.png"
+        },
+        {
+          "name": "Corn Dog",
+          "variants": {
+            "without_sausage": 1000,
+            "with_sausage": 1500
+          },
+          "image": "mini_pancakes_chocolate.png"
+        }
+      ]
+    },
+    {
+      "id": "mini-pancakes",
+      "name": "Mini Pancakes",
+      "icon": "🥞",
+      "description": "Bite-sized fluffy pancakes",
+      "items": [
+        {
+          "name": "Box of 6",
+          "price": 2000,
+          "includes": "1 free topping",
+          "image": "mini_pancakes_chocolate.png"
+        },
+        {
+          "name": "Box of 12",
+          "price": 4500,
+          "includes": "2 free toppings",
+          "image": "mini_pancakes_chocolate.png"
+        }
+      ]
+    },
+    {
+      "id": "waffles",
+      "name": "Waffles",
+      "icon": "🧇",
+      "description": "Crispy waffles with delicious toppings",
+      "items": [
+        {
+          "name": "Bubble Waffles",
+          "price": 3000,
+          "image": "bubble_waffles_strawberry_choco.png"
+        },
+        {
+          "name": "Plain Waffles",
+          "price": 3000,
+          "extras": "Syrup/Honey",
+          "image": "bubble_waffle_matcha.png"
+        }
+      ]
+    },
+    {
+      "id": "shots",
+      "name": "Shots",
+      "icon": "🥃",
+      "description": "Premium shot selections",
+      "items": [
+        {
+          "name": "Tequila Shot",
+          "price": 2000,
+          "unit": "each",
+          "image": "latte_heart_art.png"
+        }
+      ]
+    }
+  ],
+  "vibe_categories": [
+    {
+      "name": "After Class Treats",
+      "icon": "🎒",
+      "image": "ice_cream_sundae_loaded.png"
+    },
+    {
+      "name": "Birthdays & Boxes",
+      "icon": "🎂",
+      "image": "cupcakes_box_variety.png"
+    },
+    {
+      "name": "Date Night Treats",
+      "icon": "💖",
+      "image": "bubble_waffles_chocolate.png"
+    },
+    {
+      "name": "Study Break Fuel",
+      "icon": "📚",
+      "image": "cappuccino_latte_art.png"
+    },
+    {
+      "name": "Movie Nights",
+      "icon": "🍿",
+      "image": "caramel_popcorn_bowl.png"
+    },
+    {
+      "name": "Quick Cravings",
+      "icon": "✨",
+      "image": "shawarma_wrap_red.png"
+    }
+  ]
+}

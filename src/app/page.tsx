@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { Sparkles, MessageCircle, FileText, Compass, CheckCircle2, Heart } from "lucide-react";
+import { Sparkles, MessageCircle, FileText, Compass, CheckCircle2, ChevronRight } from "lucide-react";
 import FloatDessert from "@/components/FloatDessert";
 import Particles from "@/components/Particles";
+import { menuData } from "@/lib/menu-data";
 
 export default function Home() {
   const benefits = [
@@ -28,15 +29,6 @@ export default function Home() {
     },
   ];
 
-  const occasions = [
-    { name: "After Class Treats", emoji: "🎒" },
-    { name: "Birthdays & Boxes", emoji: "🎂" },
-    { name: "Date Night Treats", emoji: "💖" },
-    { name: "Study Break Fuel", emoji: "📚" },
-    { name: "Movie Nights", emoji: "🍿" },
-    { name: "Quick Cravings", emoji: "✨" },
-  ];
-
   return (
     <div className="relative min-h-screen">
       {/* Background Particles */}
@@ -57,7 +49,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="font-poppins text-base md:text-lg text-text-light max-w-xl mb-8 leading-relaxed">
-              Build your perfect treat, explore the menu, and send your order straight to WhatsApp. Built for Shaytee's Treat customers to browse with comfort and ease.
+              {menuData.tagline} Build your perfect treat, explore the menu, and send your order straight to WhatsApp.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
               <Link
@@ -73,7 +65,7 @@ export default function Home() {
                 📋 View Menu
               </Link>
               <a
-                href="https://wa.me/2348162125710"
+                href={`https://wa.me/${menuData.contact.replace(/[\s+]/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-[#25d366] text-white font-fredoka text-lg font-bold rounded-full shadow-lg hover:scale-105 transition-all duration-300 text-center flex items-center justify-center gap-2"
@@ -91,6 +83,57 @@ export default function Home() {
           {/* Hero Right Content (3D-lite Dessert View) */}
           <div className="lg:col-span-5 flex justify-center items-center">
             <FloatDessert />
+          </div>
+        </div>
+      </section>
+
+      {/* VIBE OCCASIONS CATEGORIES */}
+      <section className="py-20 bg-white/50 backdrop-blur-sm border-y border-pink-50 px-4 md:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="font-fredoka text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate mb-4">
+              Perfect For Every Vibe 🎒
+            </h2>
+            <p className="font-poppins text-text-light text-sm md:text-base">
+              Shaytee's Treat fits right into your schedule, whatever the day demands.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {menuData.vibe_categories.map((occ, idx) => (
+              <Link
+                key={idx}
+                href={`/menu`}
+                className="glossy-card group overflow-hidden flex flex-col justify-between"
+              >
+                {/* Image top half */}
+                <div className="h-48 w-full overflow-hidden relative border-b border-pink-50">
+                  <img
+                    src={`/images/${occ.image}`}
+                    alt={occ.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <span className="absolute bottom-3 left-4 text-3xl animate-bounce-slow" style={{ animationDelay: `${idx * 0.25}s` }}>
+                    {occ.icon}
+                  </span>
+                </div>
+
+                {/* Content bottom half */}
+                <div className="p-5 flex justify-between items-center bg-white/40">
+                  <div>
+                    <h3 className="font-fredoka text-lg font-bold text-chocolate group-hover:text-pink-primary transition-colors">
+                      {occ.name}
+                    </h3>
+                    <p className="text-xs text-text-light mt-0.5">Explore matching treats</p>
+                  </div>
+                  <div className="w-8 h-8 rounded-full bg-pink-50 group-hover:bg-pink-primary group-hover:text-white flex items-center justify-center text-pink-primary transition-all shadow-sm">
+                    <ChevronRight size={18} />
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -120,36 +163,6 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* PERFECT FOR OCCASIONS */}
-      <section className="py-20 bg-white/50 backdrop-blur-sm border-y border-pink-50 px-4 md:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="font-fredoka text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate mb-4">
-              Perfect For Every Vibe 🍧
-            </h2>
-            <p className="font-poppins text-text-light text-sm md:text-base">
-              Shaytee's Treat fits right into your schedule, whatever the day demands.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {occasions.map((occ, idx) => (
-              <div
-                key={idx}
-                className="glossy-card p-6 flex flex-col items-center justify-center hover:scale-105 cursor-pointer text-center"
-              >
-                <span className="text-4xl md:text-5xl mb-4 animate-bounce-slow" style={{ animationDelay: `${idx * 0.2}s` }}>
-                  {occ.emoji}
-                </span>
-                <h3 className="font-fredoka text-sm md:text-base font-bold text-chocolate">
-                  {occ.name}
-                </h3>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

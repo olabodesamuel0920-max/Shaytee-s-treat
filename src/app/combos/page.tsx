@@ -12,6 +12,7 @@ interface Combo {
   emoji: string;
   badge?: string;
   estimatedPrice: number;
+  image: string;
   params: {
     flavor: string;
     size: string;
@@ -30,6 +31,7 @@ export default function CombosPage() {
       emoji: "🎒",
       badge: "STUDENT FAVORITE",
       estimatedPrice: 5000,
+      image: "ice_cream_sundae_loaded.png",
       params: {
         flavor: "Strawberry Delight",
         size: "Medium Cup",
@@ -44,6 +46,7 @@ export default function CombosPage() {
       emoji: "🎂",
       badge: "PARTY SPECIAL",
       estimatedPrice: 12000,
+      image: "cupcakes_box_variety.png",
       params: {
         flavor: "Chocolate Bliss",
         size: "Large Cup",
@@ -58,6 +61,7 @@ export default function CombosPage() {
       emoji: "💖",
       badge: "SHARE FOR TWO",
       estimatedPrice: 6500,
+      image: "bubble_waffles_chocolate.png",
       params: {
         flavor: "Vanilla Dream",
         size: "Medium Cup",
@@ -73,6 +77,7 @@ export default function CombosPage() {
       emoji: "🍿",
       badge: "CRUNCH BOX",
       estimatedPrice: 6500,
+      image: "caramel_popcorn_bowl.png",
       params: {
         flavor: "Vanilla Dream",
         size: "Small Cup",
@@ -87,6 +92,7 @@ export default function CombosPage() {
       emoji: "🍩",
       badge: "ULTIMATE SWEET",
       estimatedPrice: 11000,
+      image: "chocolate_cake_slice.png",
       params: {
         flavor: "Chocolate Bliss",
         size: "Medium Cup",
@@ -101,6 +107,7 @@ export default function CombosPage() {
       emoji: "🎓",
       badge: "BUDGET VIBE",
       estimatedPrice: 8000,
+      image: "bakery_collection_flatlay.png",
       params: {
         flavor: "Vanilla Dream",
         size: "Small Cup",
@@ -152,64 +159,71 @@ export default function CombosPage() {
             return (
               <div
                 key={idx}
-                className="glossy-card p-6 flex flex-col justify-between relative overflow-hidden"
+                className="glossy-card overflow-hidden flex flex-col justify-between relative"
               >
-                {/* Badge */}
-                {combo.badge && (
-                  <span className="absolute top-4 right-4 text-[9px] font-bold text-white bg-gradient-to-r from-pink-primary to-pink-light px-2 py-0.5 rounded shadow-sm">
-                    {combo.badge}
-                  </span>
-                )}
-
-                <div>
-                  {/* Header */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl animate-bounce-slow" style={{ animationDelay: `${idx * 0.15}s` }}>
-                      {combo.emoji}
+                {/* Visual Header Image */}
+                <div className="h-48 w-full overflow-hidden relative border-b border-pink-50">
+                  <img
+                    src={`/images/${combo.image}`}
+                    alt={combo.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    loading="lazy"
+                  />
+                  {combo.badge && (
+                    <span className="absolute top-4 right-4 text-[9px] font-bold text-white bg-gradient-to-r from-pink-primary to-pink-light px-2 py-0.5 rounded shadow-sm">
+                      {combo.badge}
                     </span>
-                    <h3 className="font-fredoka text-xl font-bold text-chocolate leading-tight pr-16">
-                      {combo.name}
-                    </h3>
-                  </div>
-
-                  {/* Description */}
-                  <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-6">
-                    {combo.desc}
-                  </p>
-
-                  {/* Items list */}
-                  <div className="bg-pink-50/40 rounded-2xl p-4 border border-pink-100/50 mb-6">
-                    <h4 className="font-fredoka text-xs font-bold text-pink-dark uppercase tracking-wider mb-2 flex items-center gap-1.5">
-                      <Sparkles size={12} />
-                      What's Included:
-                    </h4>
-                    <ul className="space-y-2 text-xs font-poppins text-text-dark">
-                      {combo.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-start gap-1.5">
-                          <span className="text-pink-primary shrink-0">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  )}
+                  <span className="absolute bottom-2 left-4 text-3xl animate-bounce-slow" style={{ animationDelay: `${idx * 0.15}s` }}>
+                    {combo.emoji}
+                  </span>
                 </div>
 
-                {/* Price & CTA */}
-                <div className="pt-4 border-t border-pink-100/40 flex justify-between items-center">
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Est. Price</span>
-                    <span className="font-fredoka text-lg font-bold text-pink-primary mt-0.5">
-                      ₦{combo.estimatedPrice.toLocaleString()}
-                    </span>
+                <div className="p-6 flex flex-col flex-grow justify-between bg-white/40">
+                  <div>
+                    <h3 className="font-fredoka text-xl font-bold text-chocolate leading-tight pr-8 mb-3">
+                      {combo.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-6">
+                      {combo.desc}
+                    </p>
+
+                    {/* Items list */}
+                    <div className="bg-pink-50/40 rounded-2xl p-4 border border-pink-100/50 mb-6">
+                      <h4 className="font-fredoka text-xs font-bold text-pink-dark uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                        <Sparkles size={12} />
+                        What's Included:
+                      </h4>
+                      <ul className="space-y-2 text-xs font-poppins text-text-dark">
+                        {combo.items.map((item, itemIdx) => (
+                          <li key={itemIdx} className="flex items-start gap-1.5">
+                            <span className="text-pink-primary shrink-0">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <Link
-                    href={builderLink}
-                    className="px-4 py-2.5 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka text-xs font-bold rounded-full shadow-md flex items-center gap-1 transition-all hover:scale-105"
-                  >
-                    Load into Builder 🍦
-                    <ChevronRight size={14} />
-                  </Link>
+                  {/* Price & CTA */}
+                  <div className="pt-4 border-t border-pink-100/40 flex justify-between items-center">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Est. Price</span>
+                      <span className="font-fredoka text-lg font-bold text-pink-primary mt-0.5">
+                        ₦{combo.estimatedPrice.toLocaleString()}
+                      </span>
+                    </div>
+
+                    <Link
+                      href={builderLink}
+                      className="px-4 py-2.5 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka text-xs font-bold rounded-full shadow-md flex items-center gap-1 transition-all hover:scale-105"
+                    >
+                      Load into Builder 🍦
+                      <ChevronRight size={14} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             );

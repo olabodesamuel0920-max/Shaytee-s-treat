@@ -1,105 +1,42 @@
 "use client";
 
 import React, { useState } from "react";
-import { Search, Compass, ShoppingCart, MessageCircle } from "lucide-react";
+import { Search, Compass, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import Particles from "@/components/Particles";
-
-interface MenuItem {
-  name: string;
-  desc?: string;
-  prices?: number[];
-  price?: number;
-  category: "icecream" | "toppings" | "drizzle" | "food" | "snacks" | "drinks" | "specials";
-  badge?: string;
-}
+import { menuData, allMenuItems, MenuItem, getPriceText } from "@/lib/menu-data";
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const menuItems: MenuItem[] = [
-    // ICE CREAM
-    { name: "Vanilla Dream", desc: "Classic creamy vanilla scoop", prices: [1500, 3000, 5000], category: "icecream" },
-    { name: "Strawberry Delight", desc: "Creamy fresh strawberry gelato style", prices: [1500, 3000, 5000], category: "icecream" },
-    { name: "Banana Caramel", desc: "Banana flavor topped with rich caramel", prices: [1500, 3000, 5000], category: "icecream" },
-    { name: "Chocolate Bliss", desc: "Rich Belgian chocolate sensation", prices: [1500, 3000, 5000], category: "icecream" },
-
-    // TOPPINGS
-    { name: "Oreo Crumbles", price: 500, category: "toppings" },
-    { name: "Sprinkles", price: 500, category: "toppings" },
-    { name: "Chocolate Chips", price: 500, category: "toppings" },
-    { name: "Gummy Bears", price: 500, category: "toppings" },
-    { name: "Peanuts", price: 500, category: "toppings" },
-    { name: "M&Ms", price: 1000, category: "toppings" },
-    { name: "Wafers", price: 500, category: "toppings" },
-
-    // FREE DRIZZLE
-    { name: "Chocolate Drizzle", price: 0, category: "drizzle", desc: "Rich chocolate syrup" },
-    { name: "Strawberry Drizzle", price: 0, category: "drizzle", desc: "Fresh sweet strawberry drizzle" },
-    { name: "Honey Drizzle", price: 0, category: "drizzle", desc: "Pure sweet honey drizzle" },
-
-    // FOOD
-    { name: "Noodles & Egg", desc: "Akure student favorite instant noodles, egg, garnishing", price: 3000, category: "food", badge: "POPULAR" },
-    { name: "Noodles & Chicken", desc: "Rich instant noodles with crispy chicken pieces", price: 4700, category: "food" },
-    { name: "Egg Sandwich", desc: "Toasted bread with seasoned egg filling", price: 2500, category: "food" },
-    { name: "Chicken Sandwich", desc: "Savoury chicken breast, mayo, vegetables sandwich", price: 3000, category: "food" },
-    { name: "Chicken Salad", desc: "Fresh mixed greens, chicken strips, cream dressing", price: 4500, category: "food" },
-    { name: "Toast Bread & Egg", desc: "Crispy toast with soft fluffy scrambled egg", price: 2000, category: "food" },
-    { name: "Toast Bread, Egg & Sardine", desc: "Toast sandwich packed with egg & rich sardine mix", price: 2500, category: "food" },
-
-    // POPCORN & SNACKS
-    { name: "Milky Popcorn", desc: "Fresh popcorn with rich milky flavor coating", prices: [1000, 1500, 2500], category: "snacks" },
-    { name: "Caramel Popcorn", desc: "Fresh sweet buttery caramel-coated popcorn", prices: [1000, 1500, 2500], category: "snacks" },
-    { name: "Mini Pancakes (Box of 6)", desc: "Fluffy bite-sized pancakes with 1 free topping", price: 2000, category: "snacks" },
-    { name: "Mini Pancakes (Box of 12)", desc: "Fluffy bite-sized pancakes with 2 free toppings", price: 4500, category: "snacks" },
-    { name: "Bubble Waffle", desc: "Signature crispy bubble-shaped waffle", price: 3000, category: "snacks" },
-    { name: "Plain Waffle", desc: "Served with honey or sweet golden syrup", price: 3000, category: "snacks" },
-    { name: "Fruit Popsicle", desc: "Refreshing ice popsicle made with real fruit flavors", price: 1700, category: "snacks" },
-    { name: "Chocolate Popsicle", desc: "Decadent chocolate fudge popsicle", price: 2000, category: "snacks" },
-    { name: "Strawberry Popsicle", desc: "Sweet, cooling strawberry treat", price: 1700, category: "snacks" },
-
-    // DRINKS
-    { name: "Cappuccino", desc: "Classic espresso with steamed milk foam", price: 2500, category: "drinks" },
-    { name: "Latte", desc: "Creamy espresso with steamed milk and thin foam layer", price: 3500, category: "drinks" },
-    { name: "Americano", desc: "Smooth black coffee shot diluted in hot water", price: 2500, category: "drinks" },
-    { name: "Mocha", desc: "Espresso combined with rich hot chocolate milk", price: 3500, category: "drinks" },
-    { name: "Espresso", desc: "Strong concentrated shot of pure dark roast coffee", price: 3000, category: "drinks" },
-    { name: "Tequila Shot", desc: "Classic high-quality tequila shot (18+ only)", price: 2000, category: "drinks" },
-
-    // SPECIALS
-    { name: "Dubai Strawberry Cup (Small)", desc: "Akure signature special dessert cup swirl", price: 6500, category: "specials", badge: "NEW" },
-    { name: "Dubai Strawberry Cup (Big)", desc: "Akure signature special dessert cup double scoop swirl", price: 8000, category: "specials", badge: "NEW" },
-  ];
-
   const categories = [
     { id: "all", name: "All Sweets", emoji: "🍭" },
-    { id: "icecream", name: "Gelato / Ice Cream", emoji: "🍦" },
-    { id: "toppings", name: "Toppings", emoji: "🍬" },
-    { id: "food", name: "Hot Meals", emoji: "🍜" },
-    { id: "snacks", name: "Snacks & Waffles", emoji: "🥞" },
-    { id: "drinks", name: "Coffee & Drinks", emoji: "☕" },
-    { id: "specials", name: "Specials", emoji: "⭐" },
+    ...menuData.categories.map((cat) => ({
+      id: cat.id,
+      name: cat.name,
+      emoji: cat.icon,
+    })),
   ];
 
-  const filteredItems = menuItems.filter((item) => {
+  const filteredItems = allMenuItems.filter((item) => {
     const matchesTab = activeTab === "all" || item.category === activeTab;
     const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          (item.desc && item.desc.toLowerCase().includes(searchQuery.toLowerCase()));
+                          (item.flavor && item.flavor.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesTab && matchesSearch;
   });
 
   // Check if item is customizable in builder
   const isCustomizable = (item: MenuItem) => {
-    return item.category === "icecream" || 
+    return item.category === "ice-cream" || 
            item.category === "toppings" || 
            item.category === "drizzle" || 
-           item.name.toLowerCase().includes("waffle");
+           item.category === "waffles";
   };
 
   // Get deep link for custom builder
   const getBuilderLink = (item: MenuItem) => {
-    if (item.category === "icecream") {
+    if (item.category === "ice-cream") {
       return `/build-your-treat?flavor=${encodeURIComponent(item.name)}&size=Small%20Cup`;
     }
     if (item.category === "toppings") {
@@ -113,19 +50,17 @@ export default function MenuPage() {
 
   // Quick Order template generator for WhatsApp
   const handleQuickOrder = (item: MenuItem) => {
-    const priceText = item.prices
-      ? item.prices.map((p) => `₦${p.toLocaleString()}`).join(" / ") + " (Please specify size)"
-      : `₦${item.price?.toLocaleString()}`;
+    const priceString = getPriceText(item);
 
     const message = `Hello Shaytee's Treat, I want to order:
 Item: ${item.name}
-Price: ${priceText}
+Price: ${priceString}
 
 Name: 
 Pickup/Delivery: 
 Location: `;
 
-    const whatsappUrl = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${menuData.contact.replace(/[\s+]/g, "")}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -194,66 +129,68 @@ Location: `;
         {filteredItems.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item, index) => (
-              <div key={index} className="glossy-card p-6 flex flex-col justify-between relative overflow-hidden">
-                {item.badge && (
-                  <span className="absolute top-3 right-3 text-[10px] font-bold text-white bg-gradient-to-r from-pink-primary to-amber-500 px-2 py-0.5 rounded-md shadow-sm">
-                    {item.badge}
-                  </span>
-                )}
-                
-                <div>
-                  <h3 className="font-fredoka text-xl font-bold text-chocolate mb-2 flex items-center justify-between pr-14">
-                    {item.name}
-                  </h3>
-                  
-                  {item.desc && (
-                    <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
+              <div key={index} className="glossy-card overflow-hidden flex flex-col justify-between relative">
+                {/* Product Image */}
+                <div className="h-48 w-full overflow-hidden relative border-b border-pink-50 bg-zinc-100">
+                  <img
+                    src={`/images/${item.image}`}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    loading="lazy"
+                  />
+                  {item.includes && (
+                    <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-black/60 px-2 py-0.5 rounded shadow-sm">
+                      ✨ {item.includes}
+                    </span>
+                  )}
+                  {item.extras && (
+                    <span className="absolute bottom-2 left-2 text-[10px] font-bold text-white bg-black/60 px-2 py-0.5 rounded shadow-sm">
+                      ✨ {item.extras}
+                    </span>
                   )}
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-pink-50/50 flex justify-between items-center gap-3">
-                  {/* Prices display */}
-                  {item.prices ? (
+                <div className="p-6 flex flex-col flex-grow justify-between">
+                  <div>
+                    <h3 className="font-fredoka text-xl font-bold text-chocolate mb-2 flex items-center justify-between">
+                      {item.name}
+                    </h3>
+                    
+                    {item.flavor && (
+                      <p className="text-xs text-pink-primary font-semibold font-poppins mb-2">
+                        Flavor: {item.flavor}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-pink-50/50 flex justify-between items-center gap-3">
+                    {/* Price display */}
                     <div className="flex flex-col">
-                      <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Sizes</span>
-                      <div className="flex gap-1.5 mt-1">
-                        {item.prices.map((p, idx) => (
-                          <span
-                            key={idx}
-                            className="px-2 py-0.5 bg-pink-50 border border-pink-100 text-pink-primary text-[10px] md:text-xs font-bold rounded-md"
-                          >
-                            ₦{p.toLocaleString()}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col">
-                      <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">Price</span>
-                      <span className="font-poppins text-base md:text-lg font-bold text-pink-primary mt-0.5">
-                        {item.price === 0 ? "FREE" : `₦${item.price?.toLocaleString()}`}
+                      <span className="text-[10px] text-text-light/50 font-bold uppercase tracking-wider">
+                        {item.prices || item.variants ? "Options" : "Price"}
+                      </span>
+                      <span className="font-poppins text-sm md:text-base font-bold text-pink-primary mt-0.5">
+                        {getPriceText(item)}
                       </span>
                     </div>
-                  )}
 
-                  {/* Dynamic Action Buttons */}
-                  {isCustomizable(item) ? (
-                    <Link
-                      href={getBuilderLink(item)}
-                      className="px-4 py-2 bg-gradient-to-r from-pink-primary to-pink-light text-white text-xs font-fredoka font-bold rounded-full shadow-sm hover:scale-105 transition-transform text-center whitespace-nowrap flex items-center gap-1"
-                    >
-                      {item.category === "toppings" || item.category === "drizzle" ? "Add to Builder 🍦" : "Customize 🍦"}
-                    </Link>
-                  ) : (
-                    <button
-                      onClick={() => handleQuickOrder(item)}
-                      className="px-4 py-2 bg-chocolate hover:bg-pink-dark text-white text-xs font-fredoka font-bold rounded-full shadow-sm hover:scale-105 transition-transform text-center whitespace-nowrap flex items-center gap-1 cursor-pointer"
-                    >
-                      Quick Order 💬
-                    </button>
-                  )}
+                    {/* Dynamic Action Buttons */}
+                    {isCustomizable(item) ? (
+                      <Link
+                        href={getBuilderLink(item)}
+                        className="px-4 py-2 bg-gradient-to-r from-pink-primary to-pink-light text-white text-xs font-fredoka font-bold rounded-full shadow-sm hover:scale-105 transition-transform text-center whitespace-nowrap flex items-center gap-1"
+                      >
+                        {item.category === "toppings" || item.category === "drizzle" ? "Add to Builder 🍦" : "Customize 🍦"}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => handleQuickOrder(item)}
+                        className="px-4 py-2 bg-chocolate hover:bg-pink-dark text-white text-xs font-fredoka font-bold rounded-full shadow-sm hover:scale-105 transition-transform text-center whitespace-nowrap flex items-center gap-1 cursor-pointer"
+                      >
+                        Quick Order 💬
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
