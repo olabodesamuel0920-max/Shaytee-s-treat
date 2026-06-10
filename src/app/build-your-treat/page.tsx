@@ -45,7 +45,7 @@ function BuildYourTreatContent() {
     { name: "Sprinkles", price: 500 },
     { name: "Chocolate Chips", price: 500 },
     { name: "Gummy Bears", price: 500 },
-    { name: "Peanuts", price: 500 },
+    { name: "Peanut", price: 500 },
     { name: "M&Ms", price: 1000 },
     { name: "Wafers", price: 500 },
   ];
@@ -171,24 +171,35 @@ function BuildYourTreatContent() {
       return;
     }
 
-    const sizeName = size ? size.name : "Small Cup";
-    const selectedToppings = toppings.length > 0 ? toppings.map((t) => t.name).join(", ") : "None";
-    const selectedDrizzle = drizzle ? drizzle.name : "None";
-    const selectedExtras = extras.length > 0 ? extras.map((e) => e.name).join(", ") : "None";
+    const sizeName = size ? size.name.split(" ")[0] : "Small";
+    
+    let itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName} Cup) — ₦${((flavor.price) + (size ? size.price : 0)).toLocaleString()}`;
+    if (toppings.length > 0) {
+      itemsText += `\n   Toppings: ${toppings.map(t => `${t.name} (+₦${t.price.toLocaleString()})`).join(", ")}`;
+    }
+    if (drizzle) {
+      itemsText += `\n   Drizzle: ${drizzle.name} (FREE)`;
+    }
+    
+    if (extras.length > 0) {
+      itemsText += `\n\n*Additional Snacks & Eats:*`;
+      extras.forEach((ex, index) => {
+        itemsText += `\n${index + 2}. ${ex.name} — ₦${ex.price.toLocaleString()}`;
+      });
+    }
 
     const message = `🍭 *NEW ORDER — Shaytee's Treat*
 
-👤 Customer: ${clientName || "[Please Fill]"}
-Pickup/Delivery: ${orderType === "delivery" ? "Delivery" : "Pickup"}
-📍 Location: ${location || "[Please Fill]"}
+👤 *Customer Name:* ${clientName.trim() || "[Not Provided]"}
+🚚 *Order Type:* ${orderType === "delivery" ? "Delivery" : "Store Pickup"}
+📍 *Address/Meetup:* ${location.trim() || "[Not Provided]"}
 
-*Items:*
-1. ${flavor.name} (${sizeName}) — ₦${((flavor.price) + (size ? size.price : 0)).toLocaleString()}
-${toppings.length > 0 ? toppings.map(t => `   + ${t.name} — ₦${t.price.toLocaleString()}`).join("\n") + "\n" : ""}${drizzle ? `   + ${drizzle.name} (FREE)\n` : ""}${extras.map((ex, i) => `${i + 2}. ${ex.name} — ₦${ex.price.toLocaleString()}`).join("\n")}
+*Order Details:*
+${itemsText}
 
-*Estimated Total: ₦${estimatedTotal.toLocaleString()}*
+*Estimated Total:* ₦${estimatedTotal.toLocaleString()}
 
-Thank you! 💖`;
+*Note:* Price and delivery to be finalized on chat. 💖`;
 
     const whatsappUrl = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");

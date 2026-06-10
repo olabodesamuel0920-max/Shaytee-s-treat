@@ -151,7 +151,7 @@ Could you please confirm the details? Thank you!`;
                   )}
                 </div>
                 <p className="font-poppins text-text-light text-xs mt-1">
-                  Mock Hours: 10:00 AM - 10:00 PM Daily. <span className="italic font-semibold">*Owner can finalize exact schedule.</span>
+                  Opening hours can be confirmed by Shaytee’s Treat.
                 </p>
               </div>
             </div>
@@ -197,7 +197,7 @@ Could you please confirm the details? Thank you!`;
                 <span>📍</span> FUTA Campus Delivery Hubs
               </h3>
               <p className="font-poppins text-text-light text-xs mb-6">
-                Click your closest campus landmark to calculate dispatch timelines and dropoff instructions.
+                Click your closest campus landmark to calculate dispatch timelines and dropoff instructions. (All routes and durations are mock preview suggestions).
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -226,10 +226,10 @@ Could you please confirm the details? Thank you!`;
                   <div className="flex justify-between items-start gap-4">
                     <div>
                       <h4 className="font-fredoka text-sm font-bold text-pink-dark uppercase tracking-wider">
-                        Estimate for {selectedLandmark.name}
+                        Preview Estimate for {selectedLandmark.name}
                       </h4>
                       <p className="font-fredoka text-lg font-bold text-chocolate mt-1">
-                        🛵 {selectedLandmark.time}
+                        🛵 {selectedLandmark.time} <span className="text-xs font-normal text-text-light/60">(Preview Estimate)</span>
                       </p>
                     </div>
                     <span className="px-2 py-0.5 bg-emerald-500/10 text-emerald-600 text-[10px] font-bold rounded flex items-center gap-1">
@@ -237,7 +237,7 @@ Could you please confirm the details? Thank you!`;
                     </span>
                   </div>
                   <p className="font-poppins text-xs text-text-light mt-3 leading-relaxed">
-                    <strong>Rider Tip:</strong> {selectedLandmark.tip}
+                    <strong>Suggested Dispatch Tip:</strong> {selectedLandmark.tip}
                   </p>
                 </div>
               )}

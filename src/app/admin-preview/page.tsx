@@ -265,9 +265,12 @@ export default function AdminPreview() {
             </div>
             <div>
               <h2 className="font-fredoka text-sm font-bold text-pink-light tracking-wide uppercase">
-                Owner Sandbox Mode — Preview Only
+                Simulation Mode
               </h2>
-              <p className="font-poppins text-zinc-400 text-xs mt-0.5">
+              <p className="font-poppins text-zinc-200 text-xs mt-0.5 font-semibold">
+                Simulation Mode — this owner dashboard is a preview and is not connected to live orders yet.
+              </p>
+              <p className="font-poppins text-zinc-400 text-[11px] mt-0.5">
                 Interact with the control switches, simulated prices, and real-time client-side ticker below.
               </p>
             </div>
@@ -386,25 +389,25 @@ export default function AdminPreview() {
                   {/* Active Orders Card */}
                   <div className="p-5 bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 rounded-2xl flex flex-col justify-between">
                     <div className="flex justify-between items-center text-zinc-500 text-[10px] uppercase font-bold tracking-wider">
-                      <span>Active Orders</span>
+                      <span>Simulated Active Orders</span>
                       <Clock size={16} className="text-pink-light" />
                     </div>
                     <div className="text-2xl font-bold font-fredoka text-zinc-100 mt-2">
                       {activeOrdersCount}
                     </div>
-                    <span className="text-[10px] text-zinc-500 mt-1">Waiting in queues</span>
+                    <span className="text-[10px] text-zinc-500 mt-1">Waiting in queues (Mock)</span>
                   </div>
 
                   {/* Completed Orders Card */}
                   <div className="p-5 bg-zinc-900/60 backdrop-blur-sm border border-zinc-800 rounded-2xl flex flex-col justify-between">
                     <div className="flex justify-between items-center text-zinc-500 text-[10px] uppercase font-bold tracking-wider">
-                      <span>Completed Orders</span>
+                      <span>Simulated Completed Orders</span>
                       <CheckCircle size={16} className="text-emerald-500" />
                     </div>
                     <div className="text-2xl font-bold font-fredoka text-zinc-100 mt-2">
                       {completedOrdersCount}
                     </div>
-                    <span className="text-[10px] text-zinc-500 mt-1">Success delivery drafts</span>
+                    <span className="text-[10px] text-zinc-500 mt-1">Success delivery drafts (Mock)</span>
                   </div>
 
                   {/* Simulated Visitor Clicks */}

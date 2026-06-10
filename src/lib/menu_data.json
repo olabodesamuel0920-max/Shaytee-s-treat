@@ -191,8 +191,8 @@
       "description": "Signature exclusive treats",
       "items": [
         {
-          "name": "Dabba Strawberry Cup",
-          "sizes": {
+          "name": "Dubai Strawberry Cup",
+          "prices": {
             "small": 6500,
             "big": 8000
           },
@@ -208,18 +208,12 @@
       "items": [
         {
           "name": "Noodles & Egg",
-          "prices": {
-            "regular": 3000,
-            "large": 3500
-          },
+          "price": 3000,
           "image": "pastry_assortment_overhead.png"
         },
         {
           "name": "Noodles & Chicken",
-          "prices": {
-            "regular": 3000,
-            "large": 5000
-          },
+          "price": 4700,
           "image": "shawarma_wrap_red.png"
         },
         {
@@ -246,30 +240,6 @@
           "name": "Toast Bread, Egg & Sardine",
           "price": 2500,
           "image": "waffles_variety_grid.png"
-        },
-        {
-          "name": "Beef Shawarma",
-          "variants": {
-            "single_sausage": 3500,
-            "double_sausage": 4000
-          },
-          "image": "shawarma_wrap_red.png"
-        },
-        {
-          "name": "Chicken Shawarma",
-          "variants": {
-            "single_sausage": 3500,
-            "double_sausage": 4000
-          },
-          "image": "shawarma_wrap_red.png"
-        },
-        {
-          "name": "Corn Dog",
-          "variants": {
-            "without_sausage": 1000,
-            "with_sausage": 1500
-          },
-          "image": "mini_pancakes_chocolate.png"
         }
       ]
     },
@@ -323,6 +293,38 @@
           "price": 2000,
           "unit": "each",
           "image": "latte_heart_art.png"
+        }
+      ]
+    },
+    {
+      "id": "owner-confirm-addons",
+      "name": "Possible Add-ons — Owner Confirmation Needed",
+      "icon": "❓",
+      "description": "Menu additions awaiting final owner confirmation",
+      "items": [
+        {
+          "name": "Beef Shawarma",
+          "variants": {
+            "single_sausage": 3500,
+            "double_sausage": 4000
+          },
+          "image": "shawarma_wrap_red.png"
+        },
+        {
+          "name": "Chicken Shawarma",
+          "variants": {
+            "single_sausage": 3500,
+            "double_sausage": 4000
+          },
+          "image": "shawarma_wrap_red.png"
+        },
+        {
+          "name": "Corn Dog",
+          "variants": {
+            "without_sausage": 1000,
+            "with_sausage": 1500
+          },
+          "image": "mini_pancakes_chocolate.png"
         }
       ]
     }

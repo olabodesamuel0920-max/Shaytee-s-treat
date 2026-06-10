@@ -161,6 +161,32 @@ Location: `;
                         Flavor: {item.flavor}
                       </p>
                     )}
+
+                    {item.prices && (
+                      <div className="flex flex-wrap gap-1.5 mt-2 mb-3">
+                        {Object.entries(item.prices).map(([sizeName, priceVal]) => (
+                          <span key={sizeName} className="text-[10px] font-bold font-poppins px-2 py-0.5 bg-pink-50 text-pink-primary border border-pink-100/40 rounded-md capitalize">
+                            {sizeName}: ₦{priceVal.toLocaleString()}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {item.variants && (
+                      <div className="flex flex-wrap gap-1.5 mt-2 mb-3">
+                        {Object.entries(item.variants).map(([variantName, priceVal]) => (
+                          <span key={variantName} className="text-[10px] font-bold font-poppins px-2 py-0.5 bg-pink-50 text-pink-primary border border-pink-100/40 rounded-md capitalize">
+                            {variantName.replace("_", " ")}: ₦{priceVal.toLocaleString()}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    {item.category === "owner-confirm-addons" && (
+                      <p className="text-[10px] text-amber-700 bg-amber-50 border border-amber-100 rounded-lg p-2.5 mt-2 mb-3 font-semibold font-poppins leading-relaxed">
+                        ⚠️ Possible Add-on — pending final owner confirmation.
+                      </p>
+                    )}
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-pink-50/50 flex justify-between items-center gap-3">
