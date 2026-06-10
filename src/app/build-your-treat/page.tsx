@@ -4,6 +4,7 @@ import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { MessageCircle, ShoppingBag, User, MapPin, Truck } from "lucide-react";
 import Particles from "@/components/Particles";
+import { menuData } from "@/lib/menu-data";
 
 interface Option {
   name: string;
@@ -27,64 +28,105 @@ function BuildYourTreatContent() {
   const [location, setLocation] = useState("");
   const [estimatedTotal, setEstimatedTotal] = useState(0);
 
-  // Lists of options matching flyer pricing
-  const flavors: Option[] = [
-    { name: "Vanilla Dream", price: 1500, image: "/assets/shaytees/individual_assets/flavours/vanilla.png" },
-    { name: "Strawberry Delight", price: 1500, image: "/assets/shaytees/individual_assets/flavours/strawberry.png" },
-    { name: "Banana Caramel", price: 1500, image: "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png" },
-    { name: "Chocolate Bliss", price: 1500, image: "/assets/shaytees/individual_assets/flavours/chocolate.png" },
-  ];
+  // Dynamically derive options lists from menuData source of truth
+  const iceCreamCat = menuData.categories.find((c) => c.id === "ice-cream");
+  const flavors: Option[] = iceCreamCat
+    ? iceCreamCat.items.map((item) => ({
+        name: item.name,
+        price: item.prices?.small_cone || 1500,
+        image: item.image,
+      }))
+    : [];
+
+  const firstIceCream = iceCreamCat?.items[0];
+  const basePrice = firstIceCream?.prices?.small_cone || 1500;
+  const mediumCupPrice = firstIceCream?.prices?.medium_small_cup || 3000;
+  const largeCupPrice = firstIceCream?.prices?.large_big_cup || 5000;
 
   const sizes: Option[] = [
     { name: "Small Cone", price: 0, image: "/assets/shaytees/individual_assets/cup-sizes/cone.png" },
-    { name: "Medium Small Cup (+₦1,500)", price: 1500, image: "/assets/shaytees/individual_assets/cup-sizes/small-cup.png" },
-    { name: "Large Big Cup (+₦3,500)", price: 3500, image: "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate.png" },
+    {
+      name: `Medium Small Cup (+₦${(mediumCupPrice - basePrice).toLocaleString()})`,
+      price: mediumCupPrice - basePrice,
+      image: "/assets/shaytees/individual_assets/cup-sizes/small-cup.png",
+    },
+    {
+      name: `Large Big Cup (+₦${(largeCupPrice - basePrice).toLocaleString()})`,
+      price: largeCupPrice - basePrice,
+      image: "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate.png",
+    },
   ];
 
-  const toppingsList: Option[] = [
-    { name: "Oreo Crumbles", price: 500, image: "/assets/shaytees/individual_assets/toppings/oreo-crumbles.png" },
-    { name: "Sprinkles", price: 500, image: "/assets/shaytees/individual_assets/toppings/rainbow-sprinkles.png" },
-    { name: "Chocolate Chips", price: 500, image: "/assets/shaytees/individual_assets/toppings/chocolate-chips.png" },
-    { name: "Gummy Bears", price: 500, image: "/assets/shaytees/individual_assets/toppings/gummy-bears.png" },
-    { name: "Peanut", price: 500, image: "/assets/shaytees/individual_assets/toppings/peanut.png" },
-    { name: "M&Ms", price: 1000, image: "/assets/shaytees/individual_assets/toppings/m-and-ms.png" },
-    { name: "Wafers", price: 500, image: "/assets/shaytees/individual_assets/toppings/wafers.png" },
-  ];
+  const toppingsCat = menuData.categories.find((c) => c.id === "toppings");
+  const toppingsList: Option[] = toppingsCat
+    ? toppingsCat.items.map((item) => ({
+        name: item.name,
+        price: item.price || 500,
+        image: item.image,
+      }))
+    : [];
 
-  const drizzles: Option[] = [
-    { name: "Chocolate Sauce", price: 0, image: "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png" },
-    { name: "Strawberry Sauce", price: 0, image: "/assets/shaytees/individual_assets/drizzles/strawberry-sauce.png" },
-    { name: "Honey", price: 0, image: "/assets/shaytees/individual_assets/drizzles/honey.png" },
-    { name: "Peanut Butter", price: 0, image: "/assets/shaytees/individual_assets/drizzles/peanut-butter.png" },
-    { name: "Whipped Cream", price: 0, image: "/assets/shaytees/individual_assets/drizzles/whipped-cream.png" },
-  ];
+  const drizzles: Option[] = (toppingsCat?.free_drizzles || []).map((name) => {
+    const key = name.toLowerCase().replace(/ /g, "-");
+    return {
+      name,
+      price: 0,
+      image: `/assets/shaytees/individual_assets/drizzles/${key}.png`,
+    };
+  });
 
-  const extrasList: Option[] = [
-    // Snacks
-    { name: "Mini Pancakes (Box of 6)", price: 2000, image: "/images/mini_pancakes_chocolate.png" },
-    { name: "Mini Pancakes (Box of 12)", price: 4500, image: "/images/mini_pancakes_chocolate.png" },
-    { name: "Bubble Waffle", price: 3000, image: "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png" },
-    { name: "Plain Waffle + Syrup", price: 3000, image: "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png" },
-    // Popcorn (Only Medium and Large)
-    { name: "Milky Popcorn (Medium)", price: 1500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
-    { name: "Milky Popcorn (Large)", price: 2500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
-    { name: "Caramel Popcorn (Medium)", price: 1500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
-    { name: "Caramel Popcorn (Large)", price: 2500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
-    // Coffee
-    { name: "Cappuccino", price: 2500, image: "/images/cappuccino_latte_art.png" },
-    { name: "Latte", price: 3500, image: "/images/latte_heart_art.png" },
-    { name: "Americano", price: 2500, image: "/images/cappuccino_latte_art.png" },
-    { name: "Mocha", price: 3500, image: "/images/cappuccino_latte_art.png" },
-    { name: "Espresso", price: 3000, image: "/images/latte_heart_art.png" },
-    // Food
-    { name: "Noodles & Egg", price: 3500, image: "/assets/shaytees/individual_assets/snacks/noodles-and-egg.png" },
-    { name: "Noodles & Chicken", price: 6000, image: "/assets/shaytees/individual_assets/snacks/noodles-and-chicken.png" },
-    { name: "Egg Sandwich", price: 2500, image: "/images/cookies_glass_display.png" },
-    { name: "Chicken Sandwich", price: 3000, image: "/images/eclairs_fruit_topping.png" },
-    { name: "Chicken Salad", price: 4500, image: "/images/bakery_collection_flatlay.png" },
-    { name: "Toast Bread & Egg", price: 2000, image: "/images/waffles_variety_grid.png" },
-    { name: "Toast Bread, Egg & Sardine", price: 2500, image: "/images/waffles_variety_grid.png" },
-  ];
+  const targetExtraCategories = ["waffles", "mini-pancakes", "hot-snacks-extras", "coffee", "food"];
+  const extrasList: Option[] = [];
+
+  targetExtraCategories.forEach((catId) => {
+    const cat = menuData.categories.find((c) => c.id === catId);
+    if (!cat) return;
+
+    cat.items.forEach((item) => {
+      let displayName = item.name;
+      if (catId === "mini-pancakes") {
+        displayName = `Mini Pancakes (${item.name})`;
+      } else if (item.name === "Plain Waffles") {
+        displayName = "Plain Waffle + Syrup";
+      } else if (item.name === "Bubble Waffles") {
+        displayName = "Bubble Waffle";
+      }
+
+      if (item.price !== undefined) {
+        extrasList.push({
+          name: displayName,
+          price: item.price,
+          image: item.image,
+        });
+      } else if (item.prices) {
+        Object.entries(item.prices).forEach(([sizeKey, priceVal]) => {
+          if (priceVal !== undefined) {
+            const capitalizedSize = sizeKey.charAt(0).toUpperCase() + sizeKey.slice(1);
+            extrasList.push({
+              name: `${displayName} (${capitalizedSize})`,
+              price: priceVal,
+              image: item.image,
+            });
+          }
+        });
+      } else if (item.variants) {
+        Object.entries(item.variants).forEach(([variantKey, priceVal]) => {
+          if (priceVal !== undefined) {
+            const formattedVariant = variantKey
+              .replace("_", " ")
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ");
+            extrasList.push({
+              name: `${displayName} (${formattedVariant})`,
+              price: priceVal,
+              image: item.image,
+            });
+          }
+        });
+      }
+    });
+  });
 
   // Overwrite defaults with URL parameters
   useEffect(() => {
@@ -128,7 +170,11 @@ function BuildYourTreatContent() {
     if (extrasParam) {
       const names = extrasParam.split(",").map((e) => e.trim().toLowerCase());
       const matched = extrasList.filter((e) =>
-        names.includes(e.name.toLowerCase())
+        names.some((name) => 
+          e.name.toLowerCase() === name || 
+          e.name.toLowerCase().includes(name) || 
+          name.includes(e.name.toLowerCase())
+        )
       );
       setExtras(matched);
     }

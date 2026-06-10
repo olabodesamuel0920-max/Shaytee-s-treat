@@ -55,7 +55,7 @@ export default function AdminPreview() {
     { id: 1, name: "Vanilla Dream", category: "Gelato / Ice Cream", price: 1500, available: true },
     { id: 2, name: "Strawberry Delight", category: "Gelato / Ice Cream", price: 1500, available: true },
     { id: 3, name: "Dubai Strawberry Cup", category: "Specials", price: 6500, available: true },
-    { id: 4, name: "Noodles & Egg", category: "Hot Meals", price: 3000, available: true },
+    { id: 4, name: "Noodles & Egg", category: "Hot Meals", price: 3500, available: true },
     { id: 5, name: "Bubble Waffle", category: "Snacks & Waffles", price: 3000, available: true },
     { id: 6, name: "Milky Popcorn", category: "Snacks & Waffles", price: 1500, available: true },
     { id: 7, name: "Cappuccino", category: "Coffee & Drinks", price: 2500, available: true },
@@ -135,7 +135,7 @@ export default function AdminPreview() {
   const randomSizes = ["Medium Cup", "Large Cup", "Small Cup"];
   const toppingsOptions = ["Oreo Crumbles", "Sprinkles", "Chocolate Chips", "Gummy Bears", "Peanuts", "M&Ms", "Wafers"];
   const drizzleOptions = ["Chocolate Drizzle", "Strawberry Drizzle", "Honey Drizzle"];
-  const extraOptions = ["Mini Pancakes (Box of 6)", "Bubble Waffle", "Milky Popcorn (Small)", "Cappuccino", "Noodles & Egg"];
+  const extraOptions = ["Mini Pancakes (Box of 6)", "Bubble Waffle", "Milky Popcorn (Medium)", "Cappuccino", "Noodles & Egg"];
 
   const triggerNewSimulatedOrder = () => {
     const name = customerNames[Math.floor(Math.random() * customerNames.length)];
@@ -166,9 +166,9 @@ export default function AdminPreview() {
     if (extraSelect) {
       if (extraSelect.includes("Box of 6")) sum += 2000;
       else if (extraSelect.includes("Bubble")) sum += 3000;
-      else if (extraSelect.includes("Popcorn")) sum += 1000;
+      else if (extraSelect.includes("Popcorn")) sum += 1500;
       else if (extraSelect.includes("Cappuccino")) sum += 2500;
-      else if (extraSelect.includes("Noodles")) sum += 3000;
+      else if (extraSelect.includes("Noodles")) sum += 3500;
     }
 
     const orderId = `ST-${Math.floor(5000 + Math.random() * 4999)}`;
