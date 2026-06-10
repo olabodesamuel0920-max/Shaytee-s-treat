@@ -1,5 +1,6 @@
 "use client";
 
+// Phase 1D live sync: updated pricing and categories data source
 import React, { useState } from "react";
 import { Search, Compass, ShoppingCart } from "lucide-react";
 import Link from "next/link";
