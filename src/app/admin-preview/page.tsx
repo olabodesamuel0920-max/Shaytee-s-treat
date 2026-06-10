@@ -555,6 +555,96 @@ export default function AdminPreview() {
                   </button>
                 </div>
 
+                {/* Connected Product Image Library Checklist Section */}
+                <div className="p-6 bg-zinc-900/80 border border-zinc-800 rounded-3xl shadow-lg">
+                  <h4 className="font-fredoka text-sm font-bold text-pink-light uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <span>🖼️</span> Connected Product Image Library
+                  </h4>
+                  <p className="font-poppins text-zinc-400 text-xs mb-6">
+                    All digital storefront elements are mapped to high-resolution branding assets stored in <code className="text-pink-primary bg-pink-500/10 px-1.5 py-0.5 rounded font-mono text-[10px]">public/assets/shaytees/</code>.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🗺️</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Visual Boards</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Menu slider graphics</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        5 / 5 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🍧</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Cup Styles</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Cone and cup base scales</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        5 / 5 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🍦</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Flavours</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Gelato scoop options</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        6 / 6 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🍯</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Drizzles</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Sauce syrups & creams</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        6 / 6 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🍬</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Toppings</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Crumbles, chips & candies</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        8 / 8 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🍟</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Snacks & Extras</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Popcorn, noodles & wraps</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        6 / 6 OK
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             )}
 

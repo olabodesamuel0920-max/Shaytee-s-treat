@@ -16,41 +16,41 @@
           "name": "Vanilla Dream",
           "flavor": "Vanilla",
           "prices": {
-            "small": 1500,
-            "medium": 3000,
-            "large": 5000
+            "small_cone": 1500,
+            "medium_small_cup": 3000,
+            "large_big_cup": 5000
           },
-          "image": "ice_cream_sundae_pink.png"
+          "image": "/assets/shaytees/individual_assets/flavours/vanilla.png"
         },
         {
           "name": "Strawberry Delight",
           "flavor": "Strawberry",
           "prices": {
-            "small": 1500,
-            "medium": 3000,
-            "large": 5000
+            "small_cone": 1500,
+            "medium_small_cup": 3000,
+            "large_big_cup": 5000
           },
-          "image": "ice_cream_sundae_glasses.png"
+          "image": "/assets/shaytees/individual_assets/flavours/strawberry.png"
         },
         {
           "name": "Banana Caramel",
           "flavor": "Banana",
           "prices": {
-            "small": 1500,
-            "medium": 3000,
-            "large": 5000
+            "small_cone": 1500,
+            "medium_small_cup": 3000,
+            "large_big_cup": 5000
           },
-          "image": "bubble_waffle_caramel_icecream.png"
+          "image": "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png"
         },
         {
           "name": "Chocolate Bliss",
           "flavor": "Chocolate",
           "prices": {
-            "small": 1500,
-            "medium": 3000,
-            "large": 5000
+            "small_cone": 1500,
+            "medium_small_cup": 3000,
+            "large_big_cup": 5000
           },
-          "image": "chocolate_cake_slice.png"
+          "image": "/assets/shaytees/individual_assets/flavours/chocolate.png"
         }
       ]
     },
@@ -63,69 +63,45 @@
         {
           "name": "Oreo Crumbles",
           "price": 500,
-          "image": "pastry_assortment_overhead.png"
+          "image": "/assets/shaytees/individual_assets/toppings/oreo-crumbles.png"
         },
         {
           "name": "Sprinkles",
           "price": 500,
-          "image": "cupcakes_box_variety.png"
+          "image": "/assets/shaytees/individual_assets/toppings/rainbow-sprinkles.png"
         },
         {
           "name": "Chocolate Chips",
           "price": 500,
-          "image": "chocolate_popsicles_dark.png"
+          "image": "/assets/shaytees/individual_assets/toppings/chocolate-chips.png"
         },
         {
           "name": "Gummy Bears",
           "price": 500,
-          "image": "cupcakes_purple_frosting.png"
+          "image": "/assets/shaytees/individual_assets/toppings/gummy-bears.png"
         },
         {
           "name": "Peanut",
           "price": 500,
-          "image": "cookies_display_case.png"
+          "image": "/assets/shaytees/individual_assets/toppings/peanut.png"
         },
         {
           "name": "M&Ms",
           "price": 1000,
-          "image": "cupcakes_gold_thankyou.png"
+          "image": "/assets/shaytees/individual_assets/toppings/m-and-ms.png"
         },
         {
           "name": "Wafers",
           "price": 500,
-          "image": "eclairs_fruit_topping.png"
+          "image": "/assets/shaytees/individual_assets/toppings/wafers.png"
         }
       ],
       "free_drizzles": [
-        "Chocolate",
-        "Strawberry",
-        "Honey"
-      ]
-    },
-    {
-      "id": "popcorn",
-      "name": "Popcorn",
-      "icon": "🍿",
-      "description": "Fresh popped gourmet popcorn",
-      "items": [
-        {
-          "name": "Milky Popcorn",
-          "prices": {
-            "small": 1000,
-            "medium": 1500,
-            "large": 2500
-          },
-          "image": "caramel_popcorn_bowl.png"
-        },
-        {
-          "name": "Caramel Popcorn",
-          "prices": {
-            "small": 1000,
-            "medium": 1500,
-            "large": 2500
-          },
-          "image": "caramel_popcorn_bowl.png"
-        }
+        "Chocolate Sauce",
+        "Strawberry Sauce",
+        "Honey",
+        "Peanut Butter",
+        "Whipped Cream"
       ]
     },
     {
@@ -137,27 +113,27 @@
         {
           "name": "Cappuccino",
           "price": 2500,
-          "image": "cappuccino_latte_art.png"
+          "image": "/images/cappuccino_latte_art.png"
         },
         {
           "name": "Latte",
           "price": 3500,
-          "image": "latte_heart_art.png"
+          "image": "/images/latte_heart_art.png"
         },
         {
           "name": "Americano",
           "price": 2500,
-          "image": "cappuccino_latte_art.png"
+          "image": "/images/cappuccino_latte_art.png"
         },
         {
           "name": "Mocha",
           "price": 3500,
-          "image": "chocolate_cake_caramel.png"
+          "image": "/images/cappuccino_latte_art.png"
         },
         {
           "name": "Espresso",
           "price": 3000,
-          "image": "latte_heart_art.png"
+          "image": "/images/latte_heart_art.png"
         }
       ]
     },
@@ -170,17 +146,17 @@
         {
           "name": "Fruit Popsicle",
           "price": 1700,
-          "image": "chocolate_popsicles_ice.png"
+          "image": "/images/chocolate_popsicles_ice.png"
         },
         {
           "name": "Chocolate",
           "price": 2000,
-          "image": "chocolate_popsicles_dark.png"
+          "image": "/images/chocolate_popsicles_dark.png"
         },
         {
           "name": "Strawberry",
           "price": 1700,
-          "image": "chocolate_popsicles_ice.png"
+          "image": "/images/chocolate_popsicles_ice.png"
         }
       ]
     },
@@ -196,50 +172,98 @@
             "small": 6500,
             "big": 8000
           },
-          "image": "birthday_cake_slice_pink.png"
+          "image": "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png"
         }
       ]
     },
     {
       "id": "food",
-      "name": "Food",
-      "icon": "🍜",
-      "description": "Savory meals and snacks",
+      "name": "Food & Sandwiches",
+      "icon": "🥪",
+      "description": "Freshly prepared sandwiches and salads",
       "items": [
-        {
-          "name": "Noodles & Egg",
-          "price": 3000,
-          "image": "pastry_assortment_overhead.png"
-        },
-        {
-          "name": "Noodles & Chicken",
-          "price": 4700,
-          "image": "shawarma_wrap_red.png"
-        },
         {
           "name": "Egg Sandwich",
           "price": 2500,
-          "image": "cookies_glass_display.png"
+          "image": "/images/cookies_glass_display.png"
         },
         {
           "name": "Chicken Sandwich",
           "price": 3000,
-          "image": "eclairs_fruit_topping.png"
+          "image": "/images/eclairs_fruit_topping.png"
         },
         {
           "name": "Chicken Salad",
           "price": 4500,
-          "image": "bakery_collection_flatlay.png"
+          "image": "/images/bakery_collection_flatlay.png"
         },
         {
           "name": "Toast Bread & Egg",
           "price": 2000,
-          "image": "waffles_variety_grid.png"
+          "image": "/images/waffles_variety_grid.png"
         },
         {
           "name": "Toast Bread, Egg & Sardine",
           "price": 2500,
-          "image": "waffles_variety_grid.png"
+          "image": "/images/waffles_variety_grid.png"
+        }
+      ]
+    },
+    {
+      "id": "hot-snacks-extras",
+      "name": "Hot Snacks & Extras",
+      "icon": "🍟",
+      "description": "Hot meals, snacks, popcorn, and wraps",
+      "items": [
+        {
+          "name": "Noodles & Egg",
+          "price": 3500,
+          "image": "/assets/shaytees/individual_assets/snacks/noodles-and-egg.png"
+        },
+        {
+          "name": "Noodles & Chicken",
+          "price": 6000,
+          "image": "/assets/shaytees/individual_assets/snacks/noodles-and-chicken.png"
+        },
+        {
+          "name": "Milky Popcorn",
+          "prices": {
+            "medium": 1500,
+            "large": 2500
+          },
+          "image": "/assets/shaytees/individual_assets/snacks/popcorn.png"
+        },
+        {
+          "name": "Caramel Popcorn",
+          "prices": {
+            "medium": 1500,
+            "large": 2500
+          },
+          "image": "/assets/shaytees/individual_assets/snacks/popcorn.png"
+        },
+        {
+          "name": "Beef Shawarma",
+          "variants": {
+            "single_sausage": 3500,
+            "double_sausage": 4000
+          },
+          "image": "/assets/shaytees/individual_assets/snacks/beef-shawarma.png"
+        },
+        {
+          "name": "Chicken Shawarma",
+          "variants": {
+            "single_sausage": 3500,
+            "double_sausage": 4000
+          },
+          "image": "/assets/shaytees/individual_assets/snacks/chicken-shawarma.png"
+        },
+        {
+          "name": "Corn Dog",
+          "variants": {
+            "without_sausage": 1000,
+            "with_sausage": 1500
+          },
+          "image": "/assets/shaytees/individual_assets/snacks/corn-dog.png"
         }
       ]
     },
@@ -253,13 +277,13 @@
           "name": "Box of 6",
           "price": 2000,
           "includes": "1 free topping",
-          "image": "mini_pancakes_chocolate.png"
+          "image": "/images/mini_pancakes_chocolate.png"
         },
         {
           "name": "Box of 12",
           "price": 4500,
           "includes": "2 free toppings",
-          "image": "mini_pancakes_chocolate.png"
+          "image": "/images/mini_pancakes_chocolate.png"
         }
       ]
     },
@@ -272,13 +296,13 @@
         {
           "name": "Bubble Waffles",
           "price": 3000,
-          "image": "bubble_waffles_strawberry_choco.png"
+          "image": "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
         },
         {
           "name": "Plain Waffles",
           "price": 3000,
           "extras": "Syrup/Honey",
-          "image": "bubble_waffle_matcha.png"
+          "image": "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
         }
       ]
     },
@@ -292,39 +316,7 @@
           "name": "Tequila Shot",
           "price": 2000,
           "unit": "each",
-          "image": "latte_heart_art.png"
-        }
-      ]
-    },
-    {
-      "id": "owner-confirm-addons",
-      "name": "Possible Add-ons — Owner Confirmation Needed",
-      "icon": "❓",
-      "description": "Menu additions awaiting final owner confirmation",
-      "items": [
-        {
-          "name": "Beef Shawarma",
-          "variants": {
-            "single_sausage": 3500,
-            "double_sausage": 4000
-          },
-          "image": "shawarma_wrap_red.png"
-        },
-        {
-          "name": "Chicken Shawarma",
-          "variants": {
-            "single_sausage": 3500,
-            "double_sausage": 4000
-          },
-          "image": "shawarma_wrap_red.png"
-        },
-        {
-          "name": "Corn Dog",
-          "variants": {
-            "without_sausage": 1000,
-            "with_sausage": 1500
-          },
-          "image": "mini_pancakes_chocolate.png"
+          "image": "/images/latte_heart_art.png"
         }
       ]
     }

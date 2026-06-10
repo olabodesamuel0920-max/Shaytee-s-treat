@@ -1,0 +1,115 @@
+PHASE 1D — Shaytee’s Treat Real-Site Asset Integration & Final Owner-Ready Upgrade
+
+Context:
+The owner loved the preview. Phase 1C was completed, but the live site still needs to become more visually real and food-rich using the new Shaytee’s Treat asset pack. Do not redesign from scratch. Upgrade the current Next.js project by integrating the supplied product boards and individual product crops into the existing Digital Dessert World experience.
+
+Asset pack placement:
+1. Copy this entire asset pack into the project under: public/assets/shaytees/
+2. Preserve this structure:
+   public/assets/shaytees/boards/
+   public/assets/shaytees/individual_assets/cup-sizes/
+   public/assets/shaytees/individual_assets/flavours/
+   public/assets/shaytees/individual_assets/drizzles/
+   public/assets/shaytees/individual_assets/toppings/
+   public/assets/shaytees/individual_assets/snacks/
+   public/assets/shaytees/image_manifest.json
+
+Important live-site verification:
+Before changing anything, inspect the current deployed site and current repo. The live crawler may still show old Phase 1B data, so verify the source code and final browser output. Specifically re-check:
+- “Dabba Strawberry Cup” must be “Dubai Strawberry Cup”.
+- Dubai Strawberry Cup must show Small ₦6,500 and Big ₦8,000, not “Contact Us”.
+- Noodles & Egg and Noodles & Chicken must match the owner’s latest WhatsApp correction if confirmed:
+  Noodles & Egg: ₦3,500
+  Noodles & Chicken: ₦6,000
+  If keeping the flyer prices for preview, label them clearly as previous flyer values and mark owner update pending. Prefer owner’s latest WhatsApp correction for final owner review.
+- Cup sizes from owner’s WhatsApp:
+  Small cone: ₦1,500
+  Medium small cup: ₦3,000
+  Large big cup: ₦5,000
+- Popcorn: owner says “No 1000 popcorn”; remove ₦1,000 popcorn option if finalizing from owner update.
+- Shawarma:
+  Beef Shawarma single sausage ₦3,500, double sausage ₦4,000
+  Chicken Shawarma single sausage ₦3,500, double sausage ₦4,000
+- Corn Dog:
+  Without sausage ₦1,000
+  With sausage ₦1,500
+
+Main objective:
+Make the site feel much more real, visual, and attractive by replacing generic/placeholder item imagery with these new individual crops and board visuals. The site should now feel like Shaytee’s Treat has its own digital product library, not just a styled menu.
+
+Files likely to modify:
+- src/lib/menu_data.json
+- src/app/page.tsx
+- src/app/menu/page.tsx
+- src/app/build-your-treat/page.tsx
+- src/app/combos/page.tsx
+- src/app/visit/page.tsx
+- src/app/admin-preview/page.tsx
+- src/components/Footer.tsx
+- any shared MenuCard/ProductCard/TreatPreview components if present
+
+Data updates:
+1. Update menu item image paths to use the individual assets.
+2. Add image mapping keys where needed:
+   - cup sizes: cone, small cup, big cup chocolate, big cup vanilla, bubble waffle
+   - flavours: strawberry, chocolate, vanilla, strawberry vanilla mix, chocolate vanilla mix, strawberry delight sundae
+   - drizzles: chocolate sauce, peanut butter, honey, strawberry sauce, whipped cream, rainbow sprinkles
+   - toppings: M&Ms, gummy bears, Oreo crumbles, chocolate chips, peanut, fresh strawberries, wafers, rainbow sprinkles
+   - snacks: popcorn, beef shawarma, chicken shawarma, corn dog, noodles & egg, noodles & chicken
+3. Keep item names consistent between menu, builder, combos, and WhatsApp message.
+4. If a price is owner-confirmed from WhatsApp, prioritize owner-confirmed price over old flyer price.
+
+Homepage upgrades:
+1. Add a premium visual “Ice Cream Station” preview section using the board images.
+2. Show the boards as swipeable/scrollable preview cards on mobile:
+   - Cup Sizes & Serving Styles
+   - Flavour Choices
+   - Drizzles & Included Toppings
+   - Extra Toppings
+   - Hot Snacks & Extras
+3. Add CTA buttons under this section: Build My Treat and View Full Menu.
+4. Keep the hero fast and mobile-safe. Do not add huge 3D libraries unless already present and performant.
+
+Menu page upgrades:
+1. Use the individual crop images for menu item cards wherever possible.
+2. Make category tabs feel more visual and owner-ready.
+3. Add a “New Owner Updates” note or badge for items updated by the owner through WhatsApp.
+4. For possible add-ons, use the hot snacks images but keep a soft note if owner confirmation is still needed.
+
+Build Your Treat upgrades:
+1. Replace the plain builder preview with visual selection cards using the individual crop images.
+2. When a user selects flavour/size/topping/drizzle/extras, show a live visual stack/order preview using the selected item images.
+3. Keep the builder simple and fast. Avoid complicated drag-and-drop if it slows mobile.
+4. WhatsApp message must include customer name, pickup/delivery, location if delivery, cup size/serving style, flavour, drizzle, toppings, extras, estimated total, and “Please confirm availability and final total.”
+
+Combos page upgrades:
+1. Replace generic combo visuals with relevant combinations of the individual assets.
+2. Update combo pricing if owner-updated prices change totals.
+3. Keep the disclaimer: “Final combo pricing can be confirmed by Shaytee’s Treat.”
+
+Visit page upgrades:
+1. Replace “Mock Hours” wording with “Opening hours can be confirmed by Shaytee’s Treat.”
+2. Keep campus delivery landmarks/timing clearly marked as preview estimates until owner confirms.
+
+Admin preview upgrades:
+1. Keep the simulation banner very visible: “Simulation Mode — this owner dashboard is a preview and is not connected to live orders yet.”
+2. Add a section showing “Product Image Library Connected” with the new image categories.
+3. Keep mock analytics clearly labeled as mock preview data.
+
+Quality requirements:
+- No horizontal overflow on 375px and 414px mobile.
+- Use next/image where appropriate.
+- Optimize image imports/paths for Vercel deployment.
+- Keep alt text descriptive.
+- Build must pass with zero TypeScript and lint errors.
+- Run npm run build.
+- Commit and push to origin/main after verification.
+
+Final report required:
+- Asset files copied
+- Image paths integrated
+- Menu data corrections made
+- Builder tested
+- WhatsApp message tested
+- Pages tested: /, /menu, /build-your-treat, /combos, /visit, /admin-preview
+- Remaining owner-confirmation items

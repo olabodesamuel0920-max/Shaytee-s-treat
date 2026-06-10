@@ -10,6 +10,9 @@ export interface MenuItem {
     large?: number;
     regular?: number;
     big?: number;
+    small_cone?: number;
+    medium_small_cup?: number;
+    large_big_cup?: number;
   };
   variants?: {
     single_sausage?: number;

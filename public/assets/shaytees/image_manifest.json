@@ -1,0 +1,188 @@
+[
+  {
+    "category": "cup-sizes",
+    "name": "Cone",
+    "file": "individual_assets/cup-sizes/cone.png",
+    "publicPath": "/assets/shaytees/individual_assets/cup-sizes/cone.png"
+  },
+  {
+    "category": "cup-sizes",
+    "name": "Small Cup",
+    "file": "individual_assets/cup-sizes/small-cup.png",
+    "publicPath": "/assets/shaytees/individual_assets/cup-sizes/small-cup.png"
+  },
+  {
+    "category": "cup-sizes",
+    "name": "Big Cup Chocolate",
+    "file": "individual_assets/cup-sizes/big-cup-chocolate.png",
+    "publicPath": "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate.png"
+  },
+  {
+    "category": "cup-sizes",
+    "name": "Big Cup Vanilla",
+    "file": "individual_assets/cup-sizes/big-cup-vanilla.png",
+    "publicPath": "/assets/shaytees/individual_assets/cup-sizes/big-cup-vanilla.png"
+  },
+  {
+    "category": "cup-sizes",
+    "name": "Bubble Waffle",
+    "file": "individual_assets/cup-sizes/bubble-waffle.png",
+    "publicPath": "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
+  },
+  {
+    "category": "flavours",
+    "name": "Strawberry",
+    "file": "individual_assets/flavours/strawberry.png",
+    "publicPath": "/assets/shaytees/individual_assets/flavours/strawberry.png"
+  },
+  {
+    "category": "flavours",
+    "name": "Chocolate",
+    "file": "individual_assets/flavours/chocolate.png",
+    "publicPath": "/assets/shaytees/individual_assets/flavours/chocolate.png"
+  },
+  {
+    "category": "flavours",
+    "name": "Vanilla",
+    "file": "individual_assets/flavours/vanilla.png",
+    "publicPath": "/assets/shaytees/individual_assets/flavours/vanilla.png"
+  },
+  {
+    "category": "flavours",
+    "name": "Strawberry & Vanilla Mix",
+    "file": "individual_assets/flavours/strawberry-vanilla-mix.png",
+    "publicPath": "/assets/shaytees/individual_assets/flavours/strawberry-vanilla-mix.png"
+  },
+  {
+    "category": "flavours",
+    "name": "Chocolate & Vanilla Mix",
+    "file": "individual_assets/flavours/chocolate-vanilla-mix.png",
+    "publicPath": "/assets/shaytees/individual_assets/flavours/chocolate-vanilla-mix.png"
+  },
+  {
+    "category": "flavours",
+    "name": "Strawberry Delight Sundae",
+    "file": "individual_assets/flavours/strawberry-delight-sundae.png",
+    "publicPath": "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png"
+  },
+  {
+    "category": "drizzles",
+    "name": "Chocolate Sauce",
+    "file": "individual_assets/drizzles/chocolate-sauce.png",
+    "publicPath": "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png"
+  },
+  {
+    "category": "drizzles",
+    "name": "Peanut Butter",
+    "file": "individual_assets/drizzles/peanut-butter.png",
+    "publicPath": "/assets/shaytees/individual_assets/drizzles/peanut-butter.png"
+  },
+  {
+    "category": "drizzles",
+    "name": "Honey",
+    "file": "individual_assets/drizzles/honey.png",
+    "publicPath": "/assets/shaytees/individual_assets/drizzles/honey.png"
+  },
+  {
+    "category": "drizzles",
+    "name": "Strawberry Sauce",
+    "file": "individual_assets/drizzles/strawberry-sauce.png",
+    "publicPath": "/assets/shaytees/individual_assets/drizzles/strawberry-sauce.png"
+  },
+  {
+    "category": "drizzles",
+    "name": "Whipped Cream",
+    "file": "individual_assets/drizzles/whipped-cream.png",
+    "publicPath": "/assets/shaytees/individual_assets/drizzles/whipped-cream.png"
+  },
+  {
+    "category": "drizzles",
+    "name": "Rainbow Sprinkles Bowl",
+    "file": "individual_assets/drizzles/rainbow-sprinkles-bowl.png",
+    "publicPath": "/assets/shaytees/individual_assets/drizzles/rainbow-sprinkles-bowl.png"
+  },
+  {
+    "category": "toppings",
+    "name": "M&Ms",
+    "file": "individual_assets/toppings/m-and-ms.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/m-and-ms.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Gummy Bears",
+    "file": "individual_assets/toppings/gummy-bears.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/gummy-bears.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Oreo Crumbles",
+    "file": "individual_assets/toppings/oreo-crumbles.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/oreo-crumbles.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Chocolate Chips",
+    "file": "individual_assets/toppings/chocolate-chips.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/chocolate-chips.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Peanut",
+    "file": "individual_assets/toppings/peanut.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/peanut.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Fresh Strawberries",
+    "file": "individual_assets/toppings/fresh-strawberries.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/fresh-strawberries.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Wafers",
+    "file": "individual_assets/toppings/wafers.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/wafers.png"
+  },
+  {
+    "category": "toppings",
+    "name": "Rainbow Sprinkles",
+    "file": "individual_assets/toppings/rainbow-sprinkles.png",
+    "publicPath": "/assets/shaytees/individual_assets/toppings/rainbow-sprinkles.png"
+  },
+  {
+    "category": "snacks",
+    "name": "Popcorn",
+    "file": "individual_assets/snacks/popcorn.png",
+    "publicPath": "/assets/shaytees/individual_assets/snacks/popcorn.png"
+  },
+  {
+    "category": "snacks",
+    "name": "Beef Shawarma",
+    "file": "individual_assets/snacks/beef-shawarma.png",
+    "publicPath": "/assets/shaytees/individual_assets/snacks/beef-shawarma.png"
+  },
+  {
+    "category": "snacks",
+    "name": "Chicken Shawarma",
+    "file": "individual_assets/snacks/chicken-shawarma.png",
+    "publicPath": "/assets/shaytees/individual_assets/snacks/chicken-shawarma.png"
+  },
+  {
+    "category": "snacks",
+    "name": "Corn Dog",
+    "file": "individual_assets/snacks/corn-dog.png",
+    "publicPath": "/assets/shaytees/individual_assets/snacks/corn-dog.png"
+  },
+  {
+    "category": "snacks",
+    "name": "Noodles & Egg",
+    "file": "individual_assets/snacks/noodles-and-egg.png",
+    "publicPath": "/assets/shaytees/individual_assets/snacks/noodles-and-egg.png"
+  },
+  {
+    "category": "snacks",
+    "name": "Noodles & Chicken",
+    "file": "individual_assets/snacks/noodles-and-chicken.png",
+    "publicPath": "/assets/shaytees/individual_assets/snacks/noodles-and-chicken.png"
+  }
+]

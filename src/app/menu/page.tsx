@@ -133,7 +133,7 @@ Location: `;
                 {/* Product Image */}
                 <div className="h-48 w-full overflow-hidden relative border-b border-pink-50 bg-zinc-100">
                   <img
-                    src={`/images/${item.image}`}
+                    src={item.image.startsWith("/") ? item.image : `/images/${item.image}`}
                     alt={item.name}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="lazy"
@@ -182,9 +182,9 @@ Location: `;
                       </div>
                     )}
 
-                    {item.category === "owner-confirm-addons" && (
-                      <p className="text-[10px] text-amber-700 bg-amber-50 border border-amber-100 rounded-lg p-2.5 mt-2 mb-3 font-semibold font-poppins leading-relaxed">
-                        ⚠️ Possible Add-on — pending final owner confirmation.
+                    {item.category === "hot-snacks-extras" && (
+                      <p className="text-[10px] text-pink-primary bg-pink-50/50 border border-pink-100/40 rounded-lg p-2 mt-2 mb-3 font-semibold font-poppins">
+                        ℹ️ Availability can be confirmed by Shaytee’s Treat.
                       </p>
                     )}
                   </div>

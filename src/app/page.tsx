@@ -138,6 +138,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* BUILD YOUR TREAT VISUALLY (BOARD IMAGES) */}
+      <section className="py-20 px-4 md:px-8 bg-gradient-to-b from-cream to-white relative z-10 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-pink-primary font-bold text-xs uppercase tracking-widest px-3 py-1 bg-pink-100 rounded-full">
+              Ice Cream Station
+            </span>
+            <h2 className="font-fredoka text-3xl md:text-4xl lg:text-5xl font-bold text-chocolate mt-3 mb-4">
+              Build Your Treat Visually 🍨
+            </h2>
+            <p className="font-poppins text-text-light text-sm md:text-base">
+              Swipe through our serving sizes, flavor choices, drizzles, extra toppings, and hot snacks to see how your dream treat comes together!
+            </p>
+          </div>
+
+          {/* Cards slider */}
+          <div className="flex overflow-x-auto gap-6 snap-x pb-8 scrollbar-none md:grid md:grid-cols-5 md:overflow-x-visible">
+            {[
+              {
+                title: "Cup Sizes & Serving Styles",
+                desc: "Choose between cones, small cups, big cups, or bubble waffles.",
+                image: "/assets/shaytees/boards/cup-sizes-and-serving-styles.png",
+              },
+              {
+                title: "Flavour Choices",
+                desc: "Strawberry, chocolate, vanilla, or premium swirl mixes.",
+                image: "/assets/shaytees/boards/flavour-choices.png",
+              },
+              {
+                title: "Drizzles & Included Toppings",
+                desc: "Chocolate, strawberry, honey sauce, and whipped cream.",
+                image: "/assets/shaytees/boards/drizzles-and-included-toppings.png",
+              },
+              {
+                title: "Extra Toppings",
+                desc: "Crunchy Oreo, M&Ms, wafer sticks, gummy bears, and peanuts.",
+                image: "/assets/shaytees/boards/extra-toppings.png",
+              },
+              {
+                title: "Hot Snacks & Extras",
+                desc: "Noodles, crispy shawarmas, corn dogs, and premium popcorn.",
+                image: "/assets/shaytees/boards/hot-snacks-and-extras.png",
+              },
+            ].map((board, idx) => (
+              <div
+                key={idx}
+                className="w-[280px] shrink-0 snap-center glossy-card bg-white/60 p-4 shadow-md transition-all duration-300 hover:shadow-xl hover:scale-103 md:w-auto flex flex-col justify-between"
+              >
+                <div>
+                  <div className="h-44 w-full rounded-2xl overflow-hidden border border-pink-50 shadow-inner bg-zinc-50 relative mb-4">
+                    <img
+                      src={board.image}
+                      alt={board.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 className="font-fredoka text-base font-bold text-chocolate mb-2 leading-tight">
+                    {board.title}
+                  </h3>
+                  <p className="font-poppins text-text-light text-xs leading-relaxed">
+                    {board.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Action CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+            <Link
+              href="/build-your-treat"
+              className="px-8 py-3.5 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka text-base font-bold rounded-full shadow-lg hover:scale-105 transition-all duration-300 text-center"
+            >
+              🎨 Build My Treat
+            </Link>
+            <Link
+              href="/menu"
+              className="px-8 py-3.5 bg-white text-pink-primary border-2 border-pink-primary/20 hover:border-pink-primary/60 font-fredoka text-base font-bold rounded-full shadow-md hover:scale-105 transition-all duration-300 text-center"
+            >
+              📋 View Full Menu
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* WHY DIGITAL MENU */}
       <section className="py-20 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">

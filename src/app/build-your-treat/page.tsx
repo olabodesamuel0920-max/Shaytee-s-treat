@@ -8,6 +8,7 @@ import Particles from "@/components/Particles";
 interface Option {
   name: string;
   price: number;
+  image?: string;
 }
 
 function BuildYourTreatContent() {
@@ -28,61 +29,61 @@ function BuildYourTreatContent() {
 
   // Lists of options matching flyer pricing
   const flavors: Option[] = [
-    { name: "Vanilla Dream", price: 1500 },
-    { name: "Strawberry Delight", price: 1500 },
-    { name: "Banana Caramel", price: 1500 },
-    { name: "Chocolate Bliss", price: 1500 },
+    { name: "Vanilla Dream", price: 1500, image: "/assets/shaytees/individual_assets/flavours/vanilla.png" },
+    { name: "Strawberry Delight", price: 1500, image: "/assets/shaytees/individual_assets/flavours/strawberry.png" },
+    { name: "Banana Caramel", price: 1500, image: "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png" },
+    { name: "Chocolate Bliss", price: 1500, image: "/assets/shaytees/individual_assets/flavours/chocolate.png" },
   ];
 
   const sizes: Option[] = [
-    { name: "Small Cup", price: 0 },
-    { name: "Medium Cup (+₦1,500)", price: 1500 },
-    { name: "Large Cup (+₦3,500)", price: 3500 },
+    { name: "Small Cone", price: 0, image: "/assets/shaytees/individual_assets/cup-sizes/cone.png" },
+    { name: "Medium Small Cup (+₦1,500)", price: 1500, image: "/assets/shaytees/individual_assets/cup-sizes/small-cup.png" },
+    { name: "Large Big Cup (+₦3,500)", price: 3500, image: "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate.png" },
   ];
 
   const toppingsList: Option[] = [
-    { name: "Oreo Crumbles", price: 500 },
-    { name: "Sprinkles", price: 500 },
-    { name: "Chocolate Chips", price: 500 },
-    { name: "Gummy Bears", price: 500 },
-    { name: "Peanut", price: 500 },
-    { name: "M&Ms", price: 1000 },
-    { name: "Wafers", price: 500 },
+    { name: "Oreo Crumbles", price: 500, image: "/assets/shaytees/individual_assets/toppings/oreo-crumbles.png" },
+    { name: "Sprinkles", price: 500, image: "/assets/shaytees/individual_assets/toppings/rainbow-sprinkles.png" },
+    { name: "Chocolate Chips", price: 500, image: "/assets/shaytees/individual_assets/toppings/chocolate-chips.png" },
+    { name: "Gummy Bears", price: 500, image: "/assets/shaytees/individual_assets/toppings/gummy-bears.png" },
+    { name: "Peanut", price: 500, image: "/assets/shaytees/individual_assets/toppings/peanut.png" },
+    { name: "M&Ms", price: 1000, image: "/assets/shaytees/individual_assets/toppings/m-and-ms.png" },
+    { name: "Wafers", price: 500, image: "/assets/shaytees/individual_assets/toppings/wafers.png" },
   ];
 
   const drizzles: Option[] = [
-    { name: "Chocolate Drizzle", price: 0 },
-    { name: "Strawberry Drizzle", price: 0 },
-    { name: "Honey Drizzle", price: 0 },
+    { name: "Chocolate Sauce", price: 0, image: "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png" },
+    { name: "Strawberry Sauce", price: 0, image: "/assets/shaytees/individual_assets/drizzles/strawberry-sauce.png" },
+    { name: "Honey", price: 0, image: "/assets/shaytees/individual_assets/drizzles/honey.png" },
+    { name: "Peanut Butter", price: 0, image: "/assets/shaytees/individual_assets/drizzles/peanut-butter.png" },
+    { name: "Whipped Cream", price: 0, image: "/assets/shaytees/individual_assets/drizzles/whipped-cream.png" },
   ];
 
   const extrasList: Option[] = [
     // Snacks
-    { name: "Mini Pancakes (Box of 6)", price: 2000 },
-    { name: "Mini Pancakes (Box of 12)", price: 4500 },
-    { name: "Bubble Waffle", price: 3000 },
-    { name: "Plain Waffle + Syrup", price: 3000 },
-    // Popcorn
-    { name: "Milky Popcorn (Small)", price: 1000 },
-    { name: "Milky Popcorn (Medium)", price: 1500 },
-    { name: "Milky Popcorn (Large)", price: 2500 },
-    { name: "Caramel Popcorn (Small)", price: 1000 },
-    { name: "Caramel Popcorn (Medium)", price: 1500 },
-    { name: "Caramel Popcorn (Large)", price: 2500 },
+    { name: "Mini Pancakes (Box of 6)", price: 2000, image: "/images/mini_pancakes_chocolate.png" },
+    { name: "Mini Pancakes (Box of 12)", price: 4500, image: "/images/mini_pancakes_chocolate.png" },
+    { name: "Bubble Waffle", price: 3000, image: "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png" },
+    { name: "Plain Waffle + Syrup", price: 3000, image: "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png" },
+    // Popcorn (Only Medium and Large)
+    { name: "Milky Popcorn (Medium)", price: 1500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
+    { name: "Milky Popcorn (Large)", price: 2500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
+    { name: "Caramel Popcorn (Medium)", price: 1500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
+    { name: "Caramel Popcorn (Large)", price: 2500, image: "/assets/shaytees/individual_assets/snacks/popcorn.png" },
     // Coffee
-    { name: "Cappuccino", price: 2500 },
-    { name: "Latte", price: 3500 },
-    { name: "Americano", price: 2500 },
-    { name: "Mocha", price: 3500 },
-    { name: "Espresso", price: 3000 },
+    { name: "Cappuccino", price: 2500, image: "/images/cappuccino_latte_art.png" },
+    { name: "Latte", price: 3500, image: "/images/latte_heart_art.png" },
+    { name: "Americano", price: 2500, image: "/images/cappuccino_latte_art.png" },
+    { name: "Mocha", price: 3500, image: "/images/cappuccino_latte_art.png" },
+    { name: "Espresso", price: 3000, image: "/images/latte_heart_art.png" },
     // Food
-    { name: "Noodles & Egg", price: 3000 },
-    { name: "Noodles & Chicken", price: 4700 },
-    { name: "Egg Sandwich", price: 2500 },
-    { name: "Chicken Sandwich", price: 3000 },
-    { name: "Chicken Salad", price: 4500 },
-    { name: "Toast Bread & Egg", price: 2000 },
-    { name: "Toast Bread, Egg & Sardine", price: 2500 },
+    { name: "Noodles & Egg", price: 3500, image: "/assets/shaytees/individual_assets/snacks/noodles-and-egg.png" },
+    { name: "Noodles & Chicken", price: 6000, image: "/assets/shaytees/individual_assets/snacks/noodles-and-chicken.png" },
+    { name: "Egg Sandwich", price: 2500, image: "/images/cookies_glass_display.png" },
+    { name: "Chicken Sandwich", price: 3000, image: "/images/eclairs_fruit_topping.png" },
+    { name: "Chicken Salad", price: 4500, image: "/images/bakery_collection_flatlay.png" },
+    { name: "Toast Bread & Egg", price: 2000, image: "/images/waffles_variety_grid.png" },
+    { name: "Toast Bread, Egg & Sardine", price: 2500, image: "/images/waffles_variety_grid.png" },
   ];
 
   // Overwrite defaults with URL parameters
@@ -171,9 +172,9 @@ function BuildYourTreatContent() {
       return;
     }
 
-    const sizeName = size ? size.name.split(" ")[0] : "Small";
+    const sizeName = size ? size.name.split(" (+")[0] : "Small Cone";
     
-    let itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName} Cup) — ₦${((flavor.price) + (size ? size.price : 0)).toLocaleString()}`;
+    let itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName}) — ₦${((flavor.price) + (size ? size.price : 0)).toLocaleString()}`;
     if (toppings.length > 0) {
       itemsText += `\n   Toppings: ${toppings.map(t => `${t.name} (+₦${t.price.toLocaleString()})`).join(", ")}`;
     }
@@ -205,21 +206,7 @@ ${itemsText}
     window.open(whatsappUrl, "_blank");
   };
 
-  // Get color styling for the live preview base on flavor
-  const getPreviewFlavorColor = () => {
-    if (!flavor) return "bg-white border-dashed border-gray-300";
-    if (flavor.name === "Vanilla Dream") return "bg-gradient-to-b from-vanilla to-yellow-50";
-    if (flavor.name === "Strawberry Delight") return "bg-gradient-to-b from-pink-300 to-pink-100";
-    if (flavor.name === "Banana Caramel") return "bg-gradient-to-b from-[#fef08a] to-[#fef08a]/60";
-    return "bg-gradient-to-b from-chocolate to-amber-900"; // Chocolate
-  };
-
-  const getPreviewSize = () => {
-    if (!size) return "scale-75";
-    if (size.name.includes("Medium")) return "scale-90";
-    if (size.name.includes("Large")) return "scale-100";
-    return "scale-75"; // Small
-  };
+  // Visual helpers removed for board card preview layouts
 
   return (
     <div className="relative min-h-screen py-12 px-4 md:px-8">
@@ -251,20 +238,23 @@ ${itemsText}
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">1</span>
                 Choose Ice Cream Flavor
               </h3>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {flavors.map((item) => (
                   <button
                     key={item.name}
                     onClick={() => setFlavor(item)}
-                    className={`py-3 px-4 rounded-2xl border font-poppins text-sm font-semibold transition-all duration-200 text-left ${
+                    className={`p-3 rounded-2xl border font-poppins transition-all duration-200 text-center flex flex-col items-center gap-2.5 cursor-pointer ${
                       flavor?.name === item.name
                         ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
                         : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                     }`}
                   >
-                    <div className="flex justify-between items-center">
-                      <span>{item.name}</span>
-                      <span className={flavor?.name === item.name ? "text-white" : "text-pink-primary"}>
+                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <span className="font-bold text-xs leading-tight">{item.name}</span>
+                      <span className={`text-[10px] mt-0.5 font-semibold ${flavor?.name === item.name ? "text-white/80" : "text-pink-primary"}`}>
                         ₦{item.price.toLocaleString()}
                       </span>
                     </div>
@@ -279,30 +269,31 @@ ${itemsText}
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">2</span>
                 Select Cup Size
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {sizes.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => setSize(item)}
-                    className={`py-3 px-4 rounded-2xl border font-poppins text-sm font-semibold transition-all duration-200 text-left ${
-                      (size?.name === item.name) || (!size && item.name === "Small Cup")
-                        ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
-                        : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
-                    }`}
-                  >
-                    <div className="flex flex-col">
-                      <span className="text-xs opacity-85 uppercase font-bold tracking-wider">
-                        {item.name.includes("Small") ? "Small" : item.name.includes("Medium") ? "Medium" : "Large"}
-                      </span>
-                      <span className="text-sm font-bold mt-1">
-                        {item.name.split(" ")[0]} Cup
-                      </span>
-                      <span className="text-[10px] mt-1 opacity-70">
-                        {item.price === 0 ? "Included" : `+₦${item.price.toLocaleString()}`}
-                      </span>
-                    </div>
-                  </button>
-                ))}
+              <div className="grid grid-cols-3 gap-3">
+                {sizes.map((item) => {
+                  const isSelected = (size?.name === item.name) || (!size && item.name === "Small Cone");
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={() => setSize(item)}
+                      className={`p-3 rounded-2xl border font-poppins transition-all duration-200 text-center flex flex-col items-center gap-2 cursor-pointer ${
+                        isSelected
+                          ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
+                          : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
+                      }`}
+                    >
+                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-contain p-1" />
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span className="font-bold text-xs leading-tight">{item.name.split(" (+")[0]}</span>
+                        <span className={`text-[10px] mt-0.5 font-semibold ${isSelected ? "text-white/80" : "text-pink-primary"}`}>
+                          {item.price === 0 ? "Included" : `+₦${item.price.toLocaleString()}`}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -312,22 +303,25 @@ ${itemsText}
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">3</span>
                 Select Toppings (Multi-Select)
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {toppingsList.map((item) => {
                   const isSelected = toppings.some((t) => t.name === item.name);
                   return (
                     <button
                       key={item.name}
                       onClick={() => handleToppingToggle(item)}
-                      className={`py-3 px-4 rounded-2xl border font-poppins text-xs md:text-sm font-semibold transition-all duration-200 text-left ${
+                      className={`p-2.5 rounded-2xl border font-poppins transition-all duration-200 text-center flex flex-col items-center gap-2 cursor-pointer ${
                         isSelected
                           ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="flex justify-between items-center">
-                        <span>{item.name.split(" ")[0]}</span>
-                        <span className={isSelected ? "text-white" : "text-pink-primary"}>
+                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span className="font-bold text-xs leading-tight">{item.name}</span>
+                        <span className={`text-[10px] mt-0.5 font-semibold ${isSelected ? "text-white/80" : "text-pink-primary"}`}>
                           +₦{item.price.toLocaleString()}
                         </span>
                       </div>
@@ -343,23 +337,31 @@ ${itemsText}
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">4</span>
                 Select Drizzle (Free)
               </h3>
-              <div className="grid grid-cols-3 gap-3">
-                {drizzles.map((item) => (
-                  <button
-                    key={item.name}
-                    onClick={() => setDrizzle(drizzle?.name === item.name ? null : item)}
-                    className={`py-3 px-4 rounded-2xl border font-poppins text-xs md:text-sm font-semibold transition-all duration-200 text-left ${
-                      drizzle?.name === item.name
-                        ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
-                        : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
-                    }`}
-                  >
-                    <div className="flex flex-col items-center justify-center text-center">
-                      <span>{item.name.split(" ")[0]}</span>
-                      <span className="text-[10px] opacity-70 mt-0.5">FREE</span>
-                    </div>
-                  </button>
-                ))}
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                {drizzles.map((item) => {
+                  const isSelected = drizzle?.name === item.name;
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={() => setDrizzle(drizzle?.name === item.name ? null : item)}
+                      className={`p-2.5 rounded-2xl border font-poppins transition-all duration-200 text-center flex flex-col items-center gap-2 cursor-pointer ${
+                        isSelected
+                          ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
+                          : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
+                      }`}
+                    >
+                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <span className="font-bold text-xs leading-tight">{item.name.split(" ")[0]}</span>
+                        <span className={`text-[10px] mt-0.5 font-semibold ${isSelected ? "text-white/80" : "text-emerald-600"}`}>
+                          FREE
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -369,25 +371,28 @@ ${itemsText}
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">5</span>
                 Add Snacks, Food & Coffees (Optional)
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[350px] overflow-y-auto pr-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[400px] overflow-y-auto pr-2">
                 {extrasList.map((item) => {
                   const isSelected = extras.some((e) => e.name === item.name);
                   return (
                     <button
                       key={item.name}
                       onClick={() => handleExtraToggle(item)}
-                      className={`py-2.5 px-4 rounded-2xl border font-poppins text-xs font-semibold transition-all duration-200 text-left ${
+                      className={`p-2.5 rounded-2xl border font-poppins transition-all duration-200 text-left flex items-center justify-between gap-3 cursor-pointer ${
                         isSelected
                           ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="flex justify-between items-center">
-                        <span className="truncate pr-2">{item.name}</span>
-                        <span className={isSelected ? "text-white whitespace-nowrap" : "text-pink-primary whitespace-nowrap"}>
-                          +₦{item.price.toLocaleString()}
-                        </span>
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-10 h-10 rounded-lg overflow-hidden bg-white/40 border border-white/20 shrink-0 shadow-inner bg-white">
+                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                        </div>
+                        <span className="truncate text-xs font-bold leading-tight">{item.name}</span>
                       </div>
+                      <span className={`text-[11px] font-semibold ${isSelected ? "text-white" : "text-pink-primary"} shrink-0`}>
+                        +₦{item.price.toLocaleString()}
+                      </span>
                     </button>
                   );
                 })}
@@ -402,57 +407,54 @@ ${itemsText}
             {/* Live Visual Dessert Cup Preview */}
             <div className="glossy-card p-6 flex flex-col items-center justify-center overflow-hidden">
               <h4 className="font-fredoka text-sm font-bold text-pink-primary tracking-widest uppercase mb-4">
-                Dessert Live Simulator
+                Your Visual Customization
               </h4>
               
-              <div className="relative w-full h-48 flex items-center justify-center">
-                {/* Drizzle Overlay */}
-                {drizzle && (
-                  <div className="absolute top-1/4 w-32 h-6 bg-amber-500/40 rounded-full blur-md z-30 animate-pulse-slow">
-                    <div className="text-[10px] text-center text-white font-bold tracking-wider">
-                      {drizzle.name.split(" ")[0]} Swirl
+              <div className="w-full py-4 flex flex-col gap-4 items-center">
+                {/* Visual Cards Row */}
+                <div className="flex justify-center gap-4 flex-wrap w-full">
+                  {/* Size Card */}
+                  <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Cup Size</span>
+                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
+                      <img src={size ? size.image : "/assets/shaytees/individual_assets/cup-sizes/cone.png"} alt="Size" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{size ? size.name.split(" (+")[0] : "Small Cone"}</span>
+                  </div>
+
+                  {/* Flavor Card */}
+                  <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Flavor</span>
+                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50">
+                      <img src={flavor ? flavor.image : "/assets/shaytees/individual_assets/flavours/vanilla.png"} alt="Flavor" className="w-full h-full object-cover" />
+                    </div>
+                    <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{flavor ? flavor.name.split(" ")[0] : "None"}</span>
+                  </div>
+
+                  {/* Drizzle Card */}
+                  <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Drizzle</span>
+                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50">
+                      <img src={drizzle ? drizzle.image : "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png"} alt="Drizzle" className="w-full h-full object-cover" />
+                    </div>
+                    <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{drizzle ? drizzle.name.split(" ")[0] : "None"}</span>
+                  </div>
+                </div>
+
+                {/* Toppings Thumbnails List */}
+                {toppings.length > 0 && (
+                  <div className="w-full pt-2">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider block text-center mb-2">Selected Toppings</span>
+                    <div className="flex justify-center gap-2 flex-wrap">
+                      {toppings.map((t, idx) => (
+                        <div key={idx} className="flex items-center gap-1.5 bg-white/50 border border-pink-50 px-2 py-1 rounded-xl shadow-sm">
+                          <img src={t.image} alt={t.name} className="w-5 h-5 rounded object-cover animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} />
+                          <span className="text-[9px] font-bold text-chocolate">{t.name.split(" ")[0]}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
-                
-                {/* Toppings indicators */}
-                <div className="absolute top-12 z-20 flex flex-wrap gap-1 justify-center max-w-[120px]">
-                  {toppings.map((t, idx) => (
-                    <span key={idx} className="px-1.5 py-0.5 bg-pink-dark text-white rounded text-[8px] font-bold shadow-sm animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }}>
-                      {t.name.split(" ")[0]}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Ice cream Scoop with dynamic photography mapping */}
-                <div className={`w-32 h-32 rounded-full border-4 border-white/40 shadow-xl overflow-hidden transition-all duration-500 z-10 flex items-center justify-center font-fredoka font-bold text-sm ${getPreviewFlavorColor()} ${getPreviewSize()}`}>
-                  {!flavor ? (
-                    <span className="text-text-light/50 text-xs italic text-center p-2">Select flavor</span>
-                  ) : (
-                    <div className="w-full h-full relative">
-                      <img
-                        src={
-                          flavor.name === "Vanilla Dream" ? "/images/ice_cream_sundae_pink.png" :
-                          flavor.name === "Strawberry Delight" ? "/images/ice_cream_sundae_pink.png" :
-                          flavor.name === "Banana Caramel" ? "/images/bubble_waffle_caramel_icecream.png" :
-                          "/images/ice_cream_sundae_glasses.png"
-                        }
-                        alt={flavor.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                        <span className="text-white text-xs text-center px-2 drop-shadow-md">
-                          {flavor.name}
-                        </span>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Gelato Cup Base */}
-                <div className="absolute bottom-2 w-36 h-20 bg-white/40 backdrop-blur-md border border-white/50 rounded-b-[40px] rounded-t-[5px] shadow-lg z-0 flex flex-col justify-end p-2 items-center">
-                  <span className="font-fredoka text-[10px] font-bold text-pink-primary tracking-wider">Shaytee's Gelato</span>
-                </div>
               </div>
             </div>
 

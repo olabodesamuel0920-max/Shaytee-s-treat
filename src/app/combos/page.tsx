@@ -13,6 +13,7 @@ interface Combo {
   badge?: string;
   estimatedPrice: number;
   image: string;
+  assetThumbnails: string[];
   params: {
     flavor: string;
     size: string;
@@ -27,14 +28,19 @@ export default function CombosPage() {
     {
       name: "After Class Treat",
       desc: "Perfect way to reward yourself or hang out with friends after a long day of lectures at FUTA.",
-      items: ["1 Medium Ice Cream (Strawberry Delight)", "Oreo Crumbles topping", "1 Milky Popcorn (Medium)"],
+      items: ["1 Medium Small Cup Ice Cream (Strawberry Delight)", "Oreo Crumbles topping", "1 Milky Popcorn (Medium)"],
       emoji: "🎒",
       badge: "STUDENT FAVORITE",
       estimatedPrice: 5000,
       image: "ice_cream_sundae_loaded.png",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/strawberry.png",
+        "/assets/shaytees/individual_assets/toppings/oreo-crumbles.png",
+        "/assets/shaytees/individual_assets/snacks/popcorn.png"
+      ],
       params: {
         flavor: "Strawberry Delight",
-        size: "Medium Cup",
+        size: "Medium Small Cup",
         toppings: ["Oreo Crumbles"],
         extras: ["Milky Popcorn (Medium)"],
       }
@@ -42,14 +48,19 @@ export default function CombosPage() {
     {
       name: "Birthday Treat Box",
       desc: "Celebrate your special day or surprise a friend with a curated sweet overload birthday package.",
-      items: ["1 Large Ice Cream (Chocolate Bliss)", "Box of 12 Mini Pancakes + 2 Free Toppings", "Milky Popcorn (Large)"],
+      items: ["1 Large Big Cup Ice Cream (Chocolate Bliss)", "Box of 12 Mini Pancakes + 2 Free Toppings", "Milky Popcorn (Large)"],
       emoji: "🎂",
       badge: "PARTY SPECIAL",
       estimatedPrice: 12000,
       image: "cupcakes_box_variety.png",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/chocolate.png",
+        "/images/mini_pancakes_chocolate.png",
+        "/assets/shaytees/individual_assets/snacks/popcorn.png"
+      ],
       params: {
         flavor: "Chocolate Bliss",
-        size: "Large Cup",
+        size: "Large Big Cup",
         toppings: ["Wafers", "Chocolate Chips"],
         extras: ["Mini Pancakes (Box of 12)", "Milky Popcorn (Large)"],
       }
@@ -57,14 +68,19 @@ export default function CombosPage() {
     {
       name: "Date Night Dessert",
       desc: "A romantic sweet treat combo designed to be shared. Sweeten up your evening with your special someone.",
-      items: ["1 Medium Ice Cream (Vanilla Dream)", "Toppings: Chocolate Chips & Sprinkles", "1 Bubble Waffle + Honey Drizzle"],
+      items: ["1 Medium Small Cup Ice Cream (Vanilla Dream)", "Toppings: Chocolate Chips & Sprinkles", "1 Bubble Waffle + Honey Drizzle"],
       emoji: "💖",
       badge: "SHARE FOR TWO",
-      estimatedPrice: 6500,
+      estimatedPrice: 7000,
       image: "bubble_waffles_chocolate.png",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/vanilla.png",
+        "/assets/shaytees/individual_assets/toppings/chocolate-chips.png",
+        "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
+      ],
       params: {
         flavor: "Vanilla Dream",
-        size: "Medium Cup",
+        size: "Medium Small Cup",
         toppings: ["Chocolate Chips", "Sprinkles"],
         drizzle: "Honey Drizzle",
         extras: ["Bubble Waffle"],
@@ -73,14 +89,18 @@ export default function CombosPage() {
     {
       name: "Movie & Popcorn Combo",
       desc: "Snack buddy package for your chill movie nights at home. Keep the sweet crunch flowing.",
-      items: ["1 Small Cup Ice Cream (Vanilla)", "1 Caramel Popcorn (Large)", "1 Milky Popcorn (Large)"],
+      items: ["1 Small Cone Ice Cream (Vanilla Dream)", "1 Caramel Popcorn (Large)", "1 Milky Popcorn (Large)"],
       emoji: "🍿",
       badge: "CRUNCH BOX",
       estimatedPrice: 6500,
       image: "caramel_popcorn_bowl.png",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/vanilla.png",
+        "/assets/shaytees/individual_assets/snacks/popcorn.png"
+      ],
       params: {
         flavor: "Vanilla Dream",
-        size: "Small Cup",
+        size: "Small Cone",
         toppings: [],
         extras: ["Caramel Popcorn (Large)", "Milky Popcorn (Large)"],
       }
@@ -88,14 +108,19 @@ export default function CombosPage() {
     {
       name: "Sweet Tooth Overload",
       desc: "The ultimate indulgence package for heavy dessert cravings. Rich, chocolatey, and absolute bliss.",
-      items: ["1 Medium Chocolate Bliss Gelato", "Toppings: M&Ms & Wafers", "Box of 6 Mini Pancakes + Oreo topping", "1 Hot Mocha coffee"],
+      items: ["1 Medium Small Cup Chocolate Bliss Gelato", "Toppings: M&Ms & Wafers", "Box of 6 Mini Pancakes + Oreo topping", "1 Hot Mocha coffee"],
       emoji: "🍩",
       badge: "ULTIMATE SWEET",
-      estimatedPrice: 11000,
+      estimatedPrice: 10000,
       image: "chocolate_cake_slice.png",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/chocolate.png",
+        "/assets/shaytees/individual_assets/toppings/m-and-ms.png",
+        "/images/mini_pancakes_chocolate.png"
+      ],
       params: {
         flavor: "Chocolate Bliss",
-        size: "Medium Cup",
+        size: "Medium Small Cup",
         toppings: ["M&Ms", "Wafers"],
         extras: ["Mini Pancakes (Box of 6)", "Mocha"],
       }
@@ -103,14 +128,19 @@ export default function CombosPage() {
     {
       name: "FUTA Chill Combo",
       desc: "Our budget-friendly student chillout selection. Stay refreshed during those library study breaks.",
-      items: ["1 Small Vanilla scoop", "1 Plain Waffle + Syrup", "1 Latte Coffee"],
+      items: ["1 Small Cone Vanilla scoop", "1 Plain Waffle + Syrup", "1 Latte Coffee"],
       emoji: "🎓",
       badge: "BUDGET VIBE",
       estimatedPrice: 8000,
       image: "bakery_collection_flatlay.png",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/vanilla.png",
+        "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png",
+        "/images/latte_heart_art.png"
+      ],
       params: {
         flavor: "Vanilla Dream",
-        size: "Small Cup",
+        size: "Small Cone",
         toppings: [],
         extras: ["Plain Waffle + Syrup", "Latte"],
       }
@@ -186,9 +216,28 @@ export default function CombosPage() {
                     </h3>
 
                     {/* Description */}
-                    <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-6">
+                    <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-4">
                       {combo.desc}
                     </p>
+
+                    {/* Visual Asset Previews */}
+                    <div className="flex -space-x-2 mb-4 items-center">
+                      {combo.assetThumbnails.map((thumbnail, thumbIdx) => (
+                        <div
+                          key={thumbIdx}
+                          className="w-7 h-7 rounded-full border border-pink-100 overflow-hidden bg-white shadow-sm shrink-0 relative transition-transform hover:scale-110 hover:z-10"
+                        >
+                          <img
+                            src={thumbnail}
+                            alt="Combo item thumbnail"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ))}
+                      <span className="text-[9px] font-bold text-pink-primary font-poppins pl-2.5 uppercase tracking-wider">
+                        Assets Connected
+                      </span>
+                    </div>
 
                     {/* Items list */}
                     <div className="bg-pink-50/40 rounded-2xl p-4 border border-pink-100/50 mb-6">
