@@ -107,14 +107,14 @@ export default function Home() {
                 className="glossy-card group overflow-hidden flex flex-col justify-between"
               >
                 {/* Image top half */}
-                <div className="h-48 w-full overflow-hidden relative border-b border-pink-50">
+                <div className="w-full aspect-[4/3] overflow-hidden relative border-b border-pink-50 bg-pink-50/30 p-4">
                   <img
                     src={occ.image.startsWith("/") ? occ.image : `/images/${occ.image}`}
                     alt={occ.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   <span className="absolute bottom-3 left-4 text-3xl animate-bounce-slow" style={{ animationDelay: `${idx * 0.25}s` }}>
                     {occ.icon}
                   </span>
@@ -197,11 +197,11 @@ export default function Home() {
                 className="w-[280px] shrink-0 snap-center glossy-card bg-white/60 p-4 shadow-md transition-all duration-300 hover:shadow-xl hover:scale-103 md:w-auto flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-44 w-full rounded-2xl overflow-hidden border border-pink-50 shadow-inner bg-zinc-50 relative mb-4">
+                  <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-pink-50 shadow-inner bg-pink-50/20 relative mb-4 p-3">
                     <img
                       src={board.image}
                       alt={board.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                       loading="lazy"
                     />
                   </div>

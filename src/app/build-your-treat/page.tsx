@@ -295,8 +295,8 @@ ${itemsText}
                         : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                     }`}
                   >
-                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1">
+                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                     </div>
                     <div className="flex flex-col items-center">
                       <span className="font-bold text-xs leading-tight">{item.name}</span>
@@ -362,8 +362,8 @@ ${itemsText}
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-0.5">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex flex-col items-center">
                         <span className="font-bold text-xs leading-tight">{item.name}</span>
@@ -396,8 +396,8 @@ ${itemsText}
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-0.5">
+                        <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex flex-col items-center">
                         <span className="font-bold text-xs leading-tight">{item.name.split(" ")[0]}</span>
@@ -431,8 +431,8 @@ ${itemsText}
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-10 h-10 rounded-lg overflow-hidden bg-white/40 border border-white/20 shrink-0 shadow-inner bg-white">
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                        <div className="w-10 h-10 rounded-lg overflow-hidden bg-white/40 border border-white/20 shrink-0 shadow-inner bg-white p-0.5">
+                          <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                         </div>
                         <span className="truncate text-xs font-bold leading-tight">{item.name}</span>
                       </div>
@@ -471,8 +471,8 @@ ${itemsText}
                   {/* Flavor Card */}
                   <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
                     <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Flavor</span>
-                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50">
-                      <img src={flavor ? flavor.image : "/assets/shaytees/individual_assets/flavours/vanilla.png"} alt="Flavor" className="w-full h-full object-cover" />
+                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
+                      <img src={flavor ? flavor.image : "/assets/shaytees/individual_assets/flavours/vanilla.png"} alt="Flavor" className="w-full h-full object-contain" />
                     </div>
                     <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{flavor ? flavor.name.split(" ")[0] : "None"}</span>
                   </div>
@@ -480,8 +480,8 @@ ${itemsText}
                   {/* Drizzle Card */}
                   <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
                     <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Drizzle</span>
-                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50">
-                      <img src={drizzle ? drizzle.image : "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png"} alt="Drizzle" className="w-full h-full object-cover" />
+                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
+                      <img src={drizzle ? drizzle.image : "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png"} alt="Drizzle" className="w-full h-full object-contain" />
                     </div>
                     <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{drizzle ? drizzle.name.split(" ")[0] : "None"}</span>
                   </div>
@@ -494,7 +494,7 @@ ${itemsText}
                     <div className="flex justify-center gap-2 flex-wrap">
                       {toppings.map((t, idx) => (
                         <div key={idx} className="flex items-center gap-1.5 bg-white/50 border border-pink-50 px-2 py-1 rounded-xl shadow-sm">
-                          <img src={t.image} alt={t.name} className="w-5 h-5 rounded object-cover animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} />
+                          <img src={t.image} alt={t.name} className="w-5 h-5 rounded object-contain animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} />
                           <span className="text-[9px] font-bold text-chocolate">{t.name.split(" ")[0]}</span>
                         </div>
                       ))}

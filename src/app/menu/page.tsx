@@ -132,11 +132,11 @@ Location: `;
             {filteredItems.map((item, index) => (
               <div key={index} className="glossy-card overflow-hidden flex flex-col justify-between relative">
                 {/* Product Image */}
-                <div className="h-48 w-full overflow-hidden relative border-b border-pink-50 bg-zinc-100">
+                <div className="w-full aspect-[4/3] overflow-hidden relative border-b border-pink-50 bg-pink-50/30 p-4">
                   <img
                     src={item.image.startsWith("/") ? item.image : `/images/${item.image}`}
                     alt={item.name}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
                     loading="lazy"
                   />
                   {item.includes && (
