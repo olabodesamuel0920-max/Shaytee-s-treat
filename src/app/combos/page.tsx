@@ -32,9 +32,9 @@ export default function CombosPage() {
       emoji: "🎒",
       badge: "STUDENT FAVORITE",
       estimatedPrice: 5000,
-      image: "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png",
+      image: "/assets/shaytees/regen-v2/gelato/strawberry_delight.png",
       assetThumbnails: [
-        "/assets/shaytees/individual_assets/flavours/strawberry.png",
+        "/assets/shaytees/regen-v2/gelato/strawberry_delight.png",
         "/assets/shaytees/individual_assets/toppings/oreo-crumbles.png",
         "/assets/shaytees/individual_assets/snacks/popcorn.png"
       ],
@@ -54,7 +54,7 @@ export default function CombosPage() {
       estimatedPrice: 12000,
       image: "/assets/shaytees/mini-pancakes/mini_pancakes_box_12.png",
       assetThumbnails: [
-        "/assets/shaytees/individual_assets/flavours/chocolate.png",
+        "/assets/shaytees/regen-v2/gelato/chocolate_bliss.png",
         "/assets/shaytees/mini-pancakes/mini_pancakes_box_12.png",
         "/assets/shaytees/individual_assets/snacks/popcorn.png"
       ],
@@ -72,11 +72,11 @@ export default function CombosPage() {
       emoji: "💖",
       badge: "SHARE FOR TWO",
       estimatedPrice: 7000,
-      image: "/assets/shaytees/waffles/bubble_waffles.png",
+      image: "/assets/shaytees/regen-v2/waffles/bubble_waffles.png",
       assetThumbnails: [
-        "/assets/shaytees/individual_assets/flavours/vanilla.png",
+        "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
         "/assets/shaytees/individual_assets/toppings/chocolate-chips.png",
-        "/assets/shaytees/waffles/bubble_waffles.png"
+        "/assets/shaytees/regen-v2/waffles/bubble_waffles.png"
       ],
       params: {
         flavor: "Vanilla Dream",
@@ -95,7 +95,7 @@ export default function CombosPage() {
       estimatedPrice: 6500,
       image: "/assets/shaytees/individual_assets/snacks/popcorn.png",
       assetThumbnails: [
-        "/assets/shaytees/individual_assets/flavours/vanilla.png",
+        "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
         "/assets/shaytees/individual_assets/snacks/popcorn.png"
       ],
       params: {
@@ -114,7 +114,7 @@ export default function CombosPage() {
       estimatedPrice: 10000,
       image: "/assets/shaytees/mini-pancakes/mini_pancakes_box_6.png",
       assetThumbnails: [
-        "/assets/shaytees/individual_assets/flavours/chocolate.png",
+        "/assets/shaytees/regen-v2/gelato/chocolate_bliss.png",
         "/assets/shaytees/individual_assets/toppings/m-and-ms.png",
         "/assets/shaytees/mini-pancakes/mini_pancakes_box_6.png"
       ],
@@ -134,8 +134,8 @@ export default function CombosPage() {
       estimatedPrice: 8000,
       image: "/assets/shaytees/boards/food_waffles_extras_board.png",
       assetThumbnails: [
-        "/assets/shaytees/individual_assets/flavours/vanilla.png",
-        "/assets/shaytees/waffles/plain_waffles.png",
+        "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
+        "/assets/shaytees/regen-v2/waffles/plain_waffles.png",
         "/assets/shaytees/regen-v1/coffee/latte.png"
       ],
       params: {

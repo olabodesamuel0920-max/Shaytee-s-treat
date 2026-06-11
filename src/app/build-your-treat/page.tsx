@@ -472,7 +472,7 @@ ${itemsText}
                   <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
                     <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Flavor</span>
                     <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
-                      <img src={flavor ? flavor.image : "/assets/shaytees/individual_assets/flavours/vanilla.png"} alt="Flavor" className="w-full h-full object-contain" />
+                      <img src={flavor ? flavor.image : "/assets/shaytees/regen-v2/gelato/vanilla_dream.png"} alt="Flavor" className="w-full h-full object-contain" />
                     </div>
                     <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{flavor ? flavor.name.split(" ")[0] : "None"}</span>
                   </div>
