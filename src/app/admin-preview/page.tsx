@@ -660,7 +660,7 @@ export default function AdminPreview() {
                       <div className="flex items-center gap-3">
                         <span className="text-xl">🧊</span>
                         <div>
-                          <p className="font-fredoka text-xs font-bold text-zinc-200">Frozen Treats</p>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Frozen Treats/Popsicles</p>
                           <p className="text-[10px] text-zinc-500 font-poppins">Individual popsicles</p>
                         </div>
                       </div>
@@ -699,7 +699,7 @@ export default function AdminPreview() {
                       <div className="flex items-center gap-3">
                         <span className="text-xl">🥃</span>
                         <div>
-                          <p className="font-fredoka text-xs font-bold text-zinc-200">Specials & Shots</p>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Specials/Shots</p>
                           <p className="text-[10px] text-zinc-500 font-poppins">Dubai cups & tequila shots</p>
                         </div>
                       </div>
