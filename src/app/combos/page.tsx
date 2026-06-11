@@ -136,7 +136,7 @@ export default function CombosPage() {
       assetThumbnails: [
         "/assets/shaytees/individual_assets/flavours/vanilla.png",
         "/assets/shaytees/waffles/plain_waffles.png",
-        "/assets/shaytees/coffee-drinks/latte.png"
+        "/assets/shaytees/regen-v1/coffee/latte.png"
       ],
       params: {
         flavor: "Vanilla Dream",

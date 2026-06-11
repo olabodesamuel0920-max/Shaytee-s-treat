@@ -113,27 +113,27 @@
         {
           "name": "Cappuccino",
           "price": 2500,
-          "image": "/assets/shaytees/coffee-drinks/cappuccino.png"
+          "image": "/assets/shaytees/regen-v1/coffee/cappuccino.png"
         },
         {
           "name": "Latte",
           "price": 3500,
-          "image": "/assets/shaytees/coffee-drinks/latte.png"
+          "image": "/assets/shaytees/regen-v1/coffee/latte.png"
         },
         {
           "name": "Americano",
           "price": 2500,
-          "image": "/assets/shaytees/coffee-drinks/americano.png"
+          "image": "/assets/shaytees/regen-v1/coffee/americano.png"
         },
         {
           "name": "Mocha",
           "price": 3500,
-          "image": "/assets/shaytees/coffee-drinks/mocha.png"
+          "image": "/assets/shaytees/regen-v1/coffee/mocha.png"
         },
         {
           "name": "Espresso",
           "price": 3000,
-          "image": "/assets/shaytees/coffee-drinks/espresso.png"
+          "image": "/assets/shaytees/regen-v1/coffee/espresso.png"
         }
       ]
     },
@@ -185,27 +185,27 @@
         {
           "name": "Egg Sandwich",
           "price": 2500,
-          "image": "/assets/shaytees/food-sandwiches/egg_sandwich.png"
+          "image": "/assets/shaytees/regen-v1/food/egg_sandwich.png"
         },
         {
           "name": "Chicken Sandwich",
           "price": 3000,
-          "image": "/assets/shaytees/food-sandwiches/chicken_sandwich.png"
+          "image": "/assets/shaytees/regen-v1/food/chicken_sandwich.png"
         },
         {
           "name": "Chicken Salad",
           "price": 4500,
-          "image": "/assets/shaytees/food-sandwiches/chicken_salad.png"
+          "image": "/assets/shaytees/regen-v1/food/chicken_salad.png"
         },
         {
           "name": "Toast Bread & Egg",
           "price": 2000,
-          "image": "/assets/shaytees/food-sandwiches/toast_bread_egg.png"
+          "image": "/assets/shaytees/regen-v1/food/toast_bread_egg.png"
         },
         {
           "name": "Toast Bread, Egg & Sardine",
           "price": 2500,
-          "image": "/assets/shaytees/food-sandwiches/toast_bread_egg_sardine.png"
+          "image": "/assets/shaytees/regen-v1/food/toast_bread_egg_sardine.png"
         }
       ]
     },
@@ -340,7 +340,7 @@
     {
       "name": "Study Break Fuel",
       "icon": "📚",
-      "image": "/assets/shaytees/coffee-drinks/cappuccino.png"
+      "image": "/assets/shaytees/regen-v1/coffee/cappuccino.png"
     },
     {
       "name": "Movie Nights",
