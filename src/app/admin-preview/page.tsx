@@ -574,7 +574,7 @@ export default function AdminPreview() {
                         </div>
                       </div>
                       <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
-                        5 / 5 OK
+                        7 / 7 OK
                       </span>
                     </div>
 
@@ -627,6 +627,84 @@ export default function AdminPreview() {
                       </div>
                       <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
                         8 / 8 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">☕</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Coffee Drinks</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Cappuccino, latte, americano</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        5 / 5 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🥪</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Food & Sandwiches</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Sandwiches and salads</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        5 / 5 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🧊</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Frozen Treats</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Individual popsicles</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        3 / 3 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🥞</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Mini Pancakes</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Serving boxes</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        2 / 2 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl"> waffle 🧇</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Waffles</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Bubble and plain waffles</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        2 / 2 OK
+                      </span>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-800/80 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">🥃</span>
+                        <div>
+                          <p className="font-fredoka text-xs font-bold text-zinc-200">Specials & Shots</p>
+                          <p className="text-[10px] text-zinc-500 font-poppins">Dubai cups & tequila shots</p>
+                        </div>
+                      </div>
+                      <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
+                        2 / 2 OK
                       </span>
                     </div>
 

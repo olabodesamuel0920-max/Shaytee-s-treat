@@ -1,0 +1,41 @@
+{
+  "version": "phase-1e-image-fix-pack",
+  "basePath": "/assets/shaytees/",
+  "coffee-drinks": {
+    "Cappuccino": "/assets/shaytees/coffee-drinks/cappuccino.png",
+    "Latte": "/assets/shaytees/coffee-drinks/latte.png",
+    "Americano": "/assets/shaytees/coffee-drinks/americano.png",
+    "Mocha": "/assets/shaytees/coffee-drinks/mocha.png",
+    "Espresso": "/assets/shaytees/coffee-drinks/espresso.png"
+  },
+  "food-sandwiches": {
+    "Egg Sandwich": "/assets/shaytees/food-sandwiches/egg_sandwich.png",
+    "Chicken Sandwich": "/assets/shaytees/food-sandwiches/chicken_sandwich.png",
+    "Chicken Salad": "/assets/shaytees/food-sandwiches/chicken_salad.png",
+    "Toast Bread & Egg": "/assets/shaytees/food-sandwiches/toast_bread_egg.png",
+    "Toast Bread, Egg & Sardine": "/assets/shaytees/food-sandwiches/toast_bread_egg_sardine.png"
+  },
+  "frozen-treats": {
+    "Fruit Popsicle": "/assets/shaytees/frozen-treats/fruit_popsicle.png",
+    "Chocolate Popsicle": "/assets/shaytees/frozen-treats/chocolate_popsicle.png",
+    "Strawberry Popsicle": "/assets/shaytees/frozen-treats/strawberry_popsicle.png"
+  },
+  "mini-pancakes": {
+    "Box of 6": "/assets/shaytees/mini-pancakes/mini_pancakes_box_6.png",
+    "Box of 12": "/assets/shaytees/mini-pancakes/mini_pancakes_box_12.png"
+  },
+  "waffles": {
+    "Bubble Waffles": "/assets/shaytees/waffles/bubble_waffles.png",
+    "Plain Waffles": "/assets/shaytees/waffles/plain_waffles.png"
+  },
+  "specials": {
+    "Dubai Strawberry Cup": "/assets/shaytees/specials/dubai_strawberry_cup.png"
+  },
+  "shots": {
+    "Tequila Shot": "/assets/shaytees/shots/tequila_shot.png"
+  },
+  "boards": {
+    "Coffee & Drinks": "/assets/shaytees/boards/coffee_and_drinks_board.png",
+    "Food, Waffles & Extras": "/assets/shaytees/boards/food_waffles_extras_board.png"
+  }
+}

@@ -55,7 +55,7 @@ export default function CombosPage() {
       image: "cupcakes_box_variety.png",
       assetThumbnails: [
         "/assets/shaytees/individual_assets/flavours/chocolate.png",
-        "/images/mini_pancakes_chocolate.png",
+        "/assets/shaytees/mini-pancakes/mini_pancakes_box_12.png",
         "/assets/shaytees/individual_assets/snacks/popcorn.png"
       ],
       params: {
@@ -76,7 +76,7 @@ export default function CombosPage() {
       assetThumbnails: [
         "/assets/shaytees/individual_assets/flavours/vanilla.png",
         "/assets/shaytees/individual_assets/toppings/chocolate-chips.png",
-        "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
+        "/assets/shaytees/waffles/bubble_waffles.png"
       ],
       params: {
         flavor: "Vanilla Dream",
@@ -116,7 +116,7 @@ export default function CombosPage() {
       assetThumbnails: [
         "/assets/shaytees/individual_assets/flavours/chocolate.png",
         "/assets/shaytees/individual_assets/toppings/m-and-ms.png",
-        "/images/mini_pancakes_chocolate.png"
+        "/assets/shaytees/mini-pancakes/mini_pancakes_box_6.png"
       ],
       params: {
         flavor: "Chocolate Bliss",
@@ -132,11 +132,11 @@ export default function CombosPage() {
       emoji: "🎓",
       badge: "BUDGET VIBE",
       estimatedPrice: 8000,
-      image: "bakery_collection_flatlay.png",
+      image: "/assets/shaytees/boards/food_waffles_extras_board.png",
       assetThumbnails: [
         "/assets/shaytees/individual_assets/flavours/vanilla.png",
-        "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png",
-        "/images/latte_heart_art.png"
+        "/assets/shaytees/waffles/plain_waffles.png",
+        "/assets/shaytees/coffee-drinks/latte.png"
       ],
       params: {
         flavor: "Vanilla Dream",
@@ -194,7 +194,7 @@ export default function CombosPage() {
                 {/* Visual Header Image */}
                 <div className="h-48 w-full overflow-hidden relative border-b border-pink-50">
                   <img
-                    src={`/images/${combo.image}`}
+                    src={combo.image.startsWith("/") ? combo.image : `/images/${combo.image}`}
                     alt={combo.name}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     loading="lazy"

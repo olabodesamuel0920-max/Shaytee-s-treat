@@ -113,27 +113,27 @@
         {
           "name": "Cappuccino",
           "price": 2500,
-          "image": "/images/cappuccino_latte_art.png"
+          "image": "/assets/shaytees/coffee-drinks/cappuccino.png"
         },
         {
           "name": "Latte",
           "price": 3500,
-          "image": "/images/latte_heart_art.png"
+          "image": "/assets/shaytees/coffee-drinks/latte.png"
         },
         {
           "name": "Americano",
           "price": 2500,
-          "image": "/images/cappuccino_latte_art.png"
+          "image": "/assets/shaytees/coffee-drinks/americano.png"
         },
         {
           "name": "Mocha",
           "price": 3500,
-          "image": "/images/cappuccino_latte_art.png"
+          "image": "/assets/shaytees/coffee-drinks/mocha.png"
         },
         {
           "name": "Espresso",
           "price": 3000,
-          "image": "/images/latte_heart_art.png"
+          "image": "/assets/shaytees/coffee-drinks/espresso.png"
         }
       ]
     },
@@ -146,17 +146,17 @@
         {
           "name": "Fruit Popsicle",
           "price": 1700,
-          "image": "/images/chocolate_popsicles_ice.png"
+          "image": "/assets/shaytees/frozen-treats/fruit_popsicle.png"
         },
         {
           "name": "Chocolate",
           "price": 2000,
-          "image": "/images/chocolate_popsicles_dark.png"
+          "image": "/assets/shaytees/frozen-treats/chocolate_popsicle.png"
         },
         {
           "name": "Strawberry",
           "price": 1700,
-          "image": "/images/chocolate_popsicles_ice.png"
+          "image": "/assets/shaytees/frozen-treats/strawberry_popsicle.png"
         }
       ]
     },
@@ -172,7 +172,7 @@
             "small": 6500,
             "big": 8000
           },
-          "image": "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png"
+          "image": "/assets/shaytees/specials/dubai_strawberry_cup.png"
         }
       ]
     },
@@ -185,27 +185,27 @@
         {
           "name": "Egg Sandwich",
           "price": 2500,
-          "image": "/images/cookies_glass_display.png"
+          "image": "/assets/shaytees/food-sandwiches/egg_sandwich.png"
         },
         {
           "name": "Chicken Sandwich",
           "price": 3000,
-          "image": "/images/eclairs_fruit_topping.png"
+          "image": "/assets/shaytees/food-sandwiches/chicken_sandwich.png"
         },
         {
           "name": "Chicken Salad",
           "price": 4500,
-          "image": "/images/bakery_collection_flatlay.png"
+          "image": "/assets/shaytees/food-sandwiches/chicken_salad.png"
         },
         {
           "name": "Toast Bread & Egg",
           "price": 2000,
-          "image": "/images/waffles_variety_grid.png"
+          "image": "/assets/shaytees/food-sandwiches/toast_bread_egg.png"
         },
         {
           "name": "Toast Bread, Egg & Sardine",
           "price": 2500,
-          "image": "/images/waffles_variety_grid.png"
+          "image": "/assets/shaytees/food-sandwiches/toast_bread_egg_sardine.png"
         }
       ]
     },
@@ -277,13 +277,13 @@
           "name": "Box of 6",
           "price": 2000,
           "includes": "1 free topping",
-          "image": "/images/mini_pancakes_chocolate.png"
+          "image": "/assets/shaytees/mini-pancakes/mini_pancakes_box_6.png"
         },
         {
           "name": "Box of 12",
           "price": 4500,
           "includes": "2 free toppings",
-          "image": "/images/mini_pancakes_chocolate.png"
+          "image": "/assets/shaytees/mini-pancakes/mini_pancakes_box_12.png"
         }
       ]
     },
@@ -296,13 +296,13 @@
         {
           "name": "Bubble Waffles",
           "price": 3000,
-          "image": "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
+          "image": "/assets/shaytees/waffles/bubble_waffles.png"
         },
         {
           "name": "Plain Waffles",
           "price": 3000,
           "extras": "Syrup/Honey",
-          "image": "/assets/shaytees/individual_assets/cup-sizes/bubble-waffle.png"
+          "image": "/assets/shaytees/waffles/plain_waffles.png"
         }
       ]
     },
@@ -310,13 +310,13 @@
       "id": "shots",
       "name": "Shots",
       "icon": "🥃",
-      "description": "Premium shot selections",
+      "description": "Premium shots and drink extras",
       "items": [
         {
           "name": "Tequila Shot",
           "price": 2000,
           "unit": "each",
-          "image": "/images/latte_heart_art.png"
+          "image": "/assets/shaytees/shots/tequila_shot.png"
         }
       ]
     }
@@ -325,32 +325,32 @@
     {
       "name": "After Class Treats",
       "icon": "🎒",
-      "image": "ice_cream_sundae_loaded.png"
+      "image": "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.png"
     },
     {
       "name": "Birthdays & Boxes",
       "icon": "🎂",
-      "image": "cupcakes_box_variety.png"
+      "image": "/assets/shaytees/mini-pancakes/mini_pancakes_box_12.png"
     },
     {
       "name": "Date Night Treats",
       "icon": "💖",
-      "image": "bubble_waffles_chocolate.png"
+      "image": "/assets/shaytees/waffles/bubble_waffles.png"
     },
     {
       "name": "Study Break Fuel",
       "icon": "📚",
-      "image": "cappuccino_latte_art.png"
+      "image": "/assets/shaytees/coffee-drinks/cappuccino.png"
     },
     {
       "name": "Movie Nights",
       "icon": "🍿",
-      "image": "caramel_popcorn_bowl.png"
+      "image": "/assets/shaytees/individual_assets/snacks/popcorn.png"
     },
     {
       "name": "Quick Cravings",
       "icon": "✨",
-      "image": "shawarma_wrap_red.png"
+      "image": "/assets/shaytees/individual_assets/snacks/beef-shawarma.png"
     }
   ]
 }

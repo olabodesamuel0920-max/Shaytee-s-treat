@@ -109,7 +109,7 @@ export default function Home() {
                 {/* Image top half */}
                 <div className="h-48 w-full overflow-hidden relative border-b border-pink-50">
                   <img
-                    src={`/images/${occ.image}`}
+                    src={occ.image.startsWith("/") ? occ.image : `/images/${occ.image}`}
                     alt={occ.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
 
           {/* Cards slider */}
-          <div className="flex overflow-x-auto gap-6 snap-x pb-8 scrollbar-none md:grid md:grid-cols-5 md:overflow-x-visible">
+          <div className="flex overflow-x-auto gap-6 snap-x pb-8 scrollbar-none md:grid md:grid-cols-7 md:overflow-x-visible">
             {[
               {
                 title: "Cup Sizes & Serving Styles",
@@ -180,6 +180,16 @@ export default function Home() {
                 title: "Hot Snacks & Extras",
                 desc: "Noodles, crispy shawarmas, corn dogs, and premium popcorn.",
                 image: "/assets/shaytees/boards/hot-snacks-and-extras.png",
+              },
+              {
+                title: "Coffee & Drinks",
+                desc: "Freshly brewed cappuccino, lattes, espresso, and premium iced mochas.",
+                image: "/assets/shaytees/boards/coffee_and_drinks_board.png",
+              },
+              {
+                title: "Food, Waffles & Extras",
+                desc: "Toast bread, sandwiches, fresh chicken salad, and sweet waffle extras.",
+                image: "/assets/shaytees/boards/food_waffles_extras_board.png",
               },
             ].map((board, idx) => (
               <div
