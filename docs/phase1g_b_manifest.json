@@ -1,0 +1,24 @@
+{
+  "version": "phase-1g-b",
+  "description": "Regenerated gelato, popsicle, special, and waffle asset subset for Shaytee's Treat.",
+  "assets": {
+    "gelato": {
+      "Vanilla Dream": "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
+      "Strawberry Delight": "/assets/shaytees/regen-v2/gelato/strawberry_delight.png",
+      "Banana Caramel": "/assets/shaytees/regen-v2/gelato/banana_caramel.png",
+      "Chocolate Bliss": "/assets/shaytees/regen-v2/gelato/chocolate_bliss.png"
+    },
+    "popsicles": {
+      "Fruit Popsicle": "/assets/shaytees/regen-v2/popsicles/fruit_popsicle.png",
+      "Chocolate": "/assets/shaytees/regen-v2/popsicles/chocolate_popsicle.png",
+      "Strawberry": "/assets/shaytees/regen-v2/popsicles/strawberry_popsicle.png"
+    },
+    "specials": {
+      "Dubai Strawberry Cup": "/assets/shaytees/regen-v2/specials/dubai_strawberry_cup.png"
+    },
+    "waffles": {
+      "Bubble Waffles": "/assets/shaytees/regen-v2/waffles/bubble_waffles.png",
+      "Plain Waffles": "/assets/shaytees/regen-v2/waffles/plain_waffles.png"
+    }
+  }
+}

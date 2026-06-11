@@ -1,0 +1,33 @@
+{
+  "phase": "1G-C",
+  "description": "Remaining regenerated asset pack for Shaytee's Treat: toppings, snacks, mini pancakes, and Tequila Shot.",
+  "baseInstallPath": "public/assets/shaytees/regen-v3/",
+  "coveredItems": 17,
+  "assets": {
+    "toppings": {
+      "Oreo Crumbles": "/assets/shaytees/regen-v3/toppings/oreo_crumbles.png",
+      "Sprinkles": "/assets/shaytees/regen-v3/toppings/sprinkles.png",
+      "Chocolate Chips": "/assets/shaytees/regen-v3/toppings/chocolate_chips.png",
+      "Gummy Bears": "/assets/shaytees/regen-v3/toppings/gummy_bears.png",
+      "Peanut": "/assets/shaytees/regen-v3/toppings/peanut.png",
+      "M&Ms": "/assets/shaytees/regen-v3/toppings/m_and_ms.png",
+      "Wafers": "/assets/shaytees/regen-v3/toppings/wafers.png"
+    },
+    "snacks": {
+      "Noodles & Egg": "/assets/shaytees/regen-v3/snacks/noodles_egg.png",
+      "Noodles & Chicken": "/assets/shaytees/regen-v3/snacks/noodles_chicken.png",
+      "Corn Dog": "/assets/shaytees/regen-v3/snacks/corn_dog.png",
+      "Chicken Shawarma": "/assets/shaytees/regen-v3/snacks/chicken_shawarma.png",
+      "Caramel Popcorn": "/assets/shaytees/regen-v3/snacks/caramel_popcorn.png",
+      "Milky Popcorn": "/assets/shaytees/regen-v3/snacks/milky_popcorn.png",
+      "Beef Shawarma": "/assets/shaytees/regen-v3/snacks/beef_shawarma.png"
+    },
+    "miniPancakes": {
+      "Box of 6": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.png",
+      "Box of 12": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.png"
+    },
+    "shots": {
+      "Tequila Shot": "/assets/shaytees/regen-v3/shots/tequila_shot.png"
+    }
+  }
+}
