@@ -7,3 +7,5 @@ docs/ANTIGRAVITY_PHASE_1G_C_PROMPT.md
 The exact path mapping is in:
 
 docs/phase1g_c_manifest.json
+
+Update in v2: includes builder UI instruction to remove the ₦1,500 labels from Step 1 flavor cards only.

@@ -362,9 +362,6 @@ ${itemsText}
                     </div>
                     <div className="flex flex-col items-center">
                       <span className="font-bold text-xs leading-tight">{item.name}</span>
-                      <span className={`text-[10px] mt-0.5 font-semibold ${flavor?.name === item.name ? "text-white/80" : "text-pink-primary"}`}>
-                        ₦{item.price.toLocaleString()}
-                      </span>
                     </div>
                   </button>
                 ))}

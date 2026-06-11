@@ -144,3 +144,13 @@ Final report required:
 - Latest commit hash
 - Vercel production verification result
 - Any remaining owner-photo recommendations
+
+13. Builder UI polish requested from screenshot:
+   In `/build-your-treat`, under Step 1 “Choose Ice Cream Flavor”, remove the visible price text under each flavor card.
+   - Do NOT change actual prices or calculations.
+   - Do NOT remove prices from the order summary.
+   - Do NOT remove prices from cup size cards, extras, toppings, or menu page unless separately requested.
+   - Only hide/remove the small “₦1,500” price label shown directly under Vanilla Dream, Strawberry Delight, Banana Caramel, and Chocolate Bliss in the flavor selection cards.
+   - The flavor cards should show only image + flavor name.
+   Reason: The price belongs to the selected cup size/serving style, not the flavor step. Showing ₦1,500 under every flavor is confusing because larger cup sizes cost ₦3,000 / ₦5,000.
+
