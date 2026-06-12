@@ -132,16 +132,6 @@ export default function Navbar() {
             ))}
           </ul>
           
-          <div className="h-px bg-pink-100 my-2" />
-          
-          <Link
-            href="/admin-preview"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 text-text-light hover:text-pink-primary text-sm font-medium pl-2"
-          >
-            <UserCheck size={16} />
-            Owner Admin Preview
-          </Link>
         </div>
       )}
     </nav>

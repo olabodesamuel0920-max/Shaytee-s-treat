@@ -73,7 +73,7 @@ export default function FloatDessert() {
           </div>
 
           <div className="text-[10px] text-pink-dark/60 font-semibold tracking-wider">
-            PREVIEW EXPERIENCES
+            SHAYTEE'S MOMENTS
           </div>
         </div>
 

@@ -151,7 +151,7 @@ Could you please confirm the details? Thank you!`;
                   )}
                 </div>
                 <p className="font-poppins text-text-light text-xs mt-1">
-                  Opening hours can be confirmed by Shaytee’s Treat.
+                  Opening hours: To be confirmed by Shaytee’s Treat.
                 </p>
               </div>
             </div>
@@ -197,7 +197,7 @@ Could you please confirm the details? Thank you!`;
                 <span>📍</span> FUTA Campus Delivery Hubs
               </h3>
               <p className="font-poppins text-text-light text-xs mb-6">
-                Click your closest campus landmark to calculate dispatch timelines and dropoff instructions. (All routes and durations are mock preview suggestions).
+                Click your closest campus landmark to calculate dispatch timelines and dropoff instructions. (All routes and durations are estimated transit guidelines).
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -226,10 +226,10 @@ Could you please confirm the details? Thank you!`;
                   <div className="flex justify-between items-start gap-4">
                     <div>
                       <h4 className="font-fredoka text-sm font-bold text-pink-dark uppercase tracking-wider">
-                        Preview Estimate for {selectedLandmark.name}
+                        Estimated Timeline for {selectedLandmark.name}
                       </h4>
                       <p className="font-fredoka text-lg font-bold text-chocolate mt-1">
-                        🛵 {selectedLandmark.time} <span className="text-xs font-normal text-text-light/60">(Preview Estimate)</span>
+                        🛵 {selectedLandmark.time} <span className="text-xs font-normal text-text-light/60">(Estimated Timeline)</span>
                       </p>
                     </div>
                     <span className="px-2 py-0.5 bg-emerald-500/10 text-emerald-600 text-[10px] font-bold rounded flex items-center gap-1">
@@ -307,7 +307,7 @@ Could you please confirm the details? Thank you!`;
             {/* Map Placeholder Graphic */}
             <div className="glossy-card p-6">
               <h3 className="font-fredoka text-sm font-bold text-pink-dark uppercase tracking-widest mb-4">
-                Shop Map Mockup
+                Shop Map & Location
               </h3>
               
               <div className="w-full h-48 bg-pink-50 border border-pink-100 rounded-2xl relative flex items-center justify-center overflow-hidden">
@@ -342,7 +342,7 @@ Could you please confirm the details? Thank you!`;
           <HelpCircle className="text-pink-primary mx-auto mb-3" size={24} />
           <h4 className="font-fredoka text-base font-bold text-chocolate">Operation Details Disclaimer</h4>
           <p className="font-poppins text-text-light text-xs md:text-sm mt-1 max-w-2xl mx-auto leading-relaxed">
-            Delivery timelines and boundaries are estimates for preview sandbox purposes. All operational details, exact delivery fees, and order processing times can be confirmed directly by Shaytee's Treat before launching.
+            Delivery timelines and boundaries are estimated transit guidelines. All operational details, exact delivery fees, and order processing times to be confirmed by Shaytee's Treat.
           </p>
         </div>
 

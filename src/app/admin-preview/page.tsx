@@ -21,6 +21,7 @@ import {
   AlertCircle
 } from "lucide-react";
 import Particles from "@/components/Particles";
+import { menuData } from "@/lib/menu-data";
 
 interface AdminItem {
   id: number;
@@ -553,6 +554,66 @@ export default function AdminPreview() {
                   >
                     Manage Orders
                   </button>
+                </div>
+
+                {/* Owner Launch Confirmation Checklist */}
+                <div className="p-6 bg-zinc-900/80 border border-zinc-800 rounded-3xl shadow-lg">
+                  <h4 className="font-fredoka text-sm font-bold text-pink-light uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <span>📋</span> Owner Launch Confirmation Checklist
+                  </h4>
+                  <p className="font-poppins text-zinc-400 text-xs mb-6">
+                    Use this checklist to verify store settings and business choices before launching the platform publicly.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Interactive Customizer Station</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Zero hydration fallback issue, object-contain crop safety, and 17 regenerated assets live.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp Contact Link</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Currently set to {menuData.contact}. Verify if this is the active number for orders.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Opening Hours & Live Slider</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Operating hours are defined as 10:00 AM – 10:00 PM. Confirm if timezone checks are correct.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery Areas & Dispatch Fees</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Timeline estimations for FUTA landmarks (Southgate, Obanla, hostel gates) need confirmation.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Final Menu Items & Availability</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Review in-stock items. Dim or disable unavailable treats dynamically in menu tab.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Shot Catalog Permissions (Tequila Shot)</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm whether Tequila Shot (₦2,000) should remain public or be hidden for students.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Connected Product Image Library Checklist Section */}

@@ -328,7 +328,7 @@ ${itemsText}
         {/* Title */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-pink-primary font-bold text-xs uppercase tracking-widest px-3 py-1 bg-pink-100 rounded-full">
-            Customizer Sandbox
+            Customizer Station
           </span>
           <h1 className="font-fredoka text-4xl md:text-5xl font-bold text-chocolate mt-3 mb-4">
             Build Your Treat 🎨
@@ -690,7 +690,7 @@ ${itemsText}
 
             {/* Note */}
             <p className="text-[10px] text-center text-text-light/60 italic leading-relaxed">
-              *Building a treat is a mock ordering flow. Pressing send formats details into a WhatsApp message draft. Confirm final checkout pricing & location directly with Shaytee's Treat on chat.
+              *Building a treat formats your custom selections into a WhatsApp message draft. Final checkout pricing and location to be confirmed with Shaytee's Treat on chat.
             </p>
 
           </div>

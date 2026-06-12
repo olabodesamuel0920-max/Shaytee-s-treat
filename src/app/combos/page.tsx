@@ -283,7 +283,7 @@ export default function CombosPage() {
         <div className="mt-16 text-center max-w-xl mx-auto">
           <div className="inline-flex items-center gap-2 p-3 bg-amber-50 rounded-2xl border border-amber-200 text-amber-800 text-xs font-semibold">
             <Gift size={16} />
-            <span>Final combo pricing can be confirmed by Shaytee's Treat.</span>
+            <span>Combo pricing and availability: To be confirmed by Shaytee's Treat.</span>
           </div>
         </div>
 

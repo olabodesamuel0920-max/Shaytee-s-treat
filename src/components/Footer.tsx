@@ -64,7 +64,7 @@ export default function Footer() {
 
         {/* Shop Info & Preview Note */}
         <div>
-          <h4 className="font-fredoka text-lg text-pink-light mb-4 font-bold">Preview Info</h4>
+          <h4 className="font-fredoka text-lg text-pink-light mb-4 font-bold">Shop Info</h4>
           <ul className="flex flex-col gap-3 text-sm text-white/70">
             <li className="flex items-start gap-2">
               <MapPin size={18} className="text-pink-light shrink-0 mt-0.5" />
@@ -72,7 +72,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Clock size={18} className="text-pink-light shrink-0 mt-0.5" />
-              <span>Details can be confirmed by Shaytee's Treat</span>
+              <span>Details: To be confirmed by Shaytee's Treat</span>
             </li>
             <li className="flex items-start gap-2">
               <Shield size={18} className="text-pink-light shrink-0 mt-0.5" />
@@ -88,7 +88,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-xs text-white/40">
         <p>© {new Date().getFullYear()} Shaytee's Treat. All Rights Reserved. Built for Shaytee's Treat customers.</p>
         <p className="italic bg-white/5 px-3 py-1.5 rounded-md border border-white/5 text-pink-light">
-          Preview platform prepared for Shaytee’s Treat. Final business details to be confirmed by owner before public launch.
+          Shaytee’s Treat digital menu and custom order experience. Final shop details are handled by Shaytee’s Treat.
         </p>
       </div>
     </footer>

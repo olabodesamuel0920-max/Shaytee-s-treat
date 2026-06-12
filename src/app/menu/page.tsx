@@ -74,7 +74,7 @@ Location: `;
         {/* Title */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-pink-primary font-bold text-xs uppercase tracking-widest px-3 py-1 bg-pink-100 rounded-full">
-            Menu Preview
+            Store Menu
           </span>
           <h1 className="font-fredoka text-4xl md:text-5xl font-bold text-chocolate mt-3 mb-4">
             Our Sweet Menu 📑
@@ -185,7 +185,7 @@ Location: `;
 
                     {item.category === "hot-snacks-extras" && (
                       <p className="text-[10px] text-pink-primary bg-pink-50/50 border border-pink-100/40 rounded-lg p-2 mt-2 mb-3 font-semibold font-poppins">
-                        ℹ️ Availability can be confirmed by Shaytee’s Treat.
+                        ℹ️ Availability: To be confirmed by Shaytee’s Treat.
                       </p>
                     )}
                   </div>
@@ -232,9 +232,8 @@ Location: `;
           </div>
         )}
 
-        {/* Pricing notice disclaimer */}
         <p className="text-xs text-text-light/60 mt-12 text-center max-w-2xl mx-auto italic leading-relaxed">
-          *Menu pricing and availability are mock preview values. Locations, operating hours, delivery coverage, and final prices can be confirmed directly by Shaytee's Treat before launching.
+          *Menu pricing and availability details: To be confirmed by Shaytee's Treat on order placement.
         </p>
       </div>
     </div>

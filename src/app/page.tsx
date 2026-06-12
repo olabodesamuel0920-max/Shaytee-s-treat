@@ -40,7 +40,7 @@ export default function Home() {
           {/* Hero Left Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-pink-primary/10 border border-pink-primary/30 rounded-full text-pink-primary font-bold text-xs md:text-sm tracking-wide mb-6 animate-pulse-slow">
-              ✨ AKURE DESSERT PREVIEW EXPERIENCE
+              ✨ AKURE DESSERT EXPERIENCE
             </span>
             <h1 className="font-fredoka text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-chocolate tracking-tight drop-shadow-sm">
               Shaytee's Treat <br />
@@ -76,7 +76,7 @@ export default function Home() {
             </div>
             {/* Quick Note */}
             <p className="text-xs text-text-light/60 mt-4 italic">
-              *Locations and opening hours can be confirmed by Shaytee's Treat.
+              *Locations and opening hours: To be confirmed by Shaytee's Treat.
             </p>
           </div>
 
@@ -259,25 +259,6 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* PREVIEW OWNER NOTICE */}
-      <section className="py-16 px-4 md:px-8 text-center max-w-4xl mx-auto relative z-10">
-        <div className="glossy-card p-8 bg-gradient-to-r from-pink-light/10 to-amber-500/10 border-pink-200">
-          <Compass className="text-pink-primary mx-auto mb-4 animate-spin-slow" size={36} />
-          <h3 className="font-fredoka text-xl md:text-2xl font-bold text-chocolate mb-2">
-            Owner Sandbox Preview Area
-          </h3>
-          <p className="font-poppins text-text-light text-sm max-w-xl mx-auto mb-6">
-            Are you the business owner? You can check out how inventory updates, menu controls, and incoming order flows will look in the mock administration area.
-          </p>
-          <Link
-            href="/admin-preview"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-chocolate hover:bg-pink-dark text-white font-fredoka font-bold rounded-full transition-colors shadow-md"
-          >
-            💻 Enter Admin Mockup
-          </Link>
         </div>
       </section>
     </div>
