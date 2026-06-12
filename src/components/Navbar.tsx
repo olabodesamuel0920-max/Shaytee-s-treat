@@ -22,6 +22,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const showSolidNavbar = isScrolled || pathname !== "/";
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Menu", href: "/menu" },
@@ -38,7 +40,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 py-3 md:px-8 ${
-        isScrolled
+        showSolidNavbar
           ? "bg-white/80 backdrop-blur-md shadow-lg border-b border-pink-100"
           : "bg-transparent"
       }`}
@@ -48,7 +50,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={`font-fredoka text-2xl md:text-3xl font-bold flex items-center gap-2 transition-colors duration-300 ${
-            isScrolled ? "text-pink-primary" : "text-white drop-shadow-md"
+            showSolidNavbar ? "text-pink-primary" : "text-chocolate"
           }`}
         >
           <span className="animate-bounce-slow">🍦</span>
@@ -67,9 +69,9 @@ export default function Navbar() {
                   className={`font-poppins text-sm font-semibold transition-all duration-200 hover:text-pink-primary relative py-2 ${
                     isActive(link.href)
                       ? "text-pink-primary"
-                      : isScrolled
+                      : showSolidNavbar
                       ? "text-text-dark"
-                      : "text-white hover:text-pink-light drop-shadow-sm"
+                      : "text-chocolate/80 hover:text-pink-primary"
                   }`}
                 >
                   {link.name}
@@ -101,7 +103,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`p-2 rounded-full focus:outline-none transition-colors ${
-              isScrolled ? "text-text-dark hover:bg-pink-50" : "text-white hover:bg-white/10"
+              showSolidNavbar ? "text-text-dark hover:bg-pink-50" : "text-chocolate hover:bg-pink-50/20"
             }`}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}

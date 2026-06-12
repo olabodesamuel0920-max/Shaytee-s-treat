@@ -587,7 +587,7 @@ export default function AdminPreview() {
                         </div>
                       </div>
                       <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
-                        5 / 5 OK
+                        3 / 3 OK
                       </span>
                     </div>
 
@@ -600,7 +600,7 @@ export default function AdminPreview() {
                         </div>
                       </div>
                       <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
-                        6 / 6 OK
+                        4 / 4 OK
                       </span>
                     </div>
 
@@ -613,7 +613,7 @@ export default function AdminPreview() {
                         </div>
                       </div>
                       <span className="px-2 py-1 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold font-mono text-[10px] rounded">
-                        6 / 6 OK
+                        5 / 5 OK
                       </span>
                     </div>
 

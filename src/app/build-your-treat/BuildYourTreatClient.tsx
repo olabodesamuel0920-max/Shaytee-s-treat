@@ -246,8 +246,11 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
 
   // Calculate Total
   useEffect(() => {
-    let sum = 0;
-    if (flavor) sum += flavor.price;
+    if (!flavor) {
+      setEstimatedTotal(0);
+      return;
+    }
+    let sum = flavor.price;
     if (size) sum += size.price;
     toppings.forEach((t) => (sum += t.price));
     if (drizzle) sum += drizzle.price;
@@ -357,7 +360,7 @@ ${itemsText}
                         : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                     }`}
                   >
-                    <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1">
+                    <div className="w-18 h-18 rounded-2xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1 shrink-0">
                       <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                     </div>
                     <div className="flex flex-col items-center">
@@ -370,10 +373,13 @@ ${itemsText}
 
             {/* Step 2: Size */}
             <div className="glossy-card p-6">
-              <h3 className="font-fredoka text-lg font-bold text-chocolate mb-4 flex items-center gap-2">
+              <h3 className="font-fredoka text-lg font-bold text-chocolate mb-1 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">2</span>
                 Select Cup Size
               </h3>
+              <p className="text-xs text-text-light font-poppins mb-4">
+                Choose your serving style. Final price starts from your selected size.
+              </p>
               <div className="grid grid-cols-3 gap-3">
                 {sizes.map((item) => {
                   const isSelected = (size?.name === item.name) || (!size && item.name === "Small Cone");
@@ -381,13 +387,13 @@ ${itemsText}
                     <button
                       key={item.name}
                       onClick={() => setSize(item)}
-                      className={`p-3 rounded-2xl border font-poppins transition-all duration-200 text-center flex flex-col items-center gap-2 cursor-pointer ${
+                      className={`p-3 rounded-2xl border font-poppins transition-all duration-200 text-center flex flex-col items-center gap-2.5 cursor-pointer ${
                         isSelected
                           ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner">
+                      <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner shrink-0">
                         <img src={item.image} alt={item.name} className="w-full h-full object-contain p-1" />
                       </div>
                       <div className="flex flex-col items-center">
@@ -421,7 +427,7 @@ ${itemsText}
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-0.5">
+                      <div className="w-14 h-14 rounded-2xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1 shrink-0">
                         <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex flex-col items-center">
@@ -455,7 +461,7 @@ ${itemsText}
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-0.5">
+                      <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1 shrink-0">
                         <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                       </div>
                       <div className="flex flex-col items-center">
@@ -476,21 +482,21 @@ ${itemsText}
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">5</span>
                 Add Snacks, Food & Coffees (Optional)
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[400px] overflow-y-auto pr-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
                 {extrasList.map((item) => {
                   const isSelected = extras.some((e) => e.name === item.name);
                   return (
                     <button
                       key={item.name}
                       onClick={() => handleExtraToggle(item)}
-                      className={`p-2.5 rounded-2xl border font-poppins transition-all duration-200 text-left flex items-center justify-between gap-3 cursor-pointer ${
+                      className={`p-3.5 rounded-2xl border font-poppins transition-all duration-200 text-left flex items-center justify-between gap-3 cursor-pointer ${
                         isSelected
                           ? "bg-pink-primary text-white border-transparent shadow-md scale-102"
                           : "bg-white/60 text-text-dark border-pink-100 hover:bg-pink-50/50"
                       }`}
                     >
-                      <div className="flex items-center gap-2.5 min-w-0">
-                        <div className="w-10 h-10 rounded-lg overflow-hidden bg-white/40 border border-white/20 shrink-0 shadow-inner bg-white p-0.5">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/40 border border-white/20 shrink-0 shadow-inner bg-white p-1">
                           <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
                         </div>
                         <span className="truncate text-xs font-bold leading-tight">{item.name}</span>
@@ -515,46 +521,46 @@ ${itemsText}
                 Your Visual Customization
               </h4>
               
-              <div className="w-full py-4 flex flex-col gap-4 items-center">
+              <div className="w-full py-4 flex flex-col gap-6 items-center">
                 {/* Visual Cards Row */}
-                <div className="flex justify-center gap-4 flex-wrap w-full">
+                <div className="flex justify-center gap-4 sm:gap-5 flex-wrap w-full">
                   {/* Size Card */}
-                  <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
-                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Cup Size</span>
-                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
+                  <div className="flex flex-col items-center bg-gradient-to-br from-white/80 to-pink-50/40 border border-pink-100/60 p-3 rounded-2xl w-28 text-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-2">Cup Size</span>
+                    <div className="w-18 h-18 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-100/40 p-1.5 shadow-inner">
                       <img src={size ? size.image : "/assets/shaytees/individual_assets/cup-sizes/cone.png"} alt="Size" className="w-full h-full object-contain" />
                     </div>
-                    <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{size ? size.name.split(" (+")[0] : "Small Cone"}</span>
+                    <span className="font-bold text-[10px] text-chocolate truncate mt-2.5 w-full">{size ? size.name.split(" (+")[0] : "Small Cone"}</span>
                   </div>
 
                   {/* Flavor Card */}
-                  <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
-                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Flavor</span>
-                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
+                  <div className="flex flex-col items-center bg-gradient-to-br from-white/80 to-pink-50/40 border border-pink-100/60 p-3 rounded-2xl w-28 text-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-2">Flavor</span>
+                    <div className="w-18 h-18 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-100/40 p-1.5 shadow-inner">
                       <img src={flavor ? flavor.image : "/assets/shaytees/regen-v2/gelato/vanilla_dream.png"} alt="Flavor" className="w-full h-full object-contain" />
                     </div>
-                    <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{flavor ? flavor.name.split(" ")[0] : "None"}</span>
+                    <span className="font-bold text-[10px] text-chocolate truncate mt-2.5 w-full">{flavor ? flavor.name.split(" ")[0] : "None"}</span>
                   </div>
 
                   {/* Drizzle Card */}
-                  <div className="flex flex-col items-center bg-white/40 border border-pink-100 p-2.5 rounded-2xl w-24 text-center shadow-sm">
-                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-1.5">Drizzle</span>
-                    <div className="w-14 h-14 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-50 p-1">
+                  <div className="flex flex-col items-center bg-gradient-to-br from-white/80 to-pink-50/40 border border-pink-100/60 p-3 rounded-2xl w-28 text-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-2">Drizzle</span>
+                    <div className="w-18 h-18 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-100/40 p-1.5 shadow-inner">
                       <img src={drizzle ? drizzle.image : "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png"} alt="Drizzle" className="w-full h-full object-contain" />
                     </div>
-                    <span className="font-bold text-[10px] text-chocolate truncate mt-2 w-full">{drizzle ? drizzle.name.split(" ")[0] : "None"}</span>
+                    <span className="font-bold text-[10px] text-chocolate truncate mt-2.5 w-full">{drizzle ? drizzle.name.split(" ")[0] : "None"}</span>
                   </div>
                 </div>
 
                 {/* Toppings Thumbnails List */}
                 {toppings.length > 0 && (
-                  <div className="w-full pt-2">
-                    <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider block text-center mb-2">Selected Toppings</span>
-                    <div className="flex justify-center gap-2 flex-wrap">
+                  <div className="w-full pt-4 border-t border-pink-100/40">
+                    <span className="text-[10px] font-bold font-poppins text-pink-dark uppercase tracking-wider block text-center mb-3">Selected Toppings</span>
+                    <div className="flex justify-center gap-2.5 flex-wrap">
                       {toppings.map((t, idx) => (
-                        <div key={idx} className="flex items-center gap-1.5 bg-white/50 border border-pink-50 px-2 py-1 rounded-xl shadow-sm">
-                          <img src={t.image} alt={t.name} className="w-5 h-5 rounded object-contain animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} />
-                          <span className="text-[9px] font-bold text-chocolate">{t.name.split(" ")[0]}</span>
+                        <div key={idx} className="flex items-center gap-2 bg-gradient-to-r from-white/95 to-pink-50/30 border border-pink-100/50 px-2.5 py-1.5 rounded-xl shadow-sm hover:scale-102 transition-transform duration-200">
+                          <img src={t.image} alt={t.name} className="w-7 h-7 rounded object-contain animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} />
+                          <span className="text-[10px] font-bold text-chocolate">{t.name.split(" ")[0]}</span>
                         </div>
                       ))}
                     </div>
