@@ -39,9 +39,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
           {/* Hero Left Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-pink-primary/10 border border-pink-primary/30 rounded-full text-pink-primary font-bold text-xs md:text-sm tracking-wide mb-6 animate-pulse-slow">
-              ✨ AKURE DESSERT EXPERIENCE
-            </span>
+            <div className="flex flex-wrap items-center gap-3 justify-center lg:justify-start mb-6">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-pink-primary/10 border border-pink-primary/30 rounded-full text-pink-primary font-bold text-xs md:text-sm tracking-wide animate-pulse-slow">
+                ✨ AKURE DESSERT EXPERIENCE
+              </span>
+              <span className="inline-flex items-center px-3 py-1.5 bg-pink-primary/20 border border-pink-primary/40 rounded-full text-pink-dark font-bold text-xs tracking-wide animate-bounce-slow">
+                Phase 1I Live
+              </span>
+            </div>
             <h1 className="font-fredoka text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-chocolate tracking-tight drop-shadow-sm">
               Shaytee's Treat <br />
               <span className="bg-gradient-to-r from-pink-primary to-pink-light bg-clip-text text-transparent">
