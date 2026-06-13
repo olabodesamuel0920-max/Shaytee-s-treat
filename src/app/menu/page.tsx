@@ -183,11 +183,6 @@ Location: `;
                       </div>
                     )}
 
-                    {item.category === "hot-snacks-extras" && (
-                      <p className="text-[10px] text-pink-primary bg-pink-50/50 border border-pink-100/40 rounded-lg p-2 mt-2 mb-3 font-semibold font-poppins">
-                        ℹ️ Availability: To be confirmed by Shaytee’s Treat.
-                      </p>
-                    )}
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-pink-50/50 flex justify-between items-center gap-3">

@@ -569,48 +569,56 @@ export default function AdminPreview() {
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Interactive Customizer Station</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Zero hydration fallback issue, object-contain crop safety, and 17 regenerated assets live.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Menu prices for cup sizes, popcorn, shawarma, corn dog, and noodles</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed by owner via WhatsApp. All pricing updates applied to the database.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp Contact Link</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Currently set to {menuData.contact}. Verify if this is the active number for orders.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp number / QR confirmation</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Currently set to {menuData.contact}. Verify QR code matches the official line.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Opening Hours & Live Slider</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Operating hours are defined as 10:00 AM – 10:00 PM. Confirm if timezone checks are correct.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Operating hours</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Operating hours defined as 10:00 AM – 10:00 PM. Needs owner sign-off.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery Areas & Dispatch Fees</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Timeline estimations for FUTA landmarks (Southgate, Obanla, hostel gates) need confirmation.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery fees</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm delivery rates to landmarks around Akure and FUTA area.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Final Menu Items & Availability</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Review in-stock items. Dim or disable unavailable treats dynamically in menu tab.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery areas</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm delivery boundaries (e.g. Southgate, Obanla, Ijapo) and transit times.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Shot Catalog Permissions (Tequila Shot)</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm whether Tequila Shot (₦2,000) should remain public or be hidden for students.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Tequila Shot public visibility</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm whether Tequila Shot (₦2,000) should remain public or be hidden/restricted.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Social media links</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Verify links to Instagram, Facebook, and other social media profiles in footer.</p>
                       </div>
                     </div>
                   </div>
