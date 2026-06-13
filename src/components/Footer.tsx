@@ -86,7 +86,10 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-xs text-white/40">
-        <p>© {new Date().getFullYear()} Shaytee's Treat. All Rights Reserved. Built for Shaytee's Treat customers.</p>
+        <div>
+          <p>© {new Date().getFullYear()} Shaytee's Treat. All Rights Reserved. Built for Shaytee's Treat customers.</p>
+          <span className="opacity-60 text-[10px] block mt-1 text-white/30">Site version: Phase 1I / 3dae8bc</span>
+        </div>
         <p className="italic bg-white/5 px-3 py-1.5 rounded-md border border-white/5 text-pink-light">
           Shaytee’s Treat digital menu and custom order experience. Final shop details are handled by Shaytee’s Treat.
         </p>
