@@ -310,7 +310,7 @@ Could you please confirm the details? Thank you!`;
                 Shop Map & Location
               </h3>
               
-              <div className="w-full h-48 bg-pink-50 border border-pink-100 rounded-2xl relative flex items-center justify-center overflow-hidden">
+              <div className="w-full h-48 bg-pink-50 border border-pink-100 rounded-2xl relative flex items-center justify-center overflow-hidden mb-4">
                 <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <pattern id="visit-grid" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -332,6 +332,14 @@ Could you please confirm the details? Thank you!`;
                   </span>
                 </div>
               </div>
+
+              <div className="flex items-start gap-2 text-xs font-poppins text-text-light leading-relaxed">
+                <MapPin size={16} className="text-pink-primary shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-chocolate">Physical Address:</p>
+                  <p>FUTA Southgate, Atolagbe Shopping Complex, Akure</p>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -342,7 +350,7 @@ Could you please confirm the details? Thank you!`;
           <HelpCircle className="text-pink-primary mx-auto mb-3" size={24} />
           <h4 className="font-fredoka text-base font-bold text-chocolate">Operation Details Disclaimer</h4>
           <p className="font-poppins text-text-light text-xs md:text-sm mt-1 max-w-2xl mx-auto leading-relaxed">
-            Delivery timelines and boundaries are estimated transit guidelines. All operational details, exact delivery fees, and order processing times to be confirmed by Shaytee's Treat.
+            Delivery timelines and boundaries are estimated transit guidelines. Delivery fees are confirmed on WhatsApp before checkout. All operational details and order processing times are confirmed on WhatsApp.
           </p>
         </div>
 

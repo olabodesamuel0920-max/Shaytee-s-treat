@@ -23,9 +23,26 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://shaytee-s-treat.vercel.app"),
   title: "Shaytee's Treat — Digital Dessert World",
   description: "Explore Akure's finest sweet treats! Custom build your perfect ice cream cup, waffles, pancakes, and coffee, and order via WhatsApp.",
   keywords: ["shaytee", "treat", "ice cream", "waffles", "pancakes", "popcorn", "akure", "futa", "southgate"],
+  openGraph: {
+    title: "Shaytee's Treat — Digital Dessert World",
+    description: "Explore Akure's finest sweet treats! Custom build your perfect ice cream cup, waffles, pancakes, and coffee, and order via WhatsApp.",
+    url: "https://shaytee-s-treat.vercel.app",
+    siteName: "Shaytee's Treat",
+    images: [
+      {
+        url: "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
+        width: 800,
+        height: 600,
+        alt: "Shaytee's Treat Vanilla Dream Gelato",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

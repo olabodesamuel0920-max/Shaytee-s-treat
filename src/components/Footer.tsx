@@ -74,12 +74,6 @@ export default function Footer() {
               <Clock size={18} className="text-pink-light shrink-0 mt-0.5" />
               <span>Details: To be confirmed by Shaytee's Treat</span>
             </li>
-            <li className="flex items-start gap-2">
-              <Shield size={18} className="text-pink-light shrink-0 mt-0.5" />
-              <Link href="/admin-preview" className="hover:text-pink-light underline">
-                Owner Preview Area
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

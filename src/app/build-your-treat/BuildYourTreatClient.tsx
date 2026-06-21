@@ -690,7 +690,7 @@ ${itemsText}
 
             {/* Note */}
             <p className="text-[10px] text-center text-text-light/60 italic leading-relaxed">
-              *Building a treat formats your custom selections into a WhatsApp message draft. Final checkout pricing and location to be confirmed with Shaytee's Treat on chat.
+              *Building a treat formats your custom selections into a WhatsApp message draft. Final checkout pricing and location can be confirmed on WhatsApp.
             </p>
 
           </div>

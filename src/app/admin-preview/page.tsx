@@ -42,6 +42,18 @@ interface Order {
 }
 
 export default function AdminPreview() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passcode, setPasscode] = useState("");
+  const [authError, setAuthError] = useState("");
+
+  // Check localStorage on mount
+  useEffect(() => {
+    const savedAuth = localStorage.getItem("shaytee_admin_auth");
+    if (savedAuth === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   // Navigation Tabs
   const [activeTab, setActiveTab] = useState<"overview" | "menu" | "orders" | "qr">("overview");
   
@@ -243,6 +255,65 @@ export default function AdminPreview() {
     );
   };
 
+  // Handle Passcode Submission
+  const handleAuthSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passcode.trim().toUpperCase() === "SHAYTEE-ADMIN") {
+      setIsAuthenticated(true);
+      localStorage.setItem("shaytee_admin_auth", "true");
+      setAuthError("");
+    } else {
+      setAuthError("Incorrect passcode. Access denied.");
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="relative min-h-screen flex items-center justify-center py-12 px-4 md:px-8 bg-zinc-950 text-zinc-100 antialiased overflow-hidden">
+        <Particles />
+        <div className="max-w-md w-full bg-zinc-900/80 border border-zinc-800 p-8 rounded-3xl shadow-2xl relative z-10 backdrop-blur-md">
+          <div className="text-center mb-8">
+            <span className="w-14 h-14 rounded-full bg-pink-primary/10 text-pink-light border border-pink-500/20 flex items-center justify-center mx-auto text-2xl animate-pulse-slow">
+              🔒
+            </span>
+            <h2 className="font-fredoka text-2xl font-bold text-pink-light mt-4">Admin Dashboard Gate</h2>
+            <p className="font-poppins text-zinc-400 text-xs mt-2">
+              Please enter the passcode to access the Shaytee's Treat Owner Console.
+            </p>
+          </div>
+
+          <form onSubmit={handleAuthSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="passcode-input" className="sr-only">Passcode</label>
+              <input
+                id="passcode-input"
+                type="password"
+                placeholder="Enter passcode..."
+                value={passcode}
+                onChange={(e) => setPasscode(e.target.value)}
+                className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-primary text-sm font-poppins text-zinc-100 placeholder-zinc-600 text-center uppercase tracking-widest"
+                required
+              />
+            </div>
+
+            {authError && (
+              <p className="text-red-400 text-[11px] font-semibold text-center font-poppins bg-red-500/10 border border-red-500/20 py-2 rounded-lg">
+                ⚠️ {authError}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              className="w-full py-3 bg-gradient-to-r from-pink-primary to-pink-light text-white font-fredoka font-bold rounded-xl shadow-md hover:scale-102 hover:shadow-pink-500/10 transition-all flex items-center justify-center gap-1.5 cursor-pointer text-sm"
+            >
+              Verify & Enter Console
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
   // Calculate Mock metrics dynamically
   const activeOrdersCount = orders.filter((o) => o.status === "pending" || o.status === "preparing").length;
   const completedOrdersCount = orders.filter((o) => o.status === "completed").length;
@@ -277,18 +348,29 @@ export default function AdminPreview() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {/* Audio Toggle Switch */}
             <button
               onClick={() => {
                 setSoundEnabled(!soundEnabled);
                 showToast(`Chime notifications ${!soundEnabled ? "Enabled" : "Muted"}`);
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700/80 text-xs font-semibold font-poppins transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700/80 text-xs font-semibold font-poppins transition-colors cursor-pointer"
             >
               {soundEnabled ? <Volume2 size={14} className="text-pink-primary" /> : <VolumeX size={14} className="text-zinc-500" />}
               <span>{soundEnabled ? "Chime On" : "Chime Muted"}</span>
             </button>
+
+            <button
+              onClick={() => {
+                setIsAuthenticated(false);
+                localStorage.removeItem("shaytee_admin_auth");
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs font-semibold font-poppins border border-red-500/20 transition-colors cursor-pointer"
+            >
+              🔒 Logout
+            </button>
+
             <span className="px-3.5 py-1.5 bg-pink-primary/20 border border-pink-500/40 text-pink-light rounded-lg text-xs font-fredoka font-bold">
               Demo Active
             </span>
@@ -619,6 +701,14 @@ export default function AdminPreview() {
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Social media links</p>
                         <p className="text-[10px] text-zinc-500 font-poppins">Verify links to Instagram, Facebook, and other social media profiles in footer.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Final launch approval</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Owner final sign-off to proceed with public launch and remove dashboard gate.</p>
                       </div>
                     </div>
                   </div>
