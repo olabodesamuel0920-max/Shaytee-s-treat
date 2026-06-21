@@ -37,11 +37,15 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] md:min-h-[85vh] bg-gradient-to-b from-pink-primary/20 via-pink-light/10 to-cream flex items-center justify-center px-4 md:px-8 py-12 z-10 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
-          {/* Hero Left Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-pink-primary/10 border border-pink-primary/30 rounded-full text-pink-primary font-bold text-xs md:text-sm tracking-wide mb-6 animate-pulse-slow">
-              ✨ AKURE DESSERT EXPERIENCE
-            </span>
+            <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-pink-primary/10 border border-pink-primary/30 rounded-full text-pink-primary font-bold text-xs md:text-sm tracking-wide animate-pulse-slow">
+                ✨ AKURE DESSERT EXPERIENCE
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-emerald-500 text-white rounded-full font-bold text-xs md:text-sm tracking-wide shadow-md animate-pulse">
+                Phase 1L Live 🟢
+              </span>
+            </div>
             <h1 className="font-fredoka text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-chocolate tracking-tight drop-shadow-sm">
               Shaytee's Treat <br />
               <span className="bg-gradient-to-r from-pink-primary to-pink-light bg-clip-text text-transparent">
