@@ -697,10 +697,10 @@ export default function AdminPreview() {
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
-                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Social media links</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Verify links to Instagram, Facebook, and other social media profiles in footer.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">TikTok handle @shaytee.s.treat is active and verified in footer & visit pages.</p>
                       </div>
                     </div>
 

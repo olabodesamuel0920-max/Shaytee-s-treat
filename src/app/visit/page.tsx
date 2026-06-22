@@ -301,6 +301,18 @@ Could you please confirm the details? Thank you!`;
                   <Phone size={18} />
                   Call Shop Hotline
                 </a>
+
+                <a
+                  href="https://www.tiktok.com/@shaytee.s.treat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 bg-black hover:bg-zinc-800 text-white font-fredoka font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 hover:scale-102"
+                >
+                  <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 448 512">
+                    <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39t61,5.61Z"/>
+                  </svg>
+                  TikTok: @shaytee.s.treat
+                </a>
               </div>
             </div>
 
