@@ -20,7 +20,7 @@
             "medium_small_cup": 3000,
             "large_big_cup": 5000
           },
-          "image": "/assets/shaytees/regen-v2/gelato/vanilla_dream.png"
+          "image": "/assets/shaytees/regen-v2/gelato/vanilla_dream.webp"
         },
         {
           "name": "Strawberry Delight",
@@ -30,7 +30,7 @@
             "medium_small_cup": 3000,
             "large_big_cup": 5000
           },
-          "image": "/assets/shaytees/regen-v2/gelato/strawberry_delight.png"
+          "image": "/assets/shaytees/regen-v2/gelato/strawberry_delight.webp"
         },
         {
           "name": "Banana Caramel",
@@ -40,7 +40,7 @@
             "medium_small_cup": 3000,
             "large_big_cup": 5000
           },
-          "image": "/assets/shaytees/regen-v2/gelato/banana_caramel.png"
+          "image": "/assets/shaytees/regen-v2/gelato/banana_caramel.webp"
         },
         {
           "name": "Chocolate Bliss",
@@ -50,7 +50,7 @@
             "medium_small_cup": 3000,
             "large_big_cup": 5000
           },
-          "image": "/assets/shaytees/regen-v2/gelato/chocolate_bliss.png"
+          "image": "/assets/shaytees/regen-v2/gelato/chocolate_bliss.webp"
         }
       ]
     },
@@ -63,37 +63,37 @@
         {
           "name": "Oreo Crumbles",
           "price": 500,
-          "image": "/assets/shaytees/regen-v3/toppings/oreo_crumbles.png"
+          "image": "/assets/shaytees/regen-v3/toppings/oreo_crumbles.webp"
         },
         {
           "name": "Sprinkles",
           "price": 500,
-          "image": "/assets/shaytees/regen-v3/toppings/sprinkles.png"
+          "image": "/assets/shaytees/regen-v3/toppings/sprinkles.webp"
         },
         {
           "name": "Chocolate Chips",
           "price": 500,
-          "image": "/assets/shaytees/regen-v3/toppings/chocolate_chips.png"
+          "image": "/assets/shaytees/regen-v3/toppings/chocolate_chips.webp"
         },
         {
           "name": "Gummy Bears",
           "price": 500,
-          "image": "/assets/shaytees/regen-v3/toppings/gummy_bears.png"
+          "image": "/assets/shaytees/regen-v3/toppings/gummy_bears.webp"
         },
         {
           "name": "Peanut",
           "price": 500,
-          "image": "/assets/shaytees/regen-v3/toppings/peanut.png"
+          "image": "/assets/shaytees/regen-v3/toppings/peanut.webp"
         },
         {
           "name": "M&Ms",
           "price": 1000,
-          "image": "/assets/shaytees/regen-v3/toppings/m_and_ms.png"
+          "image": "/assets/shaytees/regen-v3/toppings/m_and_ms.webp"
         },
         {
           "name": "Wafers",
           "price": 500,
-          "image": "/assets/shaytees/regen-v3/toppings/wafers.png"
+          "image": "/assets/shaytees/regen-v3/toppings/wafers.webp"
         }
       ],
       "free_drizzles": [
@@ -113,27 +113,27 @@
         {
           "name": "Cappuccino",
           "price": 2500,
-          "image": "/assets/shaytees/regen-v1/coffee/cappuccino.png"
+          "image": "/assets/shaytees/regen-v1/coffee/cappuccino.webp"
         },
         {
           "name": "Latte",
           "price": 3500,
-          "image": "/assets/shaytees/regen-v1/coffee/latte.png"
+          "image": "/assets/shaytees/regen-v1/coffee/latte.webp"
         },
         {
           "name": "Americano",
           "price": 2500,
-          "image": "/assets/shaytees/regen-v1/coffee/americano.png"
+          "image": "/assets/shaytees/regen-v1/coffee/americano.webp"
         },
         {
           "name": "Mocha",
           "price": 3500,
-          "image": "/assets/shaytees/regen-v1/coffee/mocha.png"
+          "image": "/assets/shaytees/regen-v1/coffee/mocha.webp"
         },
         {
           "name": "Espresso",
           "price": 3000,
-          "image": "/assets/shaytees/regen-v1/coffee/espresso.png"
+          "image": "/assets/shaytees/regen-v1/coffee/espresso.webp"
         }
       ]
     },
@@ -146,17 +146,17 @@
         {
           "name": "Fruit Popsicle",
           "price": 1700,
-          "image": "/assets/shaytees/regen-v2/popsicles/fruit_popsicle.png"
+          "image": "/assets/shaytees/regen-v2/popsicles/fruit_popsicle.webp"
         },
         {
           "name": "Chocolate",
           "price": 2000,
-          "image": "/assets/shaytees/regen-v2/popsicles/chocolate_popsicle.png"
+          "image": "/assets/shaytees/regen-v2/popsicles/chocolate_popsicle.webp"
         },
         {
           "name": "Strawberry",
           "price": 1700,
-          "image": "/assets/shaytees/regen-v2/popsicles/strawberry_popsicle.png"
+          "image": "/assets/shaytees/regen-v2/popsicles/strawberry_popsicle.webp"
         }
       ]
     },
@@ -172,7 +172,7 @@
             "small": 6500,
             "big": 8000
           },
-          "image": "/assets/shaytees/regen-v2/specials/dubai_strawberry_cup.png"
+          "image": "/assets/shaytees/regen-v2/specials/dubai_strawberry_cup.webp"
         }
       ]
     },
@@ -185,27 +185,27 @@
         {
           "name": "Egg Sandwich",
           "price": 2500,
-          "image": "/assets/shaytees/regen-v1/food/egg_sandwich.png"
+          "image": "/assets/shaytees/regen-v1/food/egg_sandwich.webp"
         },
         {
           "name": "Chicken Sandwich",
           "price": 3000,
-          "image": "/assets/shaytees/regen-v1/food/chicken_sandwich.png"
+          "image": "/assets/shaytees/regen-v1/food/chicken_sandwich.webp"
         },
         {
           "name": "Chicken Salad",
           "price": 4500,
-          "image": "/assets/shaytees/regen-v1/food/chicken_salad.png"
+          "image": "/assets/shaytees/regen-v1/food/chicken_salad.webp"
         },
         {
           "name": "Toast Bread & Egg",
           "price": 2000,
-          "image": "/assets/shaytees/regen-v1/food/toast_bread_egg.png"
+          "image": "/assets/shaytees/regen-v1/food/toast_bread_egg.webp"
         },
         {
           "name": "Toast Bread, Egg & Sardine",
           "price": 2500,
-          "image": "/assets/shaytees/regen-v1/food/toast_bread_egg_sardine.png"
+          "image": "/assets/shaytees/regen-v1/food/toast_bread_egg_sardine.webp"
         }
       ]
     },
@@ -218,12 +218,12 @@
         {
           "name": "Noodles & Egg",
           "price": 3500,
-          "image": "/assets/shaytees/regen-v3/snacks/noodles_egg.png"
+          "image": "/assets/shaytees/regen-v3/snacks/noodles_egg.webp"
         },
         {
           "name": "Noodles & Chicken",
           "price": 6000,
-          "image": "/assets/shaytees/regen-v3/snacks/noodles_chicken.png"
+          "image": "/assets/shaytees/regen-v3/snacks/noodles_chicken.webp"
         },
         {
           "name": "Milky Popcorn",
@@ -231,7 +231,7 @@
             "medium": 1500,
             "large": 2500
           },
-          "image": "/assets/shaytees/regen-v3/snacks/milky_popcorn.png"
+          "image": "/assets/shaytees/regen-v3/snacks/milky_popcorn.webp"
         },
         {
           "name": "Caramel Popcorn",
@@ -239,7 +239,7 @@
             "medium": 1500,
             "large": 2500
           },
-          "image": "/assets/shaytees/regen-v3/snacks/caramel_popcorn.png"
+          "image": "/assets/shaytees/regen-v3/snacks/caramel_popcorn.webp"
         },
         {
           "name": "Beef Shawarma",
@@ -247,7 +247,7 @@
             "single_sausage": 3500,
             "double_sausage": 4000
           },
-          "image": "/assets/shaytees/regen-v3/snacks/beef_shawarma.png"
+          "image": "/assets/shaytees/regen-v3/snacks/beef_shawarma.webp"
         },
         {
           "name": "Chicken Shawarma",
@@ -255,7 +255,7 @@
             "single_sausage": 3500,
             "double_sausage": 4000
           },
-          "image": "/assets/shaytees/regen-v3/snacks/chicken_shawarma.png"
+          "image": "/assets/shaytees/regen-v3/snacks/chicken_shawarma.webp"
         },
         {
           "name": "Corn Dog",
@@ -263,7 +263,7 @@
             "without_sausage": 1000,
             "with_sausage": 1500
           },
-          "image": "/assets/shaytees/regen-v3/snacks/corn_dog.png"
+          "image": "/assets/shaytees/regen-v3/snacks/corn_dog.webp"
         }
       ]
     },
@@ -277,13 +277,13 @@
           "name": "Box of 6",
           "price": 2000,
           "includes": "1 free topping",
-          "image": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.png"
+          "image": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.webp"
         },
         {
           "name": "Box of 12",
           "price": 4500,
           "includes": "2 free toppings",
-          "image": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.png"
+          "image": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.webp"
         }
       ]
     },
@@ -296,13 +296,13 @@
         {
           "name": "Bubble Waffles",
           "price": 3000,
-          "image": "/assets/shaytees/regen-v2/waffles/bubble_waffles.png"
+          "image": "/assets/shaytees/regen-v2/waffles/bubble_waffles.webp"
         },
         {
           "name": "Plain Waffles",
           "price": 3000,
           "extras": "Syrup/Honey",
-          "image": "/assets/shaytees/regen-v2/waffles/plain_waffles.png"
+          "image": "/assets/shaytees/regen-v2/waffles/plain_waffles.webp"
         }
       ]
     },
@@ -316,7 +316,7 @@
           "name": "Tequila Shot",
           "price": 2000,
           "unit": "each",
-          "image": "/assets/shaytees/regen-v3/shots/tequila_shot.png"
+          "image": "/assets/shaytees/regen-v3/shots/tequila_shot.webp"
         }
       ]
     }
@@ -325,32 +325,32 @@
     {
       "name": "After Class Treats",
       "icon": "🎒",
-      "image": "/assets/shaytees/regen-v2/gelato/strawberry_delight.png"
+      "image": "/assets/shaytees/regen-v2/gelato/strawberry_delight.webp"
     },
     {
       "name": "Birthdays & Boxes",
       "icon": "🎂",
-      "image": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.png"
+      "image": "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.webp"
     },
     {
       "name": "Date Night Treats",
       "icon": "💖",
-      "image": "/assets/shaytees/regen-v2/waffles/bubble_waffles.png"
+      "image": "/assets/shaytees/regen-v2/waffles/bubble_waffles.webp"
     },
     {
       "name": "Study Break Fuel",
       "icon": "📚",
-      "image": "/assets/shaytees/regen-v1/coffee/cappuccino.png"
+      "image": "/assets/shaytees/regen-v1/coffee/cappuccino.webp"
     },
     {
       "name": "Movie Nights",
       "icon": "🍿",
-      "image": "/assets/shaytees/regen-v3/snacks/caramel_popcorn.png"
+      "image": "/assets/shaytees/regen-v3/snacks/caramel_popcorn.webp"
     },
     {
       "name": "Quick Cravings",
       "icon": "✨",
-      "image": "/assets/shaytees/regen-v3/snacks/beef_shawarma.png"
+      "image": "/assets/shaytees/regen-v3/snacks/beef_shawarma.webp"
     }
   ]
 }

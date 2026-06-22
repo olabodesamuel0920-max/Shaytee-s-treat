@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 import { Search, Compass, ShoppingCart } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import Particles from "@/components/Particles";
 import { menuData, allMenuItems, MenuItem, getPriceText } from "@/lib/menu-data";
 
@@ -133,10 +134,13 @@ Location: `;
               <div key={index} className="glossy-card overflow-hidden flex flex-col justify-between relative">
                 {/* Product Image */}
                 <div className="w-full aspect-[4/3] overflow-hidden relative border-b border-pink-50 bg-pink-50/30 p-4">
-                  <img
+                  <Image
                     src={item.image.startsWith("/") ? item.image : `/images/${item.image}`}
                     alt={item.name}
+                    width={400}
+                    height={300}
                     className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading="lazy"
                   />
                   {item.includes && (

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles, MessageCircle, FileText, Compass, CheckCircle2, ChevronRight } from "lucide-react";
 import FloatDessert from "@/components/FloatDessert";
 import Particles from "@/components/Particles";
@@ -107,10 +108,13 @@ export default function Home() {
               >
                 {/* Image top half */}
                 <div className="w-full aspect-[4/3] overflow-hidden relative border-b border-pink-50 bg-pink-50/30 p-4">
-                  <img
+                  <Image
                     src={occ.image.startsWith("/") ? occ.image : `/images/${occ.image}`}
                     alt={occ.name}
+                    width={400}
+                    height={300}
                     className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -158,37 +162,37 @@ export default function Home() {
               {
                 title: "Cup Sizes & Serving Styles",
                 desc: "Choose between cones, small cups, big cups, or bubble waffles.",
-                image: "/assets/shaytees/boards/cup-sizes-and-serving-styles.png",
+                image: "/assets/shaytees/boards/cup-sizes-and-serving-styles.webp",
               },
               {
                 title: "Flavour Choices",
                 desc: "Strawberry, chocolate, vanilla, or premium swirl mixes.",
-                image: "/assets/shaytees/boards/flavour-choices.png",
+                image: "/assets/shaytees/boards/flavour-choices.webp",
               },
               {
                 title: "Drizzles & Included Toppings",
                 desc: "Chocolate, strawberry, honey sauce, and whipped cream.",
-                image: "/assets/shaytees/boards/drizzles-and-included-toppings.png",
+                image: "/assets/shaytees/boards/drizzles-and-included-toppings.webp",
               },
               {
                 title: "Extra Toppings",
                 desc: "Crunchy Oreo, M&Ms, wafer sticks, gummy bears, and peanuts.",
-                image: "/assets/shaytees/boards/extra-toppings.png",
+                image: "/assets/shaytees/boards/extra-toppings.webp",
               },
               {
                 title: "Hot Snacks & Extras",
                 desc: "Noodles, crispy shawarmas, corn dogs, and premium popcorn.",
-                image: "/assets/shaytees/boards/hot-snacks-and-extras.png",
+                image: "/assets/shaytees/boards/hot-snacks-and-extras.webp",
               },
               {
                 title: "Coffee & Drinks",
                 desc: "Freshly brewed cappuccino, lattes, espresso, and premium iced mochas.",
-                image: "/assets/shaytees/boards/coffee_and_drinks_board.png",
+                image: "/assets/shaytees/boards/coffee_and_drinks_board.webp",
               },
               {
                 title: "Food, Waffles & Extras",
                 desc: "Toast bread, sandwiches, fresh chicken salad, and sweet waffle extras.",
-                image: "/assets/shaytees/boards/food_waffles_extras_board.png",
+                image: "/assets/shaytees/boards/food_waffles_extras_board.webp",
               },
             ].map((board, idx) => (
               <div
@@ -197,10 +201,13 @@ export default function Home() {
               >
                 <div>
                   <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-pink-50 shadow-inner bg-pink-50/20 relative mb-4 p-3">
-                    <img
+                    <Image
                       src={board.image}
                       alt={board.title}
+                      width={400}
+                      height={300}
                       className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 25vw, 15vw"
                       loading="lazy"
                     />
                   </div>

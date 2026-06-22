@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { MessageCircle, ShoppingBag, User, MapPin, Truck } from "lucide-react";
 import Particles from "@/components/Particles";
 import { menuData } from "@/lib/menu-data";
@@ -28,7 +29,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     ? iceCreamCat.items.map((item) => ({
         name: item.name,
         price: item.prices?.small_cone || 1500,
-        image: item.image,
+        image: item.image ? item.image.replace(".webp", "_thumb.webp") : "",
       }))
     : [];
 
@@ -38,16 +39,16 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
   const largeCupPrice = firstIceCream?.prices?.large_big_cup || 5000;
 
   const sizes: Option[] = [
-    { name: "Small Cone", price: 0, image: "/assets/shaytees/individual_assets/cup-sizes/cone.png" },
+    { name: "Small Cone", price: 0, image: "/assets/shaytees/individual_assets/cup-sizes/cone_thumb.webp" },
     {
       name: `Medium Small Cup (+₦${(mediumCupPrice - basePrice).toLocaleString()})`,
       price: mediumCupPrice - basePrice,
-      image: "/assets/shaytees/individual_assets/cup-sizes/small-cup.png",
+      image: "/assets/shaytees/individual_assets/cup-sizes/small-cup_thumb.webp",
     },
     {
       name: `Large Big Cup (+₦${(largeCupPrice - basePrice).toLocaleString()})`,
       price: largeCupPrice - basePrice,
-      image: "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate.png",
+      image: "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate_thumb.webp",
     },
   ];
 
@@ -56,7 +57,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     ? toppingsCat.items.map((item) => ({
         name: item.name,
         price: item.price || 500,
-        image: item.image,
+        image: item.image ? item.image.replace(".webp", "_thumb.webp") : "",
       }))
     : [];
 
@@ -65,7 +66,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     return {
       name,
       price: 0,
-      image: `/assets/shaytees/individual_assets/drizzles/${key}.png`,
+      image: `/assets/shaytees/individual_assets/drizzles/${key}_thumb.webp`,
     };
   });
 
@@ -86,11 +87,13 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
         displayName = "Bubble Waffle";
       }
 
+      const webpThumb = item.image ? item.image.replace(".webp", "_thumb.webp") : "";
+
       if (item.price !== undefined) {
         extrasList.push({
           name: displayName,
           price: item.price,
-          image: item.image,
+          image: webpThumb,
         });
       } else if (item.prices) {
         Object.entries(item.prices).forEach(([sizeKey, priceVal]) => {
@@ -99,7 +102,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
             extrasList.push({
               name: `${displayName} (${capitalizedSize})`,
               price: priceVal,
-              image: item.image,
+              image: webpThumb,
             });
           }
         });
@@ -114,7 +117,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
             extrasList.push({
               name: `${displayName} (${formattedVariant})`,
               price: priceVal,
-              image: item.image,
+              image: webpThumb,
             });
           }
         });
@@ -361,7 +364,7 @@ ${itemsText}
                     }`}
                   >
                     <div className="w-18 h-18 rounded-2xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1 shrink-0">
-                      <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                      <Image src={item.image || ""} alt={item.name} width={72} height={72} className="w-full h-full object-contain" sizes="72px" loading="lazy" />
                     </div>
                     <div className="flex flex-col items-center">
                       <span className="font-bold text-xs leading-tight">{item.name}</span>
@@ -394,7 +397,7 @@ ${itemsText}
                       }`}
                     >
                       <div className="w-16 h-16 rounded-2xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner shrink-0">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-contain p-1" />
+                        <Image src={item.image || ""} alt={item.name} width={64} height={64} className="w-full h-full object-contain p-1" sizes="64px" loading="lazy" />
                       </div>
                       <div className="flex flex-col items-center">
                         <span className="font-bold text-xs leading-tight">{item.name.split(" (+")[0]}</span>
@@ -428,7 +431,7 @@ ${itemsText}
                       }`}
                     >
                       <div className="w-14 h-14 rounded-2xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1 shrink-0">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                        <Image src={item.image || ""} alt={item.name} width={56} height={56} className="w-full h-full object-contain" sizes="56px" loading="lazy" />
                       </div>
                       <div className="flex flex-col items-center">
                         <span className="font-bold text-xs leading-tight">{item.name}</span>
@@ -462,7 +465,7 @@ ${itemsText}
                       }`}
                     >
                       <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/40 border border-white/20 relative shadow-inner p-1 shrink-0">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                        <Image src={item.image || ""} alt={item.name} width={48} height={48} className="w-full h-full object-contain" sizes="48px" loading="lazy" />
                       </div>
                       <div className="flex flex-col items-center">
                         <span className="font-bold text-xs leading-tight">{item.name.split(" ")[0]}</span>
@@ -497,7 +500,7 @@ ${itemsText}
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/40 border border-white/20 shrink-0 shadow-inner bg-white p-1">
-                          <img src={item.image} alt={item.name} className="w-full h-full object-contain" />
+                          <Image src={item.image || ""} alt={item.name} width={56} height={56} className="w-full h-full object-contain" sizes="56px" loading="lazy" />
                         </div>
                         <span className="truncate text-xs font-bold leading-tight">{item.name}</span>
                       </div>
@@ -528,7 +531,7 @@ ${itemsText}
                   <div className="flex flex-col items-center bg-gradient-to-br from-white/80 to-pink-50/40 border border-pink-100/60 p-3 rounded-2xl w-28 text-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
                     <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-2">Cup Size</span>
                     <div className="w-18 h-18 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-100/40 p-1.5 shadow-inner">
-                      <img src={size ? size.image : "/assets/shaytees/individual_assets/cup-sizes/cone.png"} alt="Size" className="w-full h-full object-contain" />
+                      <Image src={size ? size.image || "" : "/assets/shaytees/individual_assets/cup-sizes/cone_thumb.webp"} alt="Size" width={72} height={72} className="w-full h-full object-contain" sizes="72px" />
                     </div>
                     <span className="font-bold text-[10px] text-chocolate truncate mt-2.5 w-full">{size ? size.name.split(" (+")[0] : "Small Cone"}</span>
                   </div>
@@ -537,7 +540,7 @@ ${itemsText}
                   <div className="flex flex-col items-center bg-gradient-to-br from-white/80 to-pink-50/40 border border-pink-100/60 p-3 rounded-2xl w-28 text-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
                     <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-2">Flavor</span>
                     <div className="w-18 h-18 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-100/40 p-1.5 shadow-inner">
-                      <img src={flavor ? flavor.image : "/assets/shaytees/regen-v2/gelato/vanilla_dream.png"} alt="Flavor" className="w-full h-full object-contain" />
+                      <Image src={flavor ? flavor.image || "" : "/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp"} alt="Flavor" width={72} height={72} className="w-full h-full object-contain" sizes="72px" />
                     </div>
                     <span className="font-bold text-[10px] text-chocolate truncate mt-2.5 w-full">{flavor ? flavor.name.split(" ")[0] : "None"}</span>
                   </div>
@@ -546,7 +549,7 @@ ${itemsText}
                   <div className="flex flex-col items-center bg-gradient-to-br from-white/80 to-pink-50/40 border border-pink-100/60 p-3 rounded-2xl w-28 text-center shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
                     <span className="text-[9px] font-bold font-poppins text-pink-dark uppercase tracking-wider mb-2">Drizzle</span>
                     <div className="w-18 h-18 bg-white rounded-xl overflow-hidden flex items-center justify-center border border-pink-100/40 p-1.5 shadow-inner">
-                      <img src={drizzle ? drizzle.image : "/assets/shaytees/individual_assets/drizzles/chocolate-sauce.png"} alt="Drizzle" className="w-full h-full object-contain" />
+                      <Image src={drizzle ? drizzle.image || "" : "/assets/shaytees/individual_assets/drizzles/chocolate-sauce_thumb.webp"} alt="Drizzle" width={72} height={72} className="w-full h-full object-contain" sizes="72px" />
                     </div>
                     <span className="font-bold text-[10px] text-chocolate truncate mt-2.5 w-full">{drizzle ? drizzle.name.split(" ")[0] : "None"}</span>
                   </div>
@@ -559,7 +562,7 @@ ${itemsText}
                     <div className="flex justify-center gap-2.5 flex-wrap">
                       {toppings.map((t, idx) => (
                         <div key={idx} className="flex items-center gap-2 bg-gradient-to-r from-white/95 to-pink-50/30 border border-pink-100/50 px-2.5 py-1.5 rounded-xl shadow-sm hover:scale-102 transition-transform duration-200">
-                          <img src={t.image} alt={t.name} className="w-7 h-7 rounded object-contain animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} />
+                          <Image src={t.image || ""} alt={t.name} width={28} height={28} className="w-7 h-7 rounded object-contain animate-bounce-slow" style={{ animationDelay: `${idx * 0.1}s` }} sizes="28px" />
                           <span className="text-[10px] font-bold text-chocolate">{t.name.split(" ")[0]}</span>
                         </div>
                       ))}

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Heart, Star, Gift, Sparkles, ChevronRight } from "lucide-react";
 import Particles from "@/components/Particles";
 
@@ -32,11 +33,11 @@ export default function CombosPage() {
       emoji: "🎒",
       badge: "STUDENT FAVORITE",
       estimatedPrice: 5000,
-      image: "/assets/shaytees/regen-v2/gelato/strawberry_delight.png",
+      image: "/assets/shaytees/regen-v2/gelato/strawberry_delight.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/strawberry_delight.png",
-        "/assets/shaytees/regen-v3/toppings/oreo_crumbles.png",
-        "/assets/shaytees/regen-v3/snacks/milky_popcorn.png"
+        "/assets/shaytees/regen-v2/gelato/strawberry_delight_thumb.webp",
+        "/assets/shaytees/regen-v3/toppings/oreo_crumbles_thumb.webp",
+        "/assets/shaytees/regen-v3/snacks/milky_popcorn_thumb.webp"
       ],
       params: {
         flavor: "Strawberry Delight",
@@ -52,11 +53,11 @@ export default function CombosPage() {
       emoji: "🎂",
       badge: "PARTY SPECIAL",
       estimatedPrice: 12000,
-      image: "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.png",
+      image: "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/chocolate_bliss.png",
-        "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.png",
-        "/assets/shaytees/regen-v3/snacks/milky_popcorn.png"
+        "/assets/shaytees/regen-v2/gelato/chocolate_bliss_thumb.webp",
+        "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12_thumb.webp",
+        "/assets/shaytees/regen-v3/snacks/milky_popcorn_thumb.webp"
       ],
       params: {
         flavor: "Chocolate Bliss",
@@ -72,11 +73,11 @@ export default function CombosPage() {
       emoji: "💖",
       badge: "SHARE FOR TWO",
       estimatedPrice: 7000,
-      image: "/assets/shaytees/regen-v2/waffles/bubble_waffles.png",
+      image: "/assets/shaytees/regen-v2/waffles/bubble_waffles.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
-        "/assets/shaytees/regen-v3/toppings/chocolate_chips.png",
-        "/assets/shaytees/regen-v2/waffles/bubble_waffles.png"
+        "/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp",
+        "/assets/shaytees/regen-v3/toppings/chocolate_chips_thumb.webp",
+        "/assets/shaytees/regen-v2/waffles/bubble_waffles_thumb.webp"
       ],
       params: {
         flavor: "Vanilla Dream",
@@ -93,10 +94,10 @@ export default function CombosPage() {
       emoji: "🍿",
       badge: "CRUNCH BOX",
       estimatedPrice: 6500,
-      image: "/assets/shaytees/regen-v3/snacks/caramel_popcorn.png",
+      image: "/assets/shaytees/regen-v3/snacks/caramel_popcorn.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
-        "/assets/shaytees/regen-v3/snacks/caramel_popcorn.png"
+        "/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp",
+        "/assets/shaytees/regen-v3/snacks/caramel_popcorn_thumb.webp"
       ],
       params: {
         flavor: "Vanilla Dream",
@@ -112,11 +113,11 @@ export default function CombosPage() {
       emoji: "🍩",
       badge: "ULTIMATE SWEET",
       estimatedPrice: 10000,
-      image: "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.png",
+      image: "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/chocolate_bliss.png",
-        "/assets/shaytees/regen-v3/toppings/m_and_ms.png",
-        "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.png"
+        "/assets/shaytees/regen-v2/gelato/chocolate_bliss_thumb.webp",
+        "/assets/shaytees/regen-v3/toppings/m_and_ms_thumb.webp",
+        "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6_thumb.webp"
       ],
       params: {
         flavor: "Chocolate Bliss",
@@ -132,11 +133,11 @@ export default function CombosPage() {
       emoji: "🎓",
       badge: "BUDGET VIBE",
       estimatedPrice: 8000,
-      image: "/assets/shaytees/boards/food_waffles_extras_board.png",
+      image: "/assets/shaytees/boards/food_waffles_extras_board.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
-        "/assets/shaytees/regen-v2/waffles/plain_waffles.png",
-        "/assets/shaytees/regen-v1/coffee/latte.png"
+        "/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp",
+        "/assets/shaytees/regen-v2/waffles/plain_waffles_thumb.webp",
+        "/assets/shaytees/regen-v1/coffee/latte_thumb.webp"
       ],
       params: {
         flavor: "Vanilla Dream",
@@ -193,10 +194,13 @@ export default function CombosPage() {
               >
                 {/* Visual Header Image */}
                 <div className="w-full aspect-[4/3] overflow-hidden relative border-b border-pink-50 bg-pink-50/30 p-4">
-                  <img
+                  <Image
                     src={combo.image.startsWith("/") ? combo.image : `/images/${combo.image}`}
                     alt={combo.name}
+                    width={400}
+                    height={300}
                     className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     loading="lazy"
                   />
                   {combo.badge && (
@@ -227,10 +231,14 @@ export default function CombosPage() {
                           key={thumbIdx}
                           className="w-7 h-7 rounded-full border border-pink-100 overflow-hidden bg-white shadow-sm shrink-0 relative transition-transform hover:scale-110 hover:z-10"
                         >
-                          <img
+                          <Image
                             src={thumbnail}
                             alt="Combo item thumbnail"
+                            width={28}
+                            height={28}
                             className="w-full h-full object-contain p-0.5"
+                            sizes="28px"
+                            loading="lazy"
                           />
                         </div>
                       ))}
