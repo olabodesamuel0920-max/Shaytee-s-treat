@@ -651,8 +651,16 @@ export default function AdminPreview() {
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Menu prices for popcorn, shawarma, corn dog, and noodles</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed by owner via WhatsApp. All pricing updates applied to the database.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Popcorn pricing</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Small ₦1,500, Medium ₦2,000, Large ₦2,500. Applied globally.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Shawarma options</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: No Sausage ₦3,000, Single ₦3,500, Double ₦4,000. Applied globally.</p>
                       </div>
                     </div>
 
@@ -716,7 +724,7 @@ export default function AdminPreview() {
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Replacement product pictures</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Pending: client will review and send replacement pictures later.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Pending: Banana Caramel ice cream cup image. (Strawberry Delight and Chocolate Bliss cup visuals successfully updated).</p>
                       </div>
                     </div>
 

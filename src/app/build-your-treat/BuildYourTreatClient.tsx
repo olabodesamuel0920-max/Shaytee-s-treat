@@ -92,7 +92,11 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
       } else if (item.prices) {
         Object.entries(item.prices).forEach(([sizeKey, priceVal]) => {
           if (priceVal !== undefined) {
-            const capitalizedSize = sizeKey.charAt(0).toUpperCase() + sizeKey.slice(1);
+            const capitalizedSize = sizeKey
+              .replace(/_/g, " ")
+              .split(" ")
+              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" ");
             extrasList.push({
               name: `${displayName} (${capitalizedSize})`,
               price: priceVal,
@@ -265,12 +269,21 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     }
   };
 
+  // Get base name of an extra (ignoring variant suffix in parentheses)
+  const getBaseExtraName = (fullName: string) => {
+    return fullName.includes(" (") ? fullName.split(" (")[0] : fullName;
+  };
+
   // Toggle Extra selection
   const handleExtraToggle = (extra: Option) => {
-    if (extras.some((e) => e.name === extra.name)) {
+    const isAlreadySelected = extras.some((e) => e.name === extra.name);
+    if (isAlreadySelected) {
       setExtras(extras.filter((e) => e.name !== extra.name));
     } else {
-      setExtras([...extras, extra]);
+      const baseName = getBaseExtraName(extra.name);
+      // Ensure only one variant of the same item is selected at a time
+      const filtered = extras.filter((e) => getBaseExtraName(e.name) !== baseName);
+      setExtras([...filtered, extra]);
     }
   };
 
@@ -296,7 +309,11 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     if (extras.length > 0) {
       itemsText += `\n\n*Additional Snacks & Eats:*`;
       extras.forEach((ex, index) => {
-        itemsText += `\n${index + 2}. ${ex.name} — ₦${ex.price.toLocaleString()}`;
+        let formattedExtraName = ex.name;
+        if (formattedExtraName.includes(" (") && formattedExtraName.endsWith(")")) {
+          formattedExtraName = formattedExtraName.replace(" (", " — ").slice(0, -1);
+        }
+        itemsText += `\n${index + 2}. ${formattedExtraName} — ₦${ex.price.toLocaleString()}`;
       });
     }
 
@@ -578,7 +595,7 @@ ${itemsText}
               <div className="space-y-2 max-h-[180px] overflow-y-auto pr-1">
                 {flavor ? (
                   <div className="flex justify-between items-center text-sm font-poppins text-text-dark border-b border-pink-50/50 pb-1.5">
-                    <span>🍦 {flavor.name} ({size ? size.name.split(" ")[0] : "Small"})</span>
+                    <span>🍦 {flavor.name} ({size ? size.name : "Medium Small Cup"})</span>
                     <span className="font-bold text-pink-primary">₦{((flavor.price) + (size ? size.price : 0)).toLocaleString()}</span>
                   </div>
                 ) : (

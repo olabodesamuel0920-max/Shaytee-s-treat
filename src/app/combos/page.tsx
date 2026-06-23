@@ -32,10 +32,10 @@ export default function CombosPage() {
       items: ["1 Medium Small Cup Ice Cream (Strawberry Delight)", "Oreo Crumbles topping", "1 Milky Popcorn (Medium)"],
       emoji: "🎒",
       badge: "STUDENT FAVORITE",
-      estimatedPrice: 5000,
-      image: "/assets/shaytees/regen-v2/gelato/strawberry_delight.webp",
+      estimatedPrice: 5500,
+      image: "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/strawberry_delight_thumb.webp",
+        "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae_thumb.webp",
         "/assets/shaytees/regen-v3/toppings/oreo_crumbles_thumb.webp",
         "/assets/shaytees/regen-v3/snacks/milky_popcorn_thumb.webp"
       ],
@@ -55,7 +55,7 @@ export default function CombosPage() {
       estimatedPrice: 12000,
       image: "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/chocolate_bliss_thumb.webp",
+        "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate_thumb.webp",
         "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_12_thumb.webp",
         "/assets/shaytees/regen-v3/snacks/milky_popcorn_thumb.webp"
       ],
@@ -115,7 +115,7 @@ export default function CombosPage() {
       estimatedPrice: 10000,
       image: "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6.webp",
       assetThumbnails: [
-        "/assets/shaytees/regen-v2/gelato/chocolate_bliss_thumb.webp",
+        "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate_thumb.webp",
         "/assets/shaytees/regen-v3/toppings/m_and_ms_thumb.webp",
         "/assets/shaytees/regen-v3/mini-pancakes/mini_pancakes_box_6_thumb.webp"
       ],
