@@ -651,7 +651,7 @@ export default function AdminPreview() {
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Menu prices for cup sizes, popcorn, shawarma, corn dog, and noodles</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Menu prices for popcorn, shawarma, corn dog, and noodles</p>
                         <p className="text-[10px] text-zinc-500 font-poppins">Confirmed by owner via WhatsApp. All pricing updates applied to the database.</p>
                       </div>
                     </div>
@@ -659,40 +659,64 @@ export default function AdminPreview() {
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp number / QR confirmation</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Currently set to {menuData.contact}. Verify QR code matches the official line.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp number / SIM confirmation</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Pending SIM re-registration confirmation. Currently active line is {menuData.contact}.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
-                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Operating hours</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Operating hours defined as 10:00 AM – 10:00 PM. Needs owner sign-off.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Monday to Saturday 10am–10pm, Sunday 2pm–10pm.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
-                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery fees</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm delivery rates to landmarks around Akure and FUTA area.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery fee handling</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: delivery fees are discussed/confirmed directly on WhatsApp with the rider.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
-                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Delivery areas</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm delivery boundaries (e.g. Southgate, Obanla, Ijapo) and transit times.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: delivery locations are shown for guidance only.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Tequila Shot visibility decision</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Tequila Shot hidden from public menus since it cannot be delivered.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Cone delivery rule</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Small Cone removed from builder customizer because it cannot be delivered.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Cup prices</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Medium Small Cup is ₦3,000, Large Big Cup is ₦5,000.</p>
                       </div>
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Tequila Shot public visibility</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirm whether Tequila Shot (₦2,000) should remain public or be hidden/restricted.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Replacement product pictures</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Pending: client will review and send replacement pictures later.</p>
                       </div>
                     </div>
 

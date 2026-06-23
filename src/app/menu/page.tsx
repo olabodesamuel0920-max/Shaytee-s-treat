@@ -169,11 +169,19 @@ Location: `;
 
                     {item.prices && (
                       <div className="flex flex-wrap gap-1.5 mt-2 mb-3">
-                        {Object.entries(item.prices).map(([sizeName, priceVal]) => (
-                          <span key={sizeName} className="text-[10px] font-bold font-poppins px-2 py-0.5 bg-pink-50 text-pink-primary border border-pink-100/40 rounded-md capitalize">
-                            {sizeName}: ₦{priceVal.toLocaleString()}
-                          </span>
-                        ))}
+                        {Object.entries(item.prices).map(([sizeName, priceVal]) => {
+                          const isSmallCone = sizeName === "small_cone";
+                          return (
+                            <span key={sizeName} className="text-[10px] font-bold font-poppins px-2 py-0.5 bg-pink-50 text-pink-primary border border-pink-100/40 rounded-md capitalize">
+                              {sizeName.replace(/_/g, " ")}: ₦{priceVal.toLocaleString()}
+                              {isSmallCone && (
+                                <span className="text-[9px] text-amber-600 ml-1.5 normal-case font-semibold">
+                                  (Pickup Only)
+                                </span>
+                              )}
+                            </span>
+                          );
+                        })}
                       </div>
                     )}
 

@@ -28,26 +28,20 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
   const flavors: Option[] = iceCreamCat
     ? iceCreamCat.items.map((item) => ({
         name: item.name,
-        price: item.prices?.small_cone || 1500,
+        price: 0,
         image: item.image ? item.image.replace(".webp", "_thumb.webp") : "",
       }))
     : [];
 
-  const firstIceCream = iceCreamCat?.items[0];
-  const basePrice = firstIceCream?.prices?.small_cone || 1500;
-  const mediumCupPrice = firstIceCream?.prices?.medium_small_cup || 3000;
-  const largeCupPrice = firstIceCream?.prices?.large_big_cup || 5000;
-
   const sizes: Option[] = [
-    { name: "Small Cone", price: 0, image: "/assets/shaytees/individual_assets/cup-sizes/cone_thumb.webp" },
     {
-      name: `Medium Small Cup (+₦${(mediumCupPrice - basePrice).toLocaleString()})`,
-      price: mediumCupPrice - basePrice,
+      name: "Medium Small Cup",
+      price: 3000,
       image: "/assets/shaytees/individual_assets/cup-sizes/small-cup_thumb.webp",
     },
     {
-      name: `Large Big Cup (+₦${(largeCupPrice - basePrice).toLocaleString()})`,
-      price: largeCupPrice - basePrice,
+      name: "Large Big Cup",
+      price: 5000,
       image: "/assets/shaytees/individual_assets/cup-sizes/big-cup-chocolate_thumb.webp",
     },
   ];
@@ -139,11 +133,12 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
   const [size, setSize] = useState<Option | null>(() => {
     const sizeParam = initialSearchParams.size;
     if (sizeParam) {
-      return sizes.find(
-        (s) => s.name.toLowerCase().includes(sizeParam.toLowerCase())
-      ) || null;
+      return (
+        sizes.find((s) => s.name.toLowerCase().includes(sizeParam.toLowerCase())) ||
+        sizes[0]
+      );
     }
-    return null;
+    return sizes[0];
   });
 
   const [toppings, setToppings] = useState<Option[]>(() => {
@@ -205,9 +200,9 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
       const foundSize = sizes.find(
         (s) => s.name.toLowerCase().includes(sizeParam.toLowerCase())
       );
-      if (foundSize) setSize(foundSize);
+      setSize(foundSize || sizes[0]);
     } else {
-      setSize(null);
+      setSize(sizes[0]);
     }
 
     const toppingsParam = initialSearchParams.toppings;
@@ -288,9 +283,9 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
       return;
     }
 
-    const sizeName = size ? size.name.split(" (+")[0] : "Small Cone";
+    const sizeName = size ? size.name : "Medium Small Cup";
     
-    let itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName}) — ₦${((flavor.price) + (size ? size.price : 0)).toLocaleString()}`;
+    let itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName}) — ₦${(size ? size.price : 3000).toLocaleString()}`;
     if (toppings.length > 0) {
       itemsText += `\n   Toppings: ${toppings.map(t => `${t.name} (+₦${t.price.toLocaleString()})`).join(", ")}`;
     }
@@ -383,9 +378,9 @@ ${itemsText}
               <p className="text-xs text-text-light font-poppins mb-4">
                 Choose your serving style. Final price starts from your selected size.
               </p>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 gap-3 max-w-md">
                 {sizes.map((item) => {
-                  const isSelected = (size?.name === item.name) || (!size && item.name === "Small Cone");
+                  const isSelected = size?.name === item.name;
                   return (
                     <button
                       key={item.name}
@@ -400,9 +395,9 @@ ${itemsText}
                         <Image src={item.image || ""} alt={item.name} width={64} height={64} className="w-full h-full object-contain p-1" sizes="64px" loading="lazy" />
                       </div>
                       <div className="flex flex-col items-center">
-                        <span className="font-bold text-xs leading-tight">{item.name.split(" (+")[0]}</span>
+                        <span className="font-bold text-xs leading-tight">{item.name}</span>
                         <span className={`text-[10px] mt-0.5 font-semibold ${isSelected ? "text-white/80" : "text-pink-primary"}`}>
-                          {item.price === 0 ? "Included" : `+₦${item.price.toLocaleString()}`}
+                          ₦{item.price.toLocaleString()}
                         </span>
                       </div>
                     </button>

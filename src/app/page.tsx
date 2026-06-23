@@ -76,7 +76,7 @@ export default function Home() {
             </div>
             {/* Quick Note */}
             <p className="text-xs text-text-light/60 mt-4 italic">
-              *Locations and opening hours: To be confirmed by Shaytee's Treat.
+              *Mon–Sat: 10am–10pm, Sun: 2pm–10pm | FUTA Southgate, Akure
             </p>
           </div>
 

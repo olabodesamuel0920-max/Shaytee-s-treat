@@ -42,7 +42,7 @@ export interface VibeCategory {
   image: string;
 }
 
-export const menuData = menuJson as {
+const rawMenuData = menuJson as {
   brand: string;
   tagline: string;
   location: string;
@@ -51,6 +51,11 @@ export const menuData = menuJson as {
   currency_symbol: string;
   categories: MenuCategory[];
   vibe_categories: VibeCategory[];
+};
+
+export const menuData = {
+  ...rawMenuData,
+  categories: rawMenuData.categories.filter((cat) => cat.id !== "shots"),
 };
 
 // Flattened list of all items for search or direct queries

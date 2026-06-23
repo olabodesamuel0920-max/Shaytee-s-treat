@@ -83,7 +83,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Clock size={18} className="text-pink-light shrink-0 mt-0.5" />
-              <span>Details: To be confirmed by Shaytee's Treat</span>
+              <span>Mon–Sat: 10am–10pm | Sun: 2pm–10pm</span>
             </li>
           </ul>
         </div>

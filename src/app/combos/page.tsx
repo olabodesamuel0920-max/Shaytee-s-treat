@@ -90,10 +90,10 @@ export default function CombosPage() {
     {
       name: "Movie & Popcorn Combo",
       desc: "Snack buddy package for your chill movie nights at home. Keep the sweet crunch flowing.",
-      items: ["1 Small Cone Ice Cream (Vanilla Dream)", "1 Caramel Popcorn (Large)", "1 Milky Popcorn (Large)"],
+      items: ["1 Medium Small Cup Ice Cream (Vanilla Dream)", "1 Caramel Popcorn (Large)", "1 Milky Popcorn (Large)"],
       emoji: "🍿",
       badge: "CRUNCH BOX",
-      estimatedPrice: 6500,
+      estimatedPrice: 8000,
       image: "/assets/shaytees/regen-v3/snacks/caramel_popcorn.webp",
       assetThumbnails: [
         "/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp",
@@ -101,7 +101,7 @@ export default function CombosPage() {
       ],
       params: {
         flavor: "Vanilla Dream",
-        size: "Small Cone",
+        size: "Medium Small Cup",
         toppings: [],
         extras: ["Caramel Popcorn (Large)", "Milky Popcorn (Large)"],
       }
@@ -129,10 +129,10 @@ export default function CombosPage() {
     {
       name: "FUTA Chill Combo",
       desc: "Our budget-friendly student chillout selection. Stay refreshed during those library study breaks.",
-      items: ["1 Small Cone Vanilla scoop", "1 Plain Waffle + Syrup", "1 Latte Coffee"],
+      items: ["1 Medium Small Cup Vanilla scoop", "1 Plain Waffle + Syrup", "1 Latte Coffee"],
       emoji: "🎓",
       badge: "BUDGET VIBE",
-      estimatedPrice: 8000,
+      estimatedPrice: 9500,
       image: "/assets/shaytees/boards/food_waffles_extras_board.webp",
       assetThumbnails: [
         "/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp",
@@ -141,7 +141,7 @@ export default function CombosPage() {
       ],
       params: {
         flavor: "Vanilla Dream",
-        size: "Small Cone",
+        size: "Medium Small Cup",
         toppings: [],
         extras: ["Plain Waffle + Syrup", "Latte"],
       }

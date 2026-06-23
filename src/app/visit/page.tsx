@@ -28,8 +28,12 @@ export default function VisitPage() {
   }, []);
 
   const checkStoreStatus = (hour: number) => {
-    // Mock hours: 10:00 AM to 10:00 PM (10:00 to 22:00)
-    setIsOpen(hour >= 10 && hour < 22);
+    const day = new Date().getDay(); // 0 is Sunday
+    if (day === 0) {
+      setIsOpen(hour >= 14 && hour < 22);
+    } else {
+      setIsOpen(hour >= 10 && hour < 22);
+    }
   };
 
   const handleHourChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -151,7 +155,7 @@ Could you please confirm the details? Thank you!`;
                   )}
                 </div>
                 <p className="font-poppins text-text-light text-xs mt-1">
-                  Opening hours: To be confirmed by Shaytee’s Treat.
+                  Monday–Saturday: 10am–10pm <span className="mx-1">•</span> Sunday: 2pm–10pm
                 </p>
               </div>
             </div>
@@ -362,7 +366,7 @@ Could you please confirm the details? Thank you!`;
           <HelpCircle className="text-pink-primary mx-auto mb-3" size={24} />
           <h4 className="font-fredoka text-base font-bold text-chocolate">Operation Details Disclaimer</h4>
           <p className="font-poppins text-text-light text-xs md:text-sm mt-1 max-w-2xl mx-auto leading-relaxed">
-            Delivery timelines and boundaries are estimated transit guidelines. Delivery fees are confirmed on WhatsApp before checkout. All operational details and order processing times are confirmed on WhatsApp.
+            Delivery locations are shown for guidance. Delivery fee can be confirmed on WhatsApp or with the delivery rider before checkout. All operational details and order processing times are confirmed on WhatsApp.
           </p>
         </div>
 
