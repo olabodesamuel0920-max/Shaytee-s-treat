@@ -68,6 +68,7 @@ export default function AdminPreview() {
     { id: 1, name: "Vanilla Dream", category: "Gelato / Ice Cream", price: 1500, available: true },
     { id: 2, name: "Strawberry Delight", category: "Gelato / Ice Cream", price: 1500, available: true },
     { id: 3, name: "Dubai Strawberry Cup", category: "Specials", price: 6500, available: true },
+    { id: 8, name: "Boba Ice Cream", category: "Specials", price: 8000, available: true },
     { id: 4, name: "Noodles & Egg", category: "Hot Meals", price: 3500, available: true },
     { id: 5, name: "Bubble Waffle", category: "Snacks & Waffles", price: 3000, available: true },
     { id: 6, name: "Milky Popcorn", category: "Snacks & Waffles", price: 1500, available: true },
@@ -668,7 +669,7 @@ export default function AdminPreview() {
                       <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp number / SIM confirmation</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Pending SIM re-registration confirmation. Currently active line is {menuData.contact}.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Pending SIM confirmation. New number 08069621919 is pending WhatsApp activation. Currently active line is {menuData.contact}.</p>
                       </div>
                     </div>
 
@@ -725,6 +726,14 @@ export default function AdminPreview() {
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Replacement product pictures</p>
                         <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: All ice cream flavors (Vanilla Dream, Strawberry Delight, Chocolate Bliss, and Banana Caramel) updated to cup-style visuals.</p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <div>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Boba Ice Cream item added</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Boba Ice Cream added to specials for ₦8,000 using the client-provided image.</p>
                       </div>
                     </div>
 
@@ -943,6 +952,7 @@ export default function AdminPreview() {
                           {item.name.includes("Vanilla") ? "🍦" :
                            item.name.includes("Strawberry") ? "🍓" :
                            item.name.includes("Dubai") ? "⭐" :
+                           item.name.includes("Boba") ? "🧋" :
                            item.name.includes("Noodles") ? "🍜" :
                            item.name.includes("Waffle") ? "🧇" :
                            item.name.includes("Popcorn") ? "🍿" : "☕"}

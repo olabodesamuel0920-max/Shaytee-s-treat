@@ -173,6 +173,11 @@
             "big": 8000
           },
           "image": "/assets/shaytees/regen-v2/specials/dubai_strawberry_cup.webp"
+        },
+        {
+          "name": "Boba Ice Cream",
+          "price": 8000,
+          "image": "/assets/shaytees/regen-v4/specials/boba_ice_cream.webp"
         }
       ]
     },

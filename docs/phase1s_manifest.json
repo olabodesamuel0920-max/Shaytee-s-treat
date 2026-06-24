@@ -1,0 +1,16 @@
+{
+  "phase": "1S",
+  "item": "Boba Ice Cream",
+  "price_naira": 8000,
+  "assets": {
+    "png": "/assets/shaytees/regen-v4/specials/boba_ice_cream.png",
+    "webp": "/assets/shaytees/regen-v4/specials/boba_ice_cream.webp",
+    "thumb": "/assets/shaytees/regen-v4/specials/boba_ice_cream_thumb.webp"
+  },
+  "whatsapp_number_policy": "Do not change WhatsApp number until client confirms 08069621919 is active on WhatsApp.",
+  "notes": [
+    "Generated square pink-background site asset from client-provided boba photo",
+    "Use object-contain/crop-safe rendering",
+    "Add only Boba Ice Cream item; do not change unrelated data"
+  ]
+}

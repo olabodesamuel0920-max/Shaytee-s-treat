@@ -1,22 +1,15 @@
-# Shaytee's Treat — Phase 1R Ice Cream Visual Fix Pack
+# Shaytee's Treat — Phase 1S Boba Ice Cream Pack
 
-This ZIP is for Antigravity.
+This pack adds the client-provided Boba Ice Cream image and implementation instructions.
 
-## What it does
-Replaces the Vanilla Dream and Banana Caramel images with corrected cup-style soft-serve visuals:
+Use `docs/ANTIGRAVITY_PHASE_1S_PROMPT.md` for the exact implementation.
 
-- Vanilla Dream: lighter creamy vanilla.
-- Banana Caramel: more yellowish banana-flavour vibe, with no banana pieces/slices.
+Main asset path to use:
 
-## How to use
-Extract into the project root and allow overwrite.
-Then follow:
+`/assets/shaytees/regen-v4/specials/boba_ice_cream.webp`
 
-`docs/ANTIGRAVITY_PHASE_1R_PROMPT.md`
+Price:
 
-## Included
-- PNG originals
-- WebP optimized versions
-- WebP thumbnails
-- Antigravity implementation prompt
-- manifest
+`₦8,000`
+
+Do not update the WhatsApp order number until the client confirms `08069621919` is active on WhatsApp.
