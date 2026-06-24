@@ -721,10 +721,10 @@ export default function AdminPreview() {
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
-                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Replacement product pictures</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Pending: Banana Caramel ice cream cup image. (Strawberry Delight and Chocolate Bliss cup visuals successfully updated).</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: All ice cream flavors (Vanilla Dream, Strawberry Delight, Chocolate Bliss, and Banana Caramel) updated to cup-style visuals.</p>
                       </div>
                     </div>
 
