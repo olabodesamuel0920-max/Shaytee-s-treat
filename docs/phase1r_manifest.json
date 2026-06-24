@@ -1,0 +1,26 @@
+{
+  "phase": "1R",
+  "title": "Final Ice Cream Visual Replacement Pack",
+  "created_at": "2026-06-24T07:09:39.953399Z",
+  "client_correction": {
+    "vanilla_dream": "Make vanilla lighter / creamy pale vanilla.",
+    "banana_caramel": "Make banana more yellowish like banana flavour, but no banana pieces/slices and no caramel-heavy filling look."
+  },
+  "assets": [
+    "public/assets/shaytees/regen-v2/gelato/vanilla_dream.png",
+    "public/assets/shaytees/regen-v2/gelato/vanilla_dream.webp",
+    "public/assets/shaytees/regen-v2/gelato/vanilla_dream_thumb.webp",
+    "public/assets/shaytees/regen-v2/gelato/banana_caramel.png",
+    "public/assets/shaytees/regen-v2/gelato/banana_caramel.webp",
+    "public/assets/shaytees/regen-v2/gelato/banana_caramel_thumb.webp"
+  ],
+  "expected_public_paths": [
+    "/assets/shaytees/regen-v2/gelato/vanilla_dream.webp",
+    "/assets/shaytees/regen-v2/gelato/banana_caramel.webp"
+  ],
+  "notes": [
+    "Assets are already named for drop-in replacement.",
+    "PNG, main WebP, and thumbnail WebP are included.",
+    "No code changes should be necessary if existing paths are unchanged."
+  ]
+}
