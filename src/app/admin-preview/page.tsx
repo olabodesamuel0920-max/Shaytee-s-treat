@@ -666,10 +666,10 @@ export default function AdminPreview() {
                     </div>
 
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
-                      <input type="checkbox" className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
+                      <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp number / SIM confirmation</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Pending SIM confirmation. New number 08069621919 is pending WhatsApp activation. Currently active line is {menuData.contact}.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Official WhatsApp number confirmed and active. Show active number as 08069621919.</p>
                       </div>
                     </div>
 
@@ -732,8 +732,8 @@ export default function AdminPreview() {
                     <div className="p-4 bg-zinc-950 rounded-xl border border-zinc-850 flex items-start gap-3">
                       <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
-                        <p className="font-fredoka text-xs font-bold text-zinc-200">Boba Ice Cream item added</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Boba Ice Cream added to specials for ₦8,000 using the client-provided image.</p>
+                        <p className="font-fredoka text-xs font-bold text-zinc-200">Boba Ice Cream visible in Build Your Treat</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Boba Ice Cream visible in Build Your Treat customizer and specials menu for ₦8,000.</p>
                       </div>
                     </div>
 

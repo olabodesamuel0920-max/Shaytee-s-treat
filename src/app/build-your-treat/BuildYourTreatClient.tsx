@@ -64,7 +64,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     };
   });
 
-  const targetExtraCategories = ["waffles", "mini-pancakes", "hot-snacks-extras", "coffee", "food"];
+  const targetExtraCategories = ["waffles", "mini-pancakes", "hot-snacks-extras", "coffee", "food", "special-menu"];
   const extrasList: Option[] = [];
 
   targetExtraCategories.forEach((catId) => {
@@ -72,6 +72,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     if (!cat) return;
 
     cat.items.forEach((item) => {
+      if (catId === "special-menu" && item.name !== "Boba Ice Cream") return;
       let displayName = item.name;
       if (catId === "mini-pancakes") {
         displayName = `Mini Pancakes (${item.name})`;
@@ -330,7 +331,7 @@ ${itemsText}
 
 *Note:* Price and delivery to be finalized on chat. 💖`;
 
-    const whatsappUrl = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/2348069621919?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -495,7 +496,7 @@ ${itemsText}
             <div className="glossy-card p-6">
               <h3 className="font-fredoka text-lg font-bold text-chocolate mb-4 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-full bg-pink-primary text-white text-xs flex items-center justify-center font-bold">5</span>
-                Add Snacks, Food & Coffees (Optional)
+                Add Snacks, Specials & Extras
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
                 {extrasList.map((item) => {
@@ -695,10 +696,10 @@ ${itemsText}
                   Send Order to WhatsApp
                 </button>
                 <a
-                  href="tel:08162125710"
+                  href="tel:08069621919"
                   className="w-full py-2.5 bg-chocolate/5 hover:bg-chocolate/10 text-chocolate border border-chocolate/20 font-fredoka font-bold rounded-xl transition-all flex items-center justify-center gap-2 text-xs"
                 >
-                  📞 Phone Call Hotline (08162125710)
+                  📞 Phone Call Hotline (08069621919)
                 </a>
               </div>
             </div>

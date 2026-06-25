@@ -19,7 +19,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             <a
-              href="https://wa.me/2348162125710"
+              href="https://wa.me/2348069621919"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-pink-primary transition-colors duration-300"
@@ -27,7 +27,7 @@ export default function Footer() {
               <MessageCircle size={20} />
             </a>
             <a
-              href="tel:08162125710"
+              href="tel:08069621919"
               className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-pink-primary transition-colors duration-300"
             >
               <Phone size={20} />
