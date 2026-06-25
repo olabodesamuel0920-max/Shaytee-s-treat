@@ -308,7 +308,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     }
     
     if (extras.length > 0) {
-      itemsText += `\n\n*Additional Snacks & Eats:*`;
+      itemsText += `\n\nAdditional Snacks & Eats:`;
       extras.forEach((ex, index) => {
         let formattedExtraName = ex.name;
         if (formattedExtraName.includes(" (") && formattedExtraName.endsWith(")")) {
@@ -318,18 +318,19 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
       });
     }
 
-    const message = `🍭 *NEW ORDER — Shaytee's Treat*
+    const message = `NEW ORDER — Shaytee's Treat
 
-👤 *Customer Name:* ${clientName.trim() || "[Not Provided]"}
-🚚 *Order Type:* ${orderType === "delivery" ? "Delivery" : "Store Pickup"}
-📍 *Address/Meetup:* ${location.trim() || "[Not Provided]"}
+Customer Name: ${clientName.trim() || "[Not Provided]"}
+Order Type: ${orderType === "delivery" ? "Delivery" : "Store Pickup"}
+Address/Meetup: ${location.trim() || "[Not Provided]"}
 
-*Order Details:*
+Order Details:
+
 ${itemsText}
 
-*Estimated Total:* ₦${estimatedTotal.toLocaleString()}
+Estimated Total: ₦${estimatedTotal.toLocaleString()}
 
-*Note:* Price and delivery to be finalized on chat. 💖`;
+Note: Price and delivery will be confirmed on WhatsApp chat.`;
 
     const whatsappUrl = `https://wa.me/2348069621919?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");

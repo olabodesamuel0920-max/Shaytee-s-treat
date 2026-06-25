@@ -92,7 +92,7 @@ export default function VisitPage() {
   const handleInquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!inquiryText) return;
-    const locationTip = selectedLandmark ? `\n📍 Delivery Landmark: ${selectedLandmark.name}` : "";
+    const locationTip = selectedLandmark ? `\nDelivery Landmark: ${selectedLandmark.name}` : "";
     const message = `Hello Shaytee's Treat! I have an inquiry:${locationTip}
 ${inquiryText}
 
