@@ -251,7 +251,7 @@
         {
           "name": "Beef Shawarma",
           "variants": {
-            "no_sausage": 3000,
+            "no_sausage": 3500,
             "single_sausage": 3500,
             "double_sausage": 4000
           },
@@ -260,7 +260,7 @@
         {
           "name": "Chicken Shawarma",
           "variants": {
-            "no_sausage": 3000,
+            "no_sausage": 3500,
             "single_sausage": 3500,
             "double_sausage": 4000
           },

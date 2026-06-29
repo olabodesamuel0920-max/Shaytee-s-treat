@@ -661,7 +661,7 @@ export default function AdminPreview() {
                       <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Shawarma options</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: No Sausage ₦3,000, Single ₦3,500, Double ₦4,000. Applied globally.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: No Sausage ₦3,500, Single ₦3,500, Double ₦4,000. Applied globally.</p>
                       </div>
                     </div>
 
