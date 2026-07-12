@@ -273,6 +273,14 @@
             "with_sausage": 1500
           },
           "image": "/assets/shaytees/regen-v3/snacks/corn_dog.webp"
+        },
+        {
+          "name": "Breadwarma",
+          "prices": {
+            "small": 3000,
+            "big": 4500
+          },
+          "image": "/assets/shaytees/regen-v3/snacks/beef_shawarma.webp"
         }
       ]
     },

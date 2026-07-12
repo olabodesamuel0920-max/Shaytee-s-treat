@@ -19,6 +19,8 @@ export interface BuildYourTreatClientProps {
     toppings?: string;
     drizzle?: string;
     extras?: string;
+    combo?: string;
+    shawarma?: string;
   };
 }
 
@@ -182,6 +184,9 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     return [];
   });
   
+  const isShawarmaIceCreamCombo = initialSearchParams.combo === "shawarma-icecream";
+  const [comboShawarma, setComboShawarma] = useState<"No Sausage" | "Single Sausage">("Single Sausage");
+
   // State variables for client information
   const [clientName, setClientName] = useState("");
   const [orderType, setOrderType] = useState<"pickup" | "delivery">("pickup");
@@ -245,6 +250,14 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     } else {
       setExtras([]);
     }
+
+    if (initialSearchParams.shawarma) {
+      if (initialSearchParams.shawarma === "No Sausage" || initialSearchParams.shawarma === "no-sausage") {
+        setComboShawarma("No Sausage");
+      } else {
+        setComboShawarma("Single Sausage");
+      }
+    }
   }, [initialSearchParams]);
 
   // Calculate Total
@@ -254,12 +267,18 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
       return;
     }
     let sum = flavor.price;
-    if (size) sum += size.price;
+    if (size) {
+      if (isShawarmaIceCreamCombo) {
+        sum += size.name === "Large Big Cup" ? 8500 : 6500;
+      } else {
+        sum += size.price;
+      }
+    }
     toppings.forEach((t) => (sum += t.price));
     if (drizzle) sum += drizzle.price;
     extras.forEach((e) => (sum += e.price));
     setEstimatedTotal(sum);
-  }, [flavor, size, toppings, drizzle, extras]);
+  }, [flavor, size, toppings, drizzle, extras, isShawarmaIceCreamCombo]);
 
   // Toggle Topping selection
   const handleToppingToggle = (topping: Option) => {
@@ -299,12 +318,29 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
 
     const sizeName = size ? size.name : "Medium Small Cup";
     
-    let itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName}) — ₦${(size ? size.price : 3000).toLocaleString()}`;
-    if (toppings.length > 0) {
-      itemsText += `\n   Toppings: ${toppings.map(t => `${t.name} (+₦${t.price.toLocaleString()})`).join(", ")}`;
-    }
-    if (drizzle) {
-      itemsText += `\n   Drizzle: ${drizzle.name} (FREE)`;
+    let itemsText = "";
+    if (isShawarmaIceCreamCombo) {
+      const comboPrice = sizeName === "Large Big Cup" ? 8500 : 6500;
+      itemsText = `Combo:
+Shawarma + Ice Cream Combo
+Shawarma: ${comboShawarma}
+Ice Cream Size: ${sizeName}
+Flavour: ${flavor.name}
+Price: ₦${comboPrice.toLocaleString()}`;
+      if (toppings.length > 0) {
+        itemsText += `\n   Toppings: ${toppings.map(t => `${t.name} (+₦${t.price.toLocaleString()})`).join(", ")}`;
+      }
+      if (drizzle) {
+        itemsText += `\n   Drizzle: ${drizzle.name} (FREE)`;
+      }
+    } else {
+      itemsText = `1. Custom Gelato Scoop: ${flavor.name} (${sizeName}) — ₦${(size ? size.price : 3000).toLocaleString()}`;
+      if (toppings.length > 0) {
+        itemsText += `\n   Toppings: ${toppings.map(t => `${t.name} (+₦${t.price.toLocaleString()})`).join(", ")}`;
+      }
+      if (drizzle) {
+        itemsText += `\n   Drizzle: ${drizzle.name} (FREE)`;
+      }
     }
     
     if (extras.length > 0) {
@@ -354,6 +390,62 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
             Unleash your dessert creativity. Choose your sizes, flavors, premium toppings, drizzles, and snack sidekicks. Send the order details to WhatsApp in a single tap.
           </p>
         </div>
+
+        {isShawarmaIceCreamCombo && (
+          <div className="glossy-card p-6 mb-8 border-pink-200 bg-gradient-to-r from-pink-light/20 via-pink-primary/5 to-vanilla/20 shadow-md">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="flex-grow">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xl">🎁</span>
+                  <h2 className="font-fredoka text-lg font-bold text-chocolate">
+                    Shawarma + Ice Cream Combo Mode Active
+                  </h2>
+                  <span className="text-[9px] font-bold text-pink-primary bg-pink-100 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                    Special Offer
+                  </span>
+                </div>
+                <p className="font-poppins text-text-light text-xs md:text-sm leading-relaxed mb-4">
+                  This combo includes one ice cream cup and one shawarma wrap of your choice. Choose your ice cream flavor and size below, and select your shawarma option here:
+                </p>
+
+                {/* Shawarma Radio Options */}
+                <div className="flex gap-4">
+                  <label className="flex items-center gap-2 bg-white/80 border border-pink-100 rounded-xl px-4 py-2 text-xs font-bold font-poppins cursor-pointer hover:bg-pink-50 transition-colors select-none text-chocolate">
+                    <input
+                      type="radio"
+                      name="comboShawarma"
+                      checked={comboShawarma === "No Sausage"}
+                      onChange={() => setComboShawarma("No Sausage")}
+                      className="accent-pink-primary"
+                    />
+                    🌯 No Sausage
+                  </label>
+                  <label className="flex items-center gap-2 bg-white/80 border border-pink-150 rounded-xl px-4 py-2 text-xs font-bold font-poppins cursor-pointer hover:bg-pink-50 transition-colors select-none text-chocolate">
+                    <input
+                      type="radio"
+                      name="comboShawarma"
+                      checked={comboShawarma === "Single Sausage"}
+                      onChange={() => setComboShawarma("Single Sausage")}
+                      className="accent-pink-primary"
+                    />
+                    🌯 Single Sausage
+                  </label>
+                </div>
+              </div>
+
+              <div className="shrink-0">
+                <button
+                  onClick={() => {
+                    window.location.href = "/build-your-treat";
+                  }}
+                  className="px-4 py-2 border border-pink-primary/30 hover:border-pink-primary text-pink-primary hover:bg-pink-50/50 font-fredoka text-xs font-bold rounded-xl transition-all shadow-sm"
+                >
+                  Exit Combo Mode
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Builder Workstation Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -500,7 +592,14 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
                 Add Snacks, Specials & Extras
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2">
-                {extrasList.map((item) => {
+                {extrasList
+                  .filter((item) => {
+                    if (isShawarmaIceCreamCombo) {
+                      return !item.name.toLowerCase().includes("shawarma");
+                    }
+                    return true;
+                  })
+                  .map((item) => {
                   const isSelected = extras.some((e) => e.name === item.name);
                   return (
                     <button
@@ -596,9 +695,25 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
               {/* Items List */}
               <div className="space-y-2 max-h-[180px] overflow-y-auto pr-1">
                 {flavor ? (
-                  <div className="flex justify-between items-center text-sm font-poppins text-text-dark border-b border-pink-50/50 pb-1.5">
-                    <span>🍦 {flavor.name} ({size ? size.name : "Medium Small Cup"})</span>
-                    <span className="font-bold text-pink-primary">₦{((flavor.price) + (size ? size.price : 0)).toLocaleString()}</span>
+                  <div className="flex flex-col gap-1 border-b border-pink-50/30 pb-2">
+                    {isShawarmaIceCreamCombo ? (
+                      <>
+                        <div className="flex justify-between items-center text-xs font-poppins text-text-dark font-bold">
+                          <span>🎁 Shawarma + Ice Cream Combo</span>
+                          <span className="font-bold text-pink-primary">₦{(size?.name === "Large Big Cup" ? 8500 : 6500).toLocaleString()}</span>
+                        </div>
+                        <div className="text-[10px] text-text-light pl-3 flex flex-col gap-0.5">
+                          <span>• Flavour: {flavor.name}</span>
+                          <span>• Size: {size ? size.name : "Medium Small Cup"}</span>
+                          <span>• Shawarma: {comboShawarma}</span>
+                        </div>
+                      </>
+                    ) : (
+                      <div className="flex justify-between items-center text-xs font-poppins text-text-dark">
+                        <span>🍦 {flavor.name} ({size ? size.name : "Medium Small Cup"})</span>
+                        <span className="font-bold text-pink-primary">₦{((flavor.price) + (size ? size.price : 0)).toLocaleString()}</span>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <p className="text-xs text-text-light/50 italic py-2">No items selected yet. Choose your ice cream scoop to start!</p>

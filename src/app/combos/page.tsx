@@ -146,9 +146,31 @@ export default function CombosPage() {
         extras: ["Plain Waffle + Syrup", "Latte"],
       }
     },
+    {
+      name: "Shawarma + Ice Cream Combo",
+      desc: "The perfect sweet & savory pairing. Choose your ice cream flavor & size, and pair it with a fresh, delicious shawarma.",
+      items: ["1 Ice Cream Cup (Choose flavor & size)", "1 Beef or Chicken Shawarma (No Sausage or Single Sausage)"],
+      emoji: "🌯",
+      badge: "NEW COMBO",
+      estimatedPrice: 6500,
+      image: "/assets/shaytees/regen-v3/snacks/beef_shawarma.webp",
+      assetThumbnails: [
+        "/assets/shaytees/individual_assets/flavours/strawberry-delight-sundae_thumb.webp",
+        "/assets/shaytees/regen-v3/snacks/beef_shawarma_thumb.webp"
+      ],
+      params: {
+        flavor: "Vanilla Dream",
+        size: "Medium Small Cup",
+        toppings: [],
+        extras: [],
+      }
+    },
   ];
 
   const getComboLink = (combo: Combo) => {
+    if (combo.name === "Shawarma + Ice Cream Combo") {
+      return "/build-your-treat?combo=shawarma-icecream&flavor=Vanilla%20Dream&size=Medium%20Small%20Cup&shawarma=Single%20Sausage";
+    }
     const searchParams = new URLSearchParams();
     searchParams.set("flavor", combo.params.flavor);
     searchParams.set("size", combo.params.size);

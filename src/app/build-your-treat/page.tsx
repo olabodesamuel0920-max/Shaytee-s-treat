@@ -26,6 +26,8 @@ export default async function BuildYourTreat({ searchParams }: PageProps) {
     toppings: getParamString(resolvedParams.toppings),
     drizzle: getParamString(resolvedParams.drizzle),
     extras: getParamString(resolvedParams.extras),
+    combo: getParamString(resolvedParams.combo),
+    shawarma: getParamString(resolvedParams.shawarma),
   };
 
   return <BuildYourTreatClient initialSearchParams={initialSearchParams} />;
