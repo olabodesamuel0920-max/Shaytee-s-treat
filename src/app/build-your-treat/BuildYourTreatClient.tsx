@@ -185,7 +185,7 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
   });
   
   const isShawarmaIceCreamCombo = initialSearchParams.combo === "shawarma-icecream";
-  const [comboShawarma, setComboShawarma] = useState<"No Sausage" | "Single Sausage">("Single Sausage");
+  const [comboShawarma, setComboShawarma] = useState<"No Sausage" | "Single Sausage" | "Double Sausage">("Single Sausage");
 
   // State variables for client information
   const [clientName, setClientName] = useState("");
@@ -252,8 +252,11 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     }
 
     if (initialSearchParams.shawarma) {
-      if (initialSearchParams.shawarma === "No Sausage" || initialSearchParams.shawarma === "no-sausage") {
+      const s = initialSearchParams.shawarma.toLowerCase();
+      if (s === "no sausage" || s === "no-sausage") {
         setComboShawarma("No Sausage");
+      } else if (s === "double sausage" || s === "double-sausage") {
+        setComboShawarma("Double Sausage");
       } else {
         setComboShawarma("Single Sausage");
       }
@@ -269,7 +272,8 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     let sum = flavor.price;
     if (size) {
       if (isShawarmaIceCreamCombo) {
-        sum += size.name === "Large Big Cup" ? 8500 : 6500;
+        const comboBase = size.name === "Large Big Cup" ? 8500 : 6500;
+        sum += comboBase + (comboShawarma === "Double Sausage" ? 500 : 0);
       } else {
         sum += size.price;
       }
@@ -320,7 +324,8 @@ export default function BuildYourTreatClient({ initialSearchParams }: BuildYourT
     
     let itemsText = "";
     if (isShawarmaIceCreamCombo) {
-      const comboPrice = sizeName === "Large Big Cup" ? 8500 : 6500;
+      const baseComboPrice = sizeName === "Large Big Cup" ? 8500 : 6500;
+      const comboPrice = baseComboPrice + (comboShawarma === "Double Sausage" ? 500 : 0);
       itemsText = `Combo:
 Shawarma + Ice Cream Combo
 Shawarma: ${comboShawarma}
@@ -409,7 +414,7 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
                 </p>
 
                 {/* Shawarma Radio Options */}
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                   <label className="flex items-center gap-2 bg-white/80 border border-pink-100 rounded-xl px-4 py-2 text-xs font-bold font-poppins cursor-pointer hover:bg-pink-50 transition-colors select-none text-chocolate">
                     <input
                       type="radio"
@@ -420,7 +425,7 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
                     />
                     🌯 No Sausage
                   </label>
-                  <label className="flex items-center gap-2 bg-white/80 border border-pink-150 rounded-xl px-4 py-2 text-xs font-bold font-poppins cursor-pointer hover:bg-pink-50 transition-colors select-none text-chocolate">
+                  <label className="flex items-center gap-2 bg-white/80 border border-pink-100 rounded-xl px-4 py-2 text-xs font-bold font-poppins cursor-pointer hover:bg-pink-50 transition-colors select-none text-chocolate">
                     <input
                       type="radio"
                       name="comboShawarma"
@@ -429,6 +434,16 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
                       className="accent-pink-primary"
                     />
                     🌯 Single Sausage
+                  </label>
+                  <label className="flex items-center gap-2 bg-white/80 border border-pink-100 rounded-xl px-4 py-2 text-xs font-bold font-poppins cursor-pointer hover:bg-pink-50 transition-colors select-none text-chocolate">
+                    <input
+                      type="radio"
+                      name="comboShawarma"
+                      checked={comboShawarma === "Double Sausage"}
+                      onChange={() => setComboShawarma("Double Sausage")}
+                      className="accent-pink-primary"
+                    />
+                    🌯 Double Sausage (+₦500)
                   </label>
                 </div>
               </div>
@@ -700,7 +715,12 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
                       <>
                         <div className="flex justify-between items-center text-xs font-poppins text-text-dark font-bold">
                           <span>🎁 Shawarma + Ice Cream Combo</span>
-                          <span className="font-bold text-pink-primary">₦{(size?.name === "Large Big Cup" ? 8500 : 6500).toLocaleString()}</span>
+                          <span className="font-bold text-pink-primary">
+                            ₦{(
+                              (size?.name === "Large Big Cup" ? 8500 : 6500) + 
+                              (comboShawarma === "Double Sausage" ? 500 : 0)
+                            ).toLocaleString()}
+                          </span>
                         </div>
                         <div className="text-[10px] text-text-light pl-3 flex flex-col gap-0.5">
                           <span>• Flavour: {flavor.name}</span>

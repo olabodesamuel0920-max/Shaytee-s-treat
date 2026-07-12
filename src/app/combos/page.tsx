@@ -148,8 +148,8 @@ export default function CombosPage() {
     },
     {
       name: "Shawarma + Ice Cream Combo",
-      desc: "The perfect sweet & savory pairing. Choose your ice cream flavor & size, and pair it with a fresh, delicious shawarma.",
-      items: ["1 Ice Cream Cup (Choose flavor & size)", "1 Beef or Chicken Shawarma (No Sausage or Single Sausage)"],
+      desc: "The perfect sweet & savory pairing. Choose your ice cream flavor & size, and pair it with a fresh, delicious shawarma (No Sausage, Single, or Double Sausage).",
+      items: ["1 Ice Cream Cup (Choose flavor & size)", "1 Beef or Chicken Shawarma (No Sausage, Single, or Double Sausage)"],
       emoji: "🌯",
       badge: "NEW COMBO",
       estimatedPrice: 6500,
