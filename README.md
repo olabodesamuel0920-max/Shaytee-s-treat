@@ -12,4 +12,4 @@ Price:
 
 `₦8,000`
 
-Do not update the WhatsApp order number until the client confirms `08069621919` is active on WhatsApp.
+WhatsApp order number is globally updated to `08162125710`.

@@ -373,7 +373,7 @@ Estimated Total: ₦${estimatedTotal.toLocaleString()}
 
 Note: Price and delivery will be confirmed on WhatsApp chat.`;
 
-    const whatsappUrl = `https://wa.me/2348069621919?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -832,10 +832,10 @@ Note: Price and delivery will be confirmed on WhatsApp chat.`;
                   Send Order to WhatsApp
                 </button>
                 <a
-                  href="tel:08069621919"
+                  href="tel:+2348162125710"
                   className="w-full py-2.5 bg-chocolate/5 hover:bg-chocolate/10 text-chocolate border border-chocolate/20 font-fredoka font-bold rounded-xl transition-all flex items-center justify-center gap-2 text-xs"
                 >
-                  📞 Phone Call Hotline (08069621919)
+                  📞 Phone Call Hotline (08162125710)
                 </a>
               </div>
             </div>

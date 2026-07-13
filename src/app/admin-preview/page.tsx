@@ -669,7 +669,7 @@ export default function AdminPreview() {
                       <input type="checkbox" defaultChecked className="mt-0.5 rounded border-zinc-800 text-pink-primary focus:ring-pink-primary bg-zinc-900 cursor-pointer" />
                       <div>
                         <p className="font-fredoka text-xs font-bold text-zinc-200">Official WhatsApp number / SIM confirmation</p>
-                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Official WhatsApp number confirmed and active. Show active number as 08069621919.</p>
+                        <p className="text-[10px] text-zinc-500 font-poppins">Confirmed: Official WhatsApp number confirmed and active. Show active number as 08162125710.</p>
                       </div>
                     </div>
 

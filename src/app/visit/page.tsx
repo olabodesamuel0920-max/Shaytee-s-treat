@@ -97,7 +97,7 @@ export default function VisitPage() {
 ${inquiryText}
 
 Could you please confirm the details? Thank you!`;
-    const url = `https://wa.me/2348069621919?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/2348162125710?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -289,7 +289,7 @@ Could you please confirm the details? Thank you!`;
 
               <div className="flex flex-col gap-3.5">
                 <a
-                  href="https://wa.me/2348069621919"
+                  href="https://wa.me/2348162125710"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3.5 bg-[#25d366] hover:bg-[#128c7e] text-white font-fredoka font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 hover:scale-102"
@@ -299,7 +299,7 @@ Could you please confirm the details? Thank you!`;
                 </a>
 
                 <a
-                  href="tel:08069621919"
+                  href="tel:+2348162125710"
                   className="w-full py-3 bg-pink-primary hover:bg-pink-dark text-white font-fredoka font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 hover:scale-102"
                 >
                   <Phone size={18} />
